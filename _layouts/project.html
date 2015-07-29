@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<header class="project-header">
+	<h2 class="post-title">{{ page.title }}</h2>
+	{% if page.projecttype %}<h3>projecttype = {{ page.projecttype }} here</h3>{% endif %}
+	{% if page.thumbnail %}<h3>thumbnail = {{ page.thumbnail }} here</h3>{% endif %}
+</header>
+
+<article class="post-content">
+	{{ content }}
+</article>
