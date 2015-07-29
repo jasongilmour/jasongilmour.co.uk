@@ -1,0 +1,161 @@
+// ==========================================================================
+// Atmosphere
+// ==========================================================================
+
+html,
+button,
+input,
+select,
+textarea {
+    color: $default-color;
+    font-family: $default-font-stack;
+}
+
+html {
+    font-size: 1em;
+    // text-rendering: optimizeLegibility;
+    position: relative;
+    min-height: 100%;
+}
+
+// apply a natural box layout model to all elements, but allowing components to change
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+main {
+    min-height: 100vh;
+}
+
+section {
+    margin: 0 auto;
+    padding: em(10,16) em(20,16);
+    @media screen and (min-width: $bp-medium) {
+        padding: em(24,16) em(20,16);
+        width: 50%;
+    }
+}
+
+article {
+    @include clearfix;
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+// A better looking default horizontal rule
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $gray;
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+hr.secondary { border-color: $secondary-color; }
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+    height: auto;
+    margin: 0 auto 1em auto;
+    width: auto;
+    max-width: 100%;
+}
+
+audio { width: 100%; }
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    margin-bottom: em(12,16);
+    resize: vertical;
+}
+
+::-moz-selection {
+    background: tint($green, 50);
+    text-shadow: none;
+}
+
+::selection {
+    background: tint($green, 50);
+    text-shadow: none;
+}
+
+// ==========================================================================
+// Browse Happy prompt
+// ========================================================================== 
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+// ==========================================================================
+// Helper classes
+// ==========================================================================
+
+.js .jshidden {
+    @include visuallyhidden;
+}
+
+.js-hidden {
+    @include visuallyhidden;
+}
+
+// Tables
+
+table {
+    margin-bottom: 1em;
+    width: 100%;
+    tr {
+        &:nth-child(odd) {
+            background-color: $gray;
+        }
+    }
+    th {
+        border-left: 1px solid $gray;
+        overflow: auto;
+        padding: 0.25em 0.5em;
+        text-align: left;
+        &:first-child {
+            border-left: 0;
+        }
+    }
+    td {
+        border-left: 1px solid $gray;
+        padding: 0.25em 0.5em;
+        &:first-child {
+            border-left: 0;
+        }
+    }
+}
+
+// For wide tables
+.table-container {
+    overflow-x: auto;
+    table {
+        table-layout: initial;
+        white-space: nowrap;
+        width: initial;
+        td, th {
+            white-space: normal;
+        }
+    }
+}
+
+// Images
+img, span {
+    max-width: 100%;
+}

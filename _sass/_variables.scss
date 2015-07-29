@@ -1,0 +1,38 @@
+// Typography
+
+$default-font-stack: 'solomon-normal', sans-serif;
+$serif-font-stack: 'solomon-light', sans-serif;
+$thin: 200;
+$light: 300;
+$regular: 400;
+$bold: 500;
+$weight-black: 700;
+
+// Colors
+
+//  Default color for HRs, borders, default font color etc
+//  as used in the top of _atmosphere.scss, can differ
+//  from primary brand color.
+$default-color: #000;
+$secondary-color: #000;
+$black: #111;
+$white: #fff;
+$gray: #838383;
+$dark-gray: #666;
+$light-gray: #eee;
+
+// Brand colours
+$green: #35d80e;
+$dark-green: #2E8915;
+
+// Message colors
+$warning-color: red;
+$information-color: blue;
+$success-color: green;
+
+// Button colors
+$cta-background: lightgreen;
+
+// Breakpoints
+$bp-small : 30em;
+$bp-medium : 48em;

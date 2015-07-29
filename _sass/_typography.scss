@@ -1,0 +1,183 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+@font-face {
+    font-family: 'solomon-black';
+    src: url('solomon_black.eot');
+    src: url('solomon_black.eot?#iefix') format('embedded-opentype'),
+         url('solomon_black.woff2') format('woff2'),
+         url('solomon_black.woff') format('woff'),
+         url('solomon_black.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'solomon-normal';
+    src: url('solomon_normal.eot');
+    src: url('solomon_normal.eot?#iefix') format('embedded-opentype'),
+         url('solomon_normal.woff2') format('woff2'),
+         url('solomon_normal.woff') format('woff'),
+         url('solomon_normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'solomon-light';
+    src: url('solomon_light.eot');
+    src: url('solomon_light.eot?#iefix') format('embedded-opentype'),
+         url('solomon_light.woff2') format('woff2'),
+         url('solomon_light.woff') format('woff'),
+         url('solomon_light.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+
+}
+
+h1,h2,h3,h4,h5,h6,td {
+    overflow: hidden;
+}
+h1,h2,h3,h4,h5,h6,p {
+    span {
+        display: block;
+    }
+}
+h1, .h1 {
+    font-family: 'solomon-light';
+    font-size: em(48,16);
+    line-height: 1.041667;
+    margin: em(27,48) 0;
+}
+
+h2, .h2 {
+    font-family: 'solomon-light';
+    font-size: em(36,16);
+    line-height: 1.041667;
+    margin: em(12.5,36) 0;
+}
+
+h3, .h3 {
+    color: $green;
+    font-family: 'solomon-normal';
+    font-size: em(18,16);
+    line-height: 1.222222;
+    margin: em(27,18) 0 em(23,18);
+}
+
+h4, .h4 {
+    font-family: 'solomon-normal';
+    font-size: em(18,16);
+    line-height: 1.222222;
+    margin: em(25,18) 0;
+}
+h5, .h5 {
+    font-family: 'solomon-black';
+    font-size: em(12,16);
+    line-height: 2.083333;
+    margin: em(25,12) 0;
+}
+h6, .h6 {
+    font-size: em(8,16);
+    line-height: 1.5625;
+    margin: em(12.5,8) 0;
+}
+p {
+    font-family: "solomon-normal";
+    font-size: em(18,16);
+    line-height: 1.333333;
+    margin: em(25,18) 0;
+    img {
+        float: left;
+        margin-right: em(27,18);
+        vertical-align: baseline;
+        &.alignright {
+            float: right;
+            margin-left: em(27,18);
+        }
+    }
+}
+strong {
+    font-weight: $bold;
+}
+em {
+    font-style: italic;
+}
+mark {
+    background: $light-gray;
+}
+pre {
+    border-radius: 0.5em;
+    overflow-x: auto;
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+    code {
+        border-radius: 0.5em;
+        padding: 0.5em 1em;
+    }
+    &.code {
+        padding: 0;
+        border-radius: 0;
+    }
+}
+code {
+    background-color: $black;
+    border: 1px solid $black;
+    color: $white;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+}
+
+// links
+a {
+    color: $dark-green;
+    cursor: pointer;
+    text-decoration: underline;
+    &:hover, &:active {
+        color: $green;
+    }
+}
+
+// Lists
+ul, ol {
+    margin: 1em 0;
+    padding: 0 0 0 1em;
+    ul, ol {
+        margin: 0 0 0 1em;
+    }
+}
+ol ol { list-style-type: upper-roman; }
+dl {
+    margin: 1em 0;
+    padding: 0;
+    dd {
+        font-style: italic;
+        line-height: 1;
+        margin: 0 0 0.5em 1em;
+    }
+}
+
+// Quptes & citations
+blockquote {
+    border-left: 0.25em solid $default-color;
+    font-size: 1em;
+    margin: 0;
+    padding-left: em(18,18);
+    text-indent: 1em;
+}
+cite {
+    font-size: 0.75em;
+    font-size: 0.75rem;
+    font-style: italic;
+    font-weight: $regular;
+}

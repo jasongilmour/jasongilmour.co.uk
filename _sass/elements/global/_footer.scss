@@ -1,0 +1,23 @@
+footer.global {
+	@include clearfix;
+	background-color: $green;
+	color: $white;
+	font-size: em(12,16);
+	line-height: 1;
+	padding: em(9,12) em(20,12);
+	width: 100%;
+	nav {
+		float: left;
+		a:after {
+			content: ' | ';
+			padding: em(6,12);
+		}
+	}
+	a {
+		color: $white;
+	}
+	small {
+		float: right;
+		font-size: 100%;
+	}
+}

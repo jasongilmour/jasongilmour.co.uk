@@ -1,0 +1,231 @@
+// ==========================================================================
+// Fuctions & useful shortcuts
+// ==========================================================================
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `tint` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `shade` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// em values
+@function em($px, $font-size: 16px) {
+    @return($px / $font-size) * 1em;
+}
+
+// Backgrounds
+@mixin backgrounds($filename, $filetype, $position, $repeat) {
+    background-image: url('/img/#{$filename}.#{$filetype}');
+    background-position: $position;
+    background-repeat: $repeat;
+    @media screen and ( min-resolution: 93dpi ), screen and ( min-resolution: 1.3dppx) {
+        background-image: url('/img/#{$filename}@2x.#{$filetype}');
+    }
+}
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+@mixin button {
+    background-color: $green;
+    border: 0;
+    border-radius: 1em;
+    color: $white;
+    display: inline-block;
+    line-height: 1;
+    padding: em(5,16) em(18,16) em(7,16);
+    transition: background 0.2s;
+    &:hover {
+        background-color: tint($green, 15);
+        color: $white;
+        transition: background 0.2s;
+    }
+    &:active {
+        background-color: tint($green, 30);
+        color: $white;
+        transition: background 0.2s;     
+    }
+}
+@mixin secondary-button {
+}
+
+// ==========================================================================
+// Shadows
+// ==========================================================================
+
+@mixin shadow-one($inset:'') {
+    box-shadow: unquote($inset) 0 0 4px 0 rgba(0,0,0,0.05), unquote($inset) 5px 10px 7px 0 rgba(0,0,0,0.02); // x,y,blur,spread,color
+}
+
+@mixin shadow-two($inset:'') {
+    box-shadow: unquote($inset) 0 0 4px 0 rgba(0,0,0,0.05), unquote($inset) 5px 10px 23px 0 rgba(0,0,0,0.07);
+}
+
+@mixin shadow-three($inset:'') {
+    box-shadow: unquote($inset) 0 0 4px 0 rgba(0,0,0,0.5), unquote($inset) 10px 20px 70px 0 rgba(0,0,0,0.7);
+}
+
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+@mixin grid($cols, $span) {                   // Input number of columns in the grid & number of columns to span
+    $width: 100% / ($cols / $span);           // Width = 100% / (Number of columns / number of columns to span)
+    float: left;
+    width: $width;
+    // @media screen and (min-width: 35em) {
+    //     padding-left: em(10,16);
+    //     padding-right: em(10,16);
+    // }
+}
+
+@mixin prefix($cols, $span) {                 // Input number of columns in the grid & number of columns to span
+    $margin: 100% / ($cols / $span);          // Margin = 100% / (Number of columns / number of columns to span)
+    margin-left: $margin;
+}
+
+@mixin grid-class($cols) {
+    $i: 1;                                    // Iteration counter (i = 1 at the first iteration)
+    $col-width: 100% / $cols;                 // Column width = 100% / number of columns
+    $col-width-1: 100% / $cols;               // Original column width = 100% / number of columns
+    @while $i < $cols + 1 {                   // While iterations ≤ number of columns, do...
+        &#{$i} {                              // Given mixin selector + iteration number, eg. grid- + 1
+            float: left;
+            max-width: initial;
+            width: $col-width;                // Set column width
+        }
+        $i: $i + 1;                           // Count the iterations
+        $col-width: $col-width-1 * $i;        // Column width = original column width * iterations
+        }
+    &#{$cols} {
+        float: none;
+    }
+}
+
+@mixin grid-prefixes($cols) {
+    $i: 1;                                    // Iteration counter (i = 1 at the first iteration)
+    $col-width: 100% / $cols;                 // Column width = 100% / number of columns
+    $col-width-1: 100% / $cols;               // Original column width = 100% / number of columns
+    @while $i < $cols {                       // While iterations < number of columns, do...
+        &#{$i} {                              // Given mixin selector + iteration number, eg. grid- + 1
+            margin-left: $col-width;          // Set left-margin
+        }
+        $i: $i + 1;                           // Count the iterations
+        $col-width: $col-width-1 * $i;        // Column width = original column width * iterations
+    }
+}
+
+.grid-{
+    @media screen and (min-width: 49em) {
+        @include grid-class(16);
+    }
+}
+.prefix-{
+    @media screen and (min-width: 49em) {
+        @include grid-prefixes(16);
+    }
+}
+
+// ==========================================================================
+// Helper mixins
+// ==========================================================================
+
+/*
+ * Image replacement
+ */
+
+@mixin ir() {
+    background-color: transparent;
+    border: 0;
+    display: inline-block;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999em;
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+@mixin hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    &.focusable:active,
+    &.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+@mixin invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+@mixin clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+.group, nav, .grid {
+    @include clearfix();
+}
