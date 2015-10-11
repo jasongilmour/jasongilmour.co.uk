@@ -4,7 +4,7 @@ layout: default
 
 <nav class="home projects-nav">
   {% for post in site.posts %}
-    <a href="{{ post.url }}"{% if post.thumbnail %} data:img="{{ post.thumbnail }}"{% endif %}>
+    <a href="{{ post.url }}"{% if post.thumbnail %} stye="background-image: {{ post.thumbnail }}"{% endif %}>
       <h2>{{ post.title }}</h2>
       {% if post.projecttype %}<small>({{ post.projecttype }})</small>{% endif %}
     </a>

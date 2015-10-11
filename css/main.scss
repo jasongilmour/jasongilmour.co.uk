@@ -20,15 +20,15 @@
 
 // Site specific modualar elements
 // Global
-@import 'elements/global/_header';
-@import 'elements/global/_footer';
+@import 'elements/global/header';
+@import 'elements/global/footer';
 
 // Generic
-@import 'elements/generic/_post';
-@import 'elements/generic/_slideshow';
-@import 'elements/generic/_navigation';
+@import 'elements/generic/post';
+@import 'elements/generic/navigation';
+@import 'elements/generic/layout-modules';
 // Page specific styles
-@import 'elements/generic/_homepage';
+@import 'elements/generic/homepage';
 
 // Print styles
 @import 'print';

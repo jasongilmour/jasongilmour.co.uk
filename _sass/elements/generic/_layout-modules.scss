@@ -1,0 +1,47 @@
+// ==========================================================================
+// Layout modules
+// ==========================================================================
+
+// Define the grid
+.span-{
+    @media screen and (min-width: $bp-medium) {
+        @include grid-class(16);
+    }
+}
+.push-{
+    @media screen and (min-width: $bp-medium) {
+        @include grid-prefixes(16);
+    }
+}
+.pull-{
+    @media screen and (min-width: $bp-medium) {
+        @include grid-prefixes(16);
+    }
+}
+
+.row {
+	@include clearfix;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+	img {
+		width: 100%;
+		margin: em(112,16) auto;
+	}
+	.module {
+		position: relative;
+	}
+	.text {
+		padding: em(28,16);
+		z-index: 2;
+	}
+	.image {
+		z-index: 1;
+	}
+	.image-right {
+		text-align: right;
+	}
+}

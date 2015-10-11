@@ -1,19 +1,5 @@
 <header id="global-header">
-
-  <a href="/" id="logo">
+  <a href="/" id="global-logo">
     <h1>Jason Gilmour</h1>
   </a>
-
-  <nav id="global-nav" class="nav" role="navigation">
-    <a href="about">Information</a>
-
-    {% for page in site.pages %}
-      {% if page.title %}
-      <a href="{{ page.url }}">{{ page.title }}</a>
-      {% endif %}
-    {% endfor %}
-    <!-- <span href="#" id="prev" class="a">Previous</span>
-    <span href="#" id="next" class="a">Next</span> -->
-  </nav>
-
 </header>

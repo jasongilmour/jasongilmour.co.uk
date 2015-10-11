@@ -59,24 +59,6 @@
         transition: background 0.2s;     
     }
 }
-@mixin secondary-button {
-}
-
-// ==========================================================================
-// Shadows
-// ==========================================================================
-
-@mixin shadow-one($inset:'') {
-    box-shadow: unquote($inset) 0 0 4px 0 rgba(0,0,0,0.05), unquote($inset) 5px 10px 7px 0 rgba(0,0,0,0.02); // x,y,blur,spread,color
-}
-
-@mixin shadow-two($inset:'') {
-    box-shadow: unquote($inset) 0 0 4px 0 rgba(0,0,0,0.05), unquote($inset) 5px 10px 23px 0 rgba(0,0,0,0.07);
-}
-
-@mixin shadow-three($inset:'') {
-    box-shadow: unquote($inset) 0 0 4px 0 rgba(0,0,0,0.5), unquote($inset) 10px 20px 70px 0 rgba(0,0,0,0.7);
-}
 
 // ==========================================================================
 // Layout
@@ -84,7 +66,6 @@
 
 @mixin grid($cols, $span) {                   // Input number of columns in the grid & number of columns to span
     $width: 100% / ($cols / $span);           // Width = 100% / (Number of columns / number of columns to span)
-    float: left;
     width: $width;
     // @media screen and (min-width: 35em) {
     //     padding-left: em(10,16);
@@ -127,15 +108,17 @@
         $col-width: $col-width-1 * $i;        // Column width = original column width * iterations
     }
 }
-
-.grid-{
-    @media screen and (min-width: 49em) {
-        @include grid-class(16);
-    }
-}
-.prefix-{
-    @media screen and (min-width: 49em) {
-        @include grid-prefixes(16);
+// Pull
+@mixin grid-prefixes($cols) {
+    $i: 1;                                    // Iteration counter (i = 1 at the first iteration)
+    $col-width: 100% / $cols;                 // Column width = 100% / number of columns
+    $col-width-1: 100% / $cols;               // Original column width = 100% / number of columns
+    @while $i < $cols {                       // While iterations < number of columns, do...
+        &#{$i} {                              // Given mixin selector + iteration number, eg. grid- + 1
+            margin-left: -$col-width;         // Set left-margin
+        }
+        $i: $i + 1;                           // Count the iterations
+        $col-width: $col-width-1 * $i;        // Column width = original column width * iterations
     }
 }
 

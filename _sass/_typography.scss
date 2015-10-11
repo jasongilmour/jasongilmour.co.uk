@@ -139,12 +139,12 @@ code {
 }
 
 // links
-a {
-    color: $dark-green;
+a, .a {
+    color: $green;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
     &:hover, &:active {
-        color: $green;
+        color: $dark-green;
     }
 }
 
@@ -169,7 +169,7 @@ dl {
 
 // Quptes & citations
 blockquote {
-    border-left: 0.25em solid $default-color;
+    border-left: 0.25em solid $black;
     font-size: 1em;
     margin: 0;
     padding-left: em(18,18);

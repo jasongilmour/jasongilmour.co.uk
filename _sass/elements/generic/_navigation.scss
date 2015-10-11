@@ -2,6 +2,22 @@
 // Navigation
 // ==========================================================================
 
+nav {
+    &.footer-nav {
+        a {
+            &:before {
+                content: ' • ';
+                color: $black;
+                padding: 0 .25em;
+            }
+            &:first-child:before {
+                content: '';
+                display: none;
+            }
+        }
+    }
+}
+
 #global-nav {
     position: fixed;
     bottom: 1em;
@@ -29,7 +45,9 @@
                 display: inline-block;
                 height: 4em;
                 width: 4em;
-
+                &:after {
+                    content: '';
+                }
             }
         }
     }

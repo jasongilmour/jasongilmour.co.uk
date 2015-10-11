@@ -10,4 +10,4 @@ twitter_username: jasongilmour94
 markdown: kramdown
 sass:
   style: compressed
-permalink: :category/:title/
+permalink: :categories/:title/

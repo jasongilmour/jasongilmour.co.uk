@@ -3,11 +3,14 @@ layout: default
 ---
 
 <header class="project-header">
-	<h2 class="post-title">{{ page.title }}</h2>
-	{% if page.projecttype %}<h3>projecttype = {{ page.projecttype }} here</h3>{% endif %}
-	{% if page.thumbnail %}<h3>thumbnail = {{ page.thumbnail }} here</h3>{% endif %}
+	<div class="introduction">
+		<h2 class="post-title">{{ page.title }}{% if page.projecttype %}<span class="secondary project-type"> {{ page.projecttype }}</span>{% endif %}</h2>
+		<p>{{ page.introduction }}</p>
+		{% if page.secondintroduction %}<p>{{ page.secondintroduction }}</p>{% endif %}
+	</div>
+	{% if page.slug %}<img src="/img/projects/{{ page.slug }}/{{ page.slug }}-hero.png" class="banner">{% endif %}
 </header>
 
-<article class="post-content">
+<article class="project-content">
 	{{ content }}
 </article>

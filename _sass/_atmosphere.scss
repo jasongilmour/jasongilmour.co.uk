@@ -7,7 +7,7 @@ button,
 input,
 select,
 textarea {
-    color: $default-color;
+    color: $black;
     font-family: $default-font-stack;
 }
 
@@ -41,7 +41,6 @@ section {
 
 article {
     @include clearfix;
-    max-width: 50em;
     margin: 0 auto;
 }
 
@@ -55,7 +54,7 @@ hr {
     margin: 0 0 1em 0;
     padding: 0;
 }
-hr.secondary { border-color: $secondary-color; }
+hr.secondary { border-color: $light-gray; }
 
 audio,
 canvas,
