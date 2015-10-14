@@ -28,7 +28,7 @@ html {
 
 main {
     min-height: 100vh;
-    min-height: calc(100vh -40px);
+    position: relative;
     > section {
         padding: em(20,16);
     }

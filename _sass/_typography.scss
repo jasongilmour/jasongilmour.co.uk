@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: 'solomon-black';
-    src: url('solomon_black.eot');
-    src: url('solomon_black.eot?#iefix') format('embedded-opentype'),
-         url('solomon_black.woff2') format('woff2'),
-         url('solomon_black.woff') format('woff'),
-         url('solomon_black.ttf') format('truetype');
+    src: url('/fonts/solomon_black.eot');
+    src: url('/fonts/solomon_black.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/solomon_black.woff2') format('woff2'),
+         url('/fonts/solomon_black.woff') format('woff'),
+         url('/fonts/solomon_black.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 
@@ -19,11 +19,11 @@
 
 @font-face {
     font-family: 'solomon-normal';
-    src: url('solomon_normal.eot');
-    src: url('solomon_normal.eot?#iefix') format('embedded-opentype'),
-         url('solomon_normal.woff2') format('woff2'),
-         url('solomon_normal.woff') format('woff'),
-         url('solomon_normal.ttf') format('truetype');
+    src: url('/fonts/solomon_normal.eot');
+    src: url('/fonts/solomon_normal.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/solomon_normal.woff2') format('woff2'),
+         url('/fonts/solomon_normal.woff') format('woff'),
+         url('/fonts/solomon_normal.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -34,11 +34,11 @@
 
 @font-face {
     font-family: 'solomon-light';
-    src: url('solomon_light.eot');
-    src: url('solomon_light.eot?#iefix') format('embedded-opentype'),
-         url('solomon_light.woff2') format('woff2'),
-         url('solomon_light.woff') format('woff'),
-         url('solomon_light.ttf') format('truetype');
+    src: url('/fonts/solomon_light.eot');
+    src: url('/fonts/solomon_light.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/solomon_light.woff2') format('woff2'),
+         url('/fonts/solomon_light.woff') format('woff'),
+         url('/fonts/solomon_light.ttf') format('truetype');
     font-weight: light;
     font-style: normal;
 
@@ -54,20 +54,19 @@ h1,h2,h3,h4,h5,h6,p {
 }
 h1, .h1 {
     font-family: 'solomon-light';
-    font-size: em(48,16);
-    line-height: 1.041667;
-    margin: em(27,48) 0;
+    font-size: em(30,16);
+    line-height: 1.066667;
+    margin: 0 0 em(4,30);
 }
 
 h2, .h2 {
     font-family: 'solomon-light';
-    font-size: em(36,16);
-    line-height: 1.041667;
-    margin: em(12.5,36) 0;
+    font-size: em(24,16);
+    line-height: 1.166667;
+    margin: 0 0 em(20,24);
 }
 
 h3, .h3 {
-    color: $green;
     font-family: 'solomon-normal';
     font-size: em(18,16);
     line-height: 1.222222;

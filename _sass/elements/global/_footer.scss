@@ -6,6 +6,17 @@
 	line-height: 1;
 	padding: em(9,12) em(20,12);
 	width: 100%;
+	.home & {
+		@media screen and (min-width: $bp-narrow) {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			width: 50%;
+		}
+		@media screen and (min-width: $bp-wide) {
+			width: 25%;
+		}
+	}
 	nav.footer-nav {
 		margin-top: em(7,12);
 		float: left;

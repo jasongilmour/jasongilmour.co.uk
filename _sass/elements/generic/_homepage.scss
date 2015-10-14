@@ -1,4 +1,15 @@
-section.home {
+.home section {
 	float: left;
-	width: 25%;
+	padding-top: em(88,16);
+	@media screen and (min-width: $bp-narrow) {
+		margin-right: 50%;
+		width: 50%;
+	}
+	@media screen and (min-width: $bp-wide) {
+		margin-right: 75%;
+		width: 25%;
+	}
+	h3 {
+		margin-top: 0;
+	}
 }

@@ -58,6 +58,12 @@ nav.projects-nav {
     float: right;
     padding: em(10,16);
     width: 100%;
+    @media screen and (min-width: $bp-narrow) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
     @media screen and (min-width: $bp-wide) {
         padding: 0;
         width: 75%;
@@ -68,6 +74,9 @@ nav.projects-nav {
         float: left;
         height: 50vw;
         width: 50%;
+        @media screen and (min-width: $bp-narrow) {
+            height: 33.333333vh;
+        }
         @media screen and (min-width: $bp-wide) {
             border: 0;
             height: 100vh;
