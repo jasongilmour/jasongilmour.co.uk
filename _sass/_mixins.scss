@@ -25,6 +25,11 @@
     @return($px / $font-size) * 1em;
 }
 
+// rem values
+@function rem($px) {
+    @return($px / 16) * 1rem;
+}
+
 // Backgrounds
 @mixin backgrounds($filename, $filetype, $position, $repeat) {
     background-image: url('/img/#{$filename}.#{$filetype}');

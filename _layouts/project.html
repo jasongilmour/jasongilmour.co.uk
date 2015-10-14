@@ -13,7 +13,6 @@ layout: default
 
 <article class="project-content">
 	{{ content }}
-	{% for post in site.posts %}{{ forloop.index0 }}{% endfor %}
 	<nav class="project-page projects-nav">
 	  <h2>Other projects</h2>
 	  {% for post in site.categories.projects %}
