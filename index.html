@@ -1,11 +1,17 @@
 ---
 layout: default
 ---
-
+<section id="intro" class="home">
+	<h2>Digital Designer</h2>
+	<p>I make beautiful, digital things.</p>
+	<p>I forge creative solutions to complex problems through critical thinking, accurate intuition and detailed research.</p>
+	<p>My creative process relies on solid strategy, knowledge of context and clear goals.</p>
+	<p>My work speaks for itself.</p>
+</section>
 <nav class="home projects-nav">
   {% for post in site.posts %}
-    <a href="{{ post.url }}"{% if post.thumbnail %} stye="background-image: {{ post.thumbnail }}"{% endif %}>
-      <h2>{{ post.title }}</h2>
+    <a href="{{ post.url }}" class="{{ post.slug }}">
+      <h3>{{ post.title }}</h3>
       {% if post.projecttype %}<small>({{ post.projecttype }})</small>{% endif %}
     </a>
   {% endfor %}

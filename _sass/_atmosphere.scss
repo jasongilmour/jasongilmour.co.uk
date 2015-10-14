@@ -28,12 +28,16 @@ html {
 
 main {
     min-height: 100vh;
+    min-height: calc(100vh -40px);
+    > section {
+        padding: em(20,16);
+    }
 }
 
 section {
     margin: 0 auto;
     padding: em(10,16) em(20,16);
-    @media screen and (min-width: $bp-medium) {
+    @media screen and (min-width: $bp-wide) {
         padding: em(24,16) em(20,16);
         width: 50%;
     }

@@ -52,3 +52,154 @@ nav {
         }
     }
 }
+
+nav.projects-nav {
+    @include clearfix;
+    float: right;
+    padding: em(10,16);
+    width: 100%;
+    @media screen and (min-width: $bp-wide) {
+        padding: 0;
+        width: 75%;
+    }
+    a {
+        border: 10px solid $white;
+        display: block;
+        float: left;
+        height: 50vw;
+        width: 50%;
+        @media screen and (min-width: $bp-wide) {
+            border: 0;
+            height: 100vh;
+            width: 16.666667%;
+        }
+        h3 {
+            @include ir;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+        small {
+            display: none;
+        }
+        &.biondi {
+            background: linear-gradient(to bottom right, rgba(238,166,61,1) 0%, rgba(42,135,166,1) 100%);
+            h3 {
+                background-image: url('/img/ui/logo-biondi.png');
+                background-size: 86px;
+            }
+        }
+        &.chamonix {
+            background: linear-gradient(to bottom right, rgba(225,166,232,1) 0%, rgba(61,197,242,1) 100%);
+            h3 {
+                background-image: url('/img/ui/logo-chamonix.png');
+                background-size: 62px;
+            }
+        }
+        &.localpinboard {
+            background: linear-gradient(to bottom right, rgba(18,165,168,1) 0%, rgba(26,200,55,1) 100%);
+            h3 {
+                background-image: url('/img/ui/logo-localpinboard.png');
+                background-size: 43px;
+            }
+        }
+        &.maxs {
+            background: linear-gradient(to bottom right, rgba(255,0,0,1) 0%, rgba(155,51,51,1) 100%);
+            h3 {
+                background-image: url('/img/ui/logo-maxs.png');
+                background-size: 90px;
+            }
+        }
+        &.nike {
+            background: linear-gradient(to bottom right, rgba(248,187,18,1) 0%, rgba(213,19,255,1) 100%);
+            h3 {
+                background-image: url('/img/ui/logo-nike.png');
+                background-size: 91px;
+            }
+        }
+        &.smeds {
+            background: linear-gradient(to bottom right, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 100%);
+            h3 {
+                background-image: url('/img/ui/logo-smeds.png');
+                background-size: 81px;
+            }
+        }
+    }
+    &.project-page {
+        border-bottom: 1px solid $light-gray;
+        border-top: 1px solid $light-gray;
+        margin: em(48,16) 0;
+        padding: em(16,16) 0 em(20,16);
+        position: relative;
+        text-align: center;
+        width: 100%;
+        &:before {
+            border-bottom: 1px solid $light-gray;
+            content: '';
+            display: block;
+            left: 0;
+            position: absolute;
+            top: -8px;
+            right: 0;
+        }
+        &:after {
+            border-bottom: 1px solid $light-gray;
+            content: '';
+            display: block;
+            left: 0;
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+        }
+        h2 {
+            font-size: em(18,16);
+            line-height: 1.111111;
+            margin: 0 auto em(16,18);
+            text-align: left;
+            text-transform: uppercase;
+            width: 75%;
+            &:after {
+                content: ' //';
+                color: $green;
+            }
+        }
+        a {
+            display: inline-block;
+            float: none;
+            height: 0;
+            padding-bottom: 12.5%;
+            position: relative;
+            width: 12.5%;
+            h3 {
+                bottom: 0;
+                left: 0;
+                margin: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+nav.social {
+    a {
+        @include ir;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        height: 18px;
+        width: 18px;
+        &:hover {
+            background-position: center -18px;
+        }
+        &.twitter {
+            background-image: url('/img/ui/twitter-icon.svg');
+        }
+        &.linkedin {
+            background-image: url('/img/ui/linkedin-icon.svg');
+        }
+    }
+}

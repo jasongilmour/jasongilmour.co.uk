@@ -6,4 +6,11 @@
 	line-height: 1;
 	padding: em(9,12) em(20,12);
 	width: 100%;
+	nav.footer-nav {
+		margin-top: em(7,12);
+		float: left;
+	}
+	nav.social {
+		float: right;
+	}
 }
