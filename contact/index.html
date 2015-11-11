@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section>
+	<address itemscope itemtype="http://schema.org/Person">
+		<h1 itemprop="name">Jason Gilmour</h1>
+		<h3 itemprop="jobTitle">Digital Designer</h3>
+		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<span itemprop="addressLocality">Glasgow</span>
+		</div>
+		<div><a href="mailto:hello@jasongilmour.co.uk" itemprop="email">hello@jasongilmour.co.uk</a></div>
+		<div class="twitter" itemprop="url"><a href="https://www.twitter.com/jasongilmour94" target="blank">@jasongilmour94</a></div>
+		<!-- <div class="linkedin" itemprop="url"><a href="" target="blank">Linked in</a></div> -->
+		<a href="/" id="contact-close" class="close">Close</a>
+	</address>
+</section>
+<script type="text/javascript">
+    // Make back links go back without using window.history
+    if (document.referrer) {
+        var theReferer = document.referrer;
+        document.getElementById("contact-close").setAttribute('href', theReferer);
+    }
+</script>
+<!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->

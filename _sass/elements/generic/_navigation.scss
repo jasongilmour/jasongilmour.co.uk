@@ -107,14 +107,14 @@ nav.projects-nav {
                 background-size: 62px;
             }
         }
-        &.localpinboard {
+        &.local-pinboard {
             background: linear-gradient(to bottom right, rgba(18,165,168,1) 0%, rgba(26,200,55,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-localpinboard.png');
                 background-size: 43px;
             }
         }
-        &.maxs {
+        &.maxs-menu {
             background: linear-gradient(to bottom right, rgba(255,0,0,1) 0%, rgba(155,51,51,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-maxs.png');
@@ -128,7 +128,7 @@ nav.projects-nav {
                 background-size: 91px;
             }
         }
-        &.smeds {
+        &.smeds-miracle-brew {
             background: linear-gradient(to bottom right, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-smeds.png');
@@ -140,7 +140,7 @@ nav.projects-nav {
         border-bottom: 1px solid $light-gray;
         border-top: 1px solid $light-gray;
         font-size: 0;
-        margin: rem(48) 0;
+        margin: rem(48) 0 0;
         padding: rem(16) 0 rem(20);
         position: relative;
         text-align: center;
@@ -164,31 +164,52 @@ nav.projects-nav {
             right: 0;
         }
         h2 {
-            font-size: rem(18);
-            line-height: 1.111111;
-            margin: 0 auto rem(16);
+            font-size: rem(14);
+            line-height: 1.142857;
+            margin: 0 auto em(16,14);
+            padding: 0 em(20,14);
             text-align: left;
             text-transform: uppercase;
-            width: 62.5%;
+            @media screen and (min-width: $bp-narrow) {
+                font-size: rem(18);
+                line-height: 1.111111;
+                padding: 0;
+                width: 62.5%;
+            }
             &:after {
                 content: ' //';
                 color: $green;
             }
         }
         a {
+            border: 0;
             display: inline-block;
             float: none;
             height: 0;
-            padding-bottom: 12.5%;
+            padding-bottom: 20%;
             position: relative;
-            width: 12.5%;
+            width: 20%;
+            @media screen and (min-width: $bp-narrow) {
+                padding-bottom: 12.5%;
+                width: 12.5%;
+            }
             h3 {
+                background-size: 60%;
                 bottom: 0;
                 left: 0;
                 margin: 0;
                 position: absolute;
                 top: 0;
                 right: 0;
+            }
+            &.chamonix h3 {
+                background-size: 45%;
+            }
+            &.localpinboard h3 {
+                background-size: 55%;
+            }
+            &.nike h3 {
+                background-size: 65%;
             }
         }
     }
@@ -201,6 +222,8 @@ nav.social {
         background-repeat: no-repeat;
         background-size: 18px;
         height: 18px;
+        position: relative;
+        top: 3px;
         width: 18px;
         &:hover {
             background-position: center -18px;
@@ -212,4 +235,18 @@ nav.social {
             background-image: url('/img/ui/linkedin-icon.svg');
         }
     }
+}
+
+a.close {
+    @include ir;
+    background-color: $white;
+    background: url('/img/ui/close.svg'), linear-gradient(225deg, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255 ,0) 85%, rgba(255, 255, 255 ,0) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: em(28,16), cover;
+    height: em(38,16);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: em(38,16);
 }

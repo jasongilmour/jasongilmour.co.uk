@@ -4,44 +4,100 @@
 
 // Define the grid
 .span-{
-    @media screen and (min-width: $bp-wide) {
-        @include grid-class(16);
-    }
+    // @media screen and (min-width: $bp-narrow) {
+    //     @include grid-class-half(8);
+    // }
+    @include grid-class(16);
 }
 .push-{
+    // @media screen and (min-width: $bp-narrow) {
+    //     @include grid-push(8,2);
+    // }
     @media screen and (min-width: $bp-wide) {
-        @include grid-prefixes(16);
+        @include grid-push(16);
     }
 }
 .pull-{
+    // @media screen and (min-width: $bp-narrow) {
+    //     @include grid-pull(8,2);
+    // }
     @media screen and (min-width: $bp-wide) {
-        @include grid-prefixes(16);
+        @include grid-pull(16);
     }
+}
+.post-{
+    // @media screen and (min-width: $bp-narrow) {
+    //     @include grid-post(8,2);
+    // }
+    @media screen and (min-width: $bp-wide) {
+        @include grid-post(16);
+    }
+}
+.post-pull-{
+    // @media screen and (min-width: $bp-narrow) {
+    //     @include grid-post-pull(8,2);
+    // }
+    @media screen and (min-width: $bp-wide) {
+        @include grid-post-pull(16);
+    }
+}
+
+.centred {
+	text-align: center;
 }
 
 .row {
 	@include clearfix;
-	align-items: center;
-	display: flex;
-	justify-content: center;
 	margin: 0 auto;
+	padding: 0 em(14,16);
 	position: relative;
 	width: 100%;
+	@media screen and (min-width: $bp-wide) {
+		// align-items: center;
+		// display: flex;
+		// justify-content: center;
+	}
 	img {
 		width: 100%;
-		margin: em(112,16) auto;
+		margin-bottom: 0;
+		// margin: em(52,16) auto em(40,16);
+		@media screen and (min-width: $bp-wide) {
+			// margin: em(112,16) auto;
+		}
 	}
 	.module {
 		position: relative;
+		padding: 0 em(14,16);
+		@media screen and (min-width: $bp-wide) {
+			padding: em(14,16);
+		}
 	}
 	.text {
-		padding: em(28,16);
+		background-color: $white;
 		z-index: 2;
 	}
 	.image {
 		z-index: 1;
 	}
 	.image-right {
-		text-align: right;
+		@media screen and (min-width: $bp-wide) {
+			text-align: right;
+		}
+	}
+	.overlapping {
+		border: em(14,16) solid $white;
+	}
+	&.borderless,
+	.borderless {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	&.borderless-right,
+	.borderless-right {
+		padding-right: 0;
+	}
+	&.borderless-left,
+	.borderless-left {
+		padding-left: 0;
 	}
 }

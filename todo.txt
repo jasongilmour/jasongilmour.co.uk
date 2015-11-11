@@ -1,3 +1,29 @@
+Sort out grid mixin
+
+To do:
+	Make reponsive images for Biondi
+	Add logos to biondi
+	Add first drafts for other projects content
+	Homepage
+		Projects need hover state
+		Logos enlarge or move up
+	Biondi
+		Images are too small on mobile
+		Last laptop could slide in from right
+	Chamonix
+		Phones should rotate on scroll
+		Phones should be re-arranged on mobile
+	Local pinboard
+	Max's
+	Nike
+	Smed's
+
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Content:																																				|
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+
 Projects
 	- Biondi
 	- Chamonix

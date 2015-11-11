@@ -4,18 +4,19 @@ layout: default
 
 <header class="project-header">
 	<div class="introduction">
-		<h2 class="post-title">{{ page.title }}{% if page.projecttype %}<span class="secondary project-type"> {{ page.projecttype }}</span>{% endif %}</h2>
+		<h1 class="post-title">{{ page.title }}{% if page.projecttype %}<span class="secondary project-type"> {{ page.projecttype }}</span>{% endif %}</h1>
 		<p>{{ page.introduction }}</p>
 		{% if page.secondintroduction %}<p>{{ page.secondintroduction }}</p>{% endif %}
 	</div>
 	{% if page.slug %}<img src="/img/projects/{{ page.slug }}/{{ page.slug }}-hero.png" class="banner">{% endif %}
+	<a href="/" class="close">Close</a>
 </header>
 
 <article class="project-content">
 	{{ content }}
 	<nav class="project-page projects-nav">
 	  <h2>Other projects</h2>
-	  {% for post in site.categories.projects %}
+	  {% for post in site.categories.projects reversed %}
 		{% if post.url != page.url %}
 		  <a href="{{ post.url }}" class="{{ post.slug }}">
 		    <h3>{{ post.title }}</h3>
@@ -25,3 +26,4 @@ layout: default
 	  {% endfor %}
 	</nav>
 </article>
+{% include footer.html %}

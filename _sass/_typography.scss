@@ -54,27 +54,29 @@ h1,h2,h3,h4,h5,h6,p {
 }
 h1, .h1 {
     font-family: 'solomon-light';
-    font-size: em(30,16);
-    line-height: 1.066667;
+    font-size: em(26,16);
+    line-height: 1.076923;
     margin: 0 0 em(4,30);
 }
 
 h2, .h2 {
     font-family: 'solomon-light';
-    font-size: em(24,16);
-    line-height: 1.166667;
+    font-size: em(20,16);
+    line-height: 1.2;
     margin: 0 0 em(20,24);
 }
 
 h3, .h3 {
-    font-family: 'solomon-normal';
-    font-size: em(18,16);
-    line-height: 1.222222;
-    margin: em(27,18) 0 em(23,18);
+    font-family: 'solomon-light';
+    font-size: em(14,16);
+    letter-spacing: em(2,14);
+    line-height: 1.428571;
+    margin: em(8,18) 0 em(28,18);
+    text-transform: uppercase;
 }
 
 h4, .h4 {
-    font-family: 'solomon-normal';
+    font-family: 'solomon-light';
     font-size: em(18,16);
     line-height: 1.222222;
     margin: em(25,18) 0;
@@ -92,16 +94,16 @@ h6, .h6 {
 }
 p {
     font-family: "solomon-normal";
-    font-size: em(18,16);
-    line-height: 1.333333;
-    margin: em(25,18) 0;
+    font-size: em(14,16);
+    line-height: 1.428571;
+    margin: em(16,14) 0;
     img {
         float: left;
-        margin-right: em(27,18);
+        margin-right: em(28,14);
         vertical-align: baseline;
         &.alignright {
             float: right;
-            margin-left: em(27,18);
+            margin-left: em(28,14);
         }
     }
 }

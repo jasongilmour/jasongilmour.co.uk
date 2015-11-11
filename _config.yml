@@ -9,5 +9,5 @@ twitter_username: jasongilmour94
 # Build settings
 markdown: kramdown
 sass:
-  style: compressed
+  style: expanded
 permalink: :categories/:title/
