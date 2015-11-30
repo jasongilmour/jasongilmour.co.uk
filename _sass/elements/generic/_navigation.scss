@@ -249,5 +249,11 @@ a.close {
     position: fixed;
     top: 0;
     right: 0;
-    width: em(38,16);\z-index: 3;
+    width: em(38,16);
+    z-index: 3;
+    @media screen and (min-width: $bp-wide) {
+        background-size: em(40,16), cover;
+        height: em(60,16);
+        width: em(60,16);   
+    }
 }
