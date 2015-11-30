@@ -4,42 +4,19 @@
 
 // Define the grid
 .span-{
-    // @media screen and (min-width: $bp-narrow) {
-    //     @include grid-class-half(8);
-    // }
     @include grid-class(16);
 }
 .push-{
-    // @media screen and (min-width: $bp-narrow) {
-    //     @include grid-push(8,2);
-    // }
-    @media screen and (min-width: $bp-wide) {
-        @include grid-push(16);
-    }
+    @include grid-push(16);
 }
 .pull-{
-    // @media screen and (min-width: $bp-narrow) {
-    //     @include grid-pull(8,2);
-    // }
-    @media screen and (min-width: $bp-wide) {
-        @include grid-pull(16);
-    }
+    @include grid-pull(16);
 }
 .post-{
-    // @media screen and (min-width: $bp-narrow) {
-    //     @include grid-post(8,2);
-    // }
-    @media screen and (min-width: $bp-wide) {
-        @include grid-post(16);
-    }
+    @include grid-post(16);
 }
 .post-pull-{
-    // @media screen and (min-width: $bp-narrow) {
-    //     @include grid-post-pull(8,2);
-    // }
-    @media screen and (min-width: $bp-wide) {
-        @include grid-post-pull(16);
-    }
+    @include grid-post-pull(16);
 }
 
 .centred {
@@ -48,28 +25,30 @@
 
 .row {
 	@include clearfix;
-	margin: 0 auto;
-	padding: 0 em(14,16);
+	margin: em(12,16) auto;
 	position: relative;
 	width: 100%;
-	@media screen and (min-width: $bp-wide) {
-		// align-items: center;
-		// display: flex;
-		// justify-content: center;
+	@media screen and (min-width: $bp-narrow) {
+		margin: em(20,16) auto;
+		padding: 0 em(14,16);
 	}
 	img {
 		width: 100%;
-		margin-bottom: 0;
+		margin-bottom: em(20,16);
 		// margin: em(52,16) auto em(40,16);
-		@media screen and (min-width: $bp-wide) {
+		@media screen and (min-width: $bp-narrow) {
 			// margin: em(112,16) auto;
 		}
 	}
 	.module {
 		position: relative;
 		padding: 0 em(14,16);
-		@media screen and (min-width: $bp-wide) {
+		@media screen and (min-width: $bp-narrow) {
 			padding: em(14,16);
+		}
+		&:last-child p,
+		& p:last-child {
+			margin-bottom: 0;
 		}
 	}
 	.text {
@@ -80,12 +59,14 @@
 		z-index: 1;
 	}
 	.image-right {
-		@media screen and (min-width: $bp-wide) {
+		@media screen and (min-width: $bp-narrow) {
 			text-align: right;
 		}
 	}
 	.overlapping {
-		border: em(14,16) solid $white;
+		@media screen and (min-width: $bp-narrow) {
+			border: em(14,16) solid $white;
+		}
 	}
 	&.borderless,
 	.borderless {
@@ -94,10 +75,14 @@
 	}
 	&.borderless-right,
 	.borderless-right {
-		padding-right: 0;
+			@media screen and (min-width: $bp-narrow) {
+			padding-right: 0;
+		}
 	}
 	&.borderless-left,
 	.borderless-left {
-		padding-left: 0;
+			@media screen and (min-width: $bp-narrow) {
+			padding-left: 0;
+		}
 	}
 }

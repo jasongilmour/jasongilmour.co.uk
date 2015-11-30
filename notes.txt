@@ -1,5 +1,11 @@
 Sort out grid mixin
 
+Top priority:
+	Fix layouts
+	Fix project introductions
+	Cross browser test
+	Make images responsive
+
 To do:
 	Make reponsive images for Biondi
 	Add logos to biondi

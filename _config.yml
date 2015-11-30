@@ -2,8 +2,8 @@
 title: Jason Gilmour
 email: hello@jasongilmour.co.uk
 description: Jason Gilmour's portfolio site.
-baseurl: "/" # the subpath of your site, e.g. /blog/
-url: "http://jasongimlour.dev" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jasongilmour.co.uk" # the base hostname & protocol for your site
 twitter_username: jasongilmour94
 
 # Build settings

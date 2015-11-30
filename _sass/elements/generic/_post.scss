@@ -15,41 +15,53 @@ header.project-header {
 		background-color: $white;
 		background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 1) 93%, rgba(255, 255, 255 ,0) 93%, rgba(255, 255, 255 ,0) 100%);
 		bottom: 0;
-		margin: 0 auto;
+		float: left;
+		margin: -17% auto 0;
 		overflow: hidden;
-		padding: em(20,16) em(20,16) 56.25%;
+		padding: em(20,16) em(20,16);
 		@media screen and (min-width: $bp-narrow) {
-			@include grid(16, 12);
+			width: 75%;
 			left: 12.5%;
+			margin: 0 auto 0;
 			padding: em(28,16);
 			position: absolute;
 			// top: 43.75%;
 		}
 		@media screen and (min-width: $bp-wide) {
-			@include grid(16, 6);
+			width: 50%;
+			left: 25%;
+		}
+		@media screen and (min-width: $bp-x-wide) {
+			width: 37.5%;
 			left: 31.25%;
 		}
 		h1 {
 			font-size: em(44,16);
 			line-height: 1.181818;
 			.project-type {
-				font-size: em(18,44);
+				font-size: em(10,44);
+				letter-spacing: .3em;
 				line-height: 1.111111;
+				text-transform: uppercase;
 			}
 		}
 		p {
 			font-size: em(18,16);
 			line-height: 1.25;
+			margin: em(28,18) 0;
 		}
 	}
 	img.banner {
-		bottom: 0;
-		left: 0;
-		position: fixed;
-		right: 0;
-		top: 0;
+		float: left;
 		width: 100%;
-		z-index: -1;
+		@media screen and (min-width: $bp-narrow) {
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: fixed;
+			top: 0;
+			z-index: -1;
+		}
 	}
 }
 

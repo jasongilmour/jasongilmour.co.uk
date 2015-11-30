@@ -17,6 +17,7 @@ error_document: error.html
 gzip:
   - .html
   - .css
+  - .js
   - .md
 # gzip_zopfli: true
 
@@ -29,6 +30,7 @@ exclude_from_upload:
   - biondi
   - maxs-menu
   - local-pinboard
+  - notes.txt
 #   - i_wouldnt_want_to_upload
 
 # s3_reduced_redundancy: true

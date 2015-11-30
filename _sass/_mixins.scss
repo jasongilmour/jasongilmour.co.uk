@@ -35,7 +35,7 @@
     background-image: url('/img/#{$filename}.#{$filetype}');
     background-position: $position;
     background-repeat: $repeat;
-    @media screen and ( min-resolution: 93dpi ), screen and ( min-resolution: 1.3dppx) {
+    @media screen and (min-resolution: 93dpi), screen and (min-resolution: 1.3dppx), screen and (-webkit-min-device-pixel-ratio: 1.3) {
         background-image: url('/img/#{$filename}@2x.#{$filetype}');
     }
 }
@@ -69,23 +69,10 @@
 // Layout
 // ==========================================================================
 
-@mixin grid($cols, $span) {                   // Input number of columns in the grid & number of columns to span
-    $width: 100% / ($cols / $span);           // Width = 100% / (Number of columns / number of columns to span)
-    width: $width;
-    // @media screen and (min-width: 35em) {
-    //     padding-left: em(10,16);
-    //     padding-right: em(10,16);
-    // }
-}
-
-@mixin prefix($cols, $span) {                 // Input number of columns in the grid & number of columns to span
-    $margin: 100% / ($cols / $span);          // Margin = 100% / (Number of columns / number of columns to span)
-    margin-left: $margin;
-}
-
-
 // Grid classes
 @mixin grid-class($cols) {
+
+    $i: 1;
     
     $i-m: 1;
     $cols-m: $cols / 2;
@@ -97,15 +84,21 @@
     $col-l-width: 100% / $cols-l;
     $original-col-l-width: 100% / $cols-l;
 
-    @media screen and (min-width: $bp-narrow) {
+    @while $i < $cols + 1 {
+        &#{$i} {
+            float: left;
+            width: 100%;
+            $i: $i +1;
+        }
+    }
+
+    @media screen and (min-width: $bp-narrow) { /* narrow */
         $skip: false;
         @while $i-m < $cols + 1 {  // <=16
             @if $skip == false {
                 @if $i-m == 1 {
                     &#{$i-m} {
-                        float: left;
                         width: $col-m-width / 2 + $original-col-l-width;
-                        // content: $skip;
                     }
                     $skip: true;
                     $i-m: $i-m + 1;
@@ -113,9 +106,7 @@
                 @if $skip == false {
                     @if $i-m > 1 {
                         &#{$i-m} {
-                            float: left;
                             width: $col-m-width / 2 + $original-col-m-width;
-                            // content: $skip;
                         }
                         $skip: true;
                         $i-m: $i-m + 1;
@@ -125,19 +116,16 @@
             @if $skip == true {
                 $col-m-width: $original-col-m-width * $i-m;
                 &#{$i-m} {
-                    float: left;
                     width: $col-m-width / 2;
-                    content: $skip;
                 }
                 $skip: false;
                 $i-m: $i-m + 1;
             }
         }
     }
-    @media screen and (min-width: $bp-narrow) {
+    @media screen and (min-width: $bp-wide) { /* wide */
         @while $i-l < $cols-l + 1 {
             &#{$i-l} {
-                float: left;
                 width: $col-l-width;
             }
             $i-l: $i-l + 1;
@@ -146,56 +134,230 @@
         }
     }
 }
-// Add left margin
+
+// Margin left
 @mixin grid-push($cols) {
-    $i: 1;                                    // Iteration counter (i = 1 at the first iteration)
-    $col-width: 100% / $cols;                 // Column width = 100% / number of columns
-    $col-width-1: 100% / $cols;               // Original column width = 100% / number of columns
-    @while $i < $cols {                       // While iterations < number of columns, do...
-        &#{$i} {                              // Given mixin selector + iteration number, eg. grid- + 1
-            margin-left: $col-width;          // Set left-margin
+    
+    $i-m: 1;
+    $cols-m: $cols / 2;
+    $col-m-width: 100% / $cols-m;
+    $original-col-m-width: 100% / $cols-m;
+    
+    $i-l: 1;
+    $cols-l: $cols;
+    $col-l-width: 100% / $cols-l;
+    $original-col-l-width: 100% / $cols-l;
+
+    @media screen and (min-width: $bp-narrow) { /* narrow */
+        $skip: false;
+        @while $i-m < $cols + 1 {  // <=16
+            @if $skip == false {
+                @if $i-m == 1 {
+                    &#{$i-m} {
+                        margin-left: 0; /* 0 */
+                    }
+                    $skip: true;
+                    $i-m: $i-m + 1;
+                }
+                @if $skip == false {
+                    @if $i-m > 1 {
+                        &#{$i-m} {
+                            margin-left: $col-m-width / 2 + $original-col-l-width; /* 1 */
+                        }
+                        $skip: true;
+                        $i-m: $i-m + 1;
+                    }
+                }
+            }
+            @if $skip == true {
+                $col-m-width: $original-col-m-width * $i-m;
+                &#{$i-m} {
+                    margin-left: $col-m-width / 2; /* 2 */
+                }
+                $skip: false;
+                $i-m: $i-m + 1;
+            }
         }
-        $i: $i + 1;                           // Count the iterations
-        $col-width: $col-width-1 * $i;        // Column width = original column width * iterations
+    }
+    @media screen and (min-width: $bp-wide) { /* wide */
+        @while $i-l < $cols-l + 1 {
+            &#{$i-l} {
+                margin-left: $col-l-width;
+            }
+            $i-l: $i-l + 1;
+            $col-l-width: $original-col-l-width * $i-l;
+            // $col-l-width: $col-l-width: * $i;
+        }
     }
 }
-// Add negative left margin
+
+// Negative margin left
 @mixin grid-pull($cols) {
-    $i: 1;                                    // Iteration counter (i = 1 at the first iteration)
-    $col-width: 100% / $cols;                 // Column width = 100% / number of columns
-    $col-width-1: 100% / $cols;               // Original column width = 100% / number of columns
-    @while $i < $cols {                       // While iterations < number of columns, do...
-        &#{$i} {                              // Given mixin selector + iteration number, eg. grid- + 1
-            margin-left: -$col-width;         // Set left-margin
+    
+    $i-m: 1;
+    $cols-m: $cols / 2;
+    $col-m-width: 100% / $cols-m;
+    $original-col-m-width: 100% / $cols-m;
+    
+    $i-l: 1;
+    $cols-l: $cols;
+    $col-l-width: 100% / $cols-l;
+    $original-col-l-width: 100% / $cols-l;
+
+    @media screen and (min-width: $bp-narrow) { /* narrow */
+        $skip: false;
+        @while $i-m < $cols + 1 {  // <=16
+            @if $skip == false {
+                @if $i-m == 1 {
+                    &#{$i-m} {
+                        margin-left: -($col-m-width / 2 + $original-col-l-width);
+                    }
+                    $skip: true;
+                    $i-m: $i-m + 1;
+                }
+                @if $skip == false {
+                    @if $i-m > 1 {
+                        &#{$i-m} {
+                            margin-left: -($col-m-width / 2 + $original-col-m-width);
+                        }
+                        $skip: true;
+                        $i-m: $i-m + 1;
+                    }
+                }
+            }
+            @if $skip == true {
+                $col-m-width: $original-col-m-width * $i-m;
+                &#{$i-m} {
+                    margin-left: -($col-m-width / 2);
+                }
+                $skip: false;
+                $i-m: $i-m + 1;
+            }
         }
-        $i: $i + 1;                           // Count the iterations
-        $col-width: $col-width-1 * $i;        // Column width = original column width * iterations
+    }
+    @media screen and (min-width: $bp-wide) { /* wide */
+        @while $i-l < $cols-l + 1 {
+            &#{$i-l} {
+                margin-left: -($col-l-width);
+            }
+            $i-l: $i-l + 1;
+            $col-l-width: $original-col-l-width * $i-l;
+            // $col-l-width: $col-l-width: * $i;
+        }
     }
 }
-// Add right margin
+
+
+// Margin right
 @mixin grid-post($cols) {
-    $i: 1;                                    // Iteration counter (i = 1 at the first iteration)
-    $col-width: 100% / $cols;                 // Column width = 100% / number of columns
-    $col-width-1: 100% / $cols;               // Original column width = 100% / number of columns
-    @while $i < $cols {                       // While iterations < number of columns, do...
-        &#{$i} {                              // Given mixin selector + iteration number, eg. grid- + 1
-            margin-right: $col-width;         // Set left-margin
+    
+    $i-m: 1;
+    $cols-m: $cols / 2;
+    $col-m-width: 100% / $cols-m;
+    $original-col-m-width: 100% / $cols-m;
+    
+    $i-l: 1;
+    $cols-l: $cols;
+    $col-l-width: 100% / $cols-l;
+    $original-col-l-width: 100% / $cols-l;
+
+    @media screen and (min-width: $bp-narrow) { /* narrow */
+        $skip: false;
+        @while $i-m < $cols + 1 {  // <=16
+            @if $skip == false {
+                @if $i-m == 1 {
+                    &#{$i-m} {
+                        margin-right: $col-m-width / 2 + $original-col-l-width;
+                    }
+                    $skip: true;
+                    $i-m: $i-m + 1;
+                }
+                @if $skip == false {
+                    @if $i-m > 1 {
+                        &#{$i-m} {
+                            margin-right: $col-m-width / 2 + $original-col-m-width;
+                        }
+                        $skip: true;
+                        $i-m: $i-m + 1;
+                    }
+                }
+            }
+            @if $skip == true {
+                $col-m-width: $original-col-m-width * $i-m;
+                &#{$i-m} {
+                    margin-right: $col-m-width / 2;
+                }
+                $skip: false;
+                $i-m: $i-m + 1;
+            }
         }
-        $i: $i + 1;                           // Count the iterations
-        $col-width: $col-width-1 * $i;        // Column width = original column width * iterations
+    }
+    @media screen and (min-width: $bp-wide) { /* wide */
+        @while $i-l < $cols-l + 1 {
+            &#{$i-l} {
+                margin-right: $col-l-width;
+            }
+            $i-l: $i-l + 1;
+            $col-l-width: $original-col-l-width * $i-l;
+            // $col-l-width: $col-l-width: * $i;
+        }
     }
 }
-// Add negative right margin
+
+
+// Negative margin right
 @mixin grid-post-pull($cols) {
-    $i: 1;                                    // Iteration counter (i = 1 at the first iteration)
-    $col-width: 100% / $cols;                 // Column width = 100% / number of columns
-    $col-width-1: 100% / $cols;               // Original column width = 100% / number of columns
-    @while $i < $cols {                       // While iterations < number of columns, do...
-        &#{$i} {                              // Given mixin selector + iteration number, eg. grid- + 1
-            margin-right: -$col-width;         // Set left-margin
+    
+    $i-m: 1;
+    $cols-m: $cols / 2;
+    $col-m-width: 100% / $cols-m;
+    $original-col-m-width: 100% / $cols-m;
+    
+    $i-l: 1;
+    $cols-l: $cols;
+    $col-l-width: 100% / $cols-l;
+    $original-col-l-width: 100% / $cols-l;
+
+    @media screen and (min-width: $bp-narrow) { /* narrow */
+        $skip: false;
+        @while $i-m < $cols + 1 {  // <=16
+            @if $skip == false {
+                @if $i-m == 1 {
+                    &#{$i-m} {
+                        margin-right: -($col-m-width / 2 + $original-col-l-width);
+                    }
+                    $skip: true;
+                    $i-m: $i-m + 1;
+                }
+                @if $skip == false {
+                    @if $i-m > 1 {
+                        &#{$i-m} {
+                            margin-right: -($col-m-width / 2 + $original-col-m-width);
+                        }
+                        $skip: true;
+                        $i-m: $i-m + 1;
+                    }
+                }
+            }
+            @if $skip == true {
+                $col-m-width: $original-col-m-width * $i-m;
+                &#{$i-m} {
+                    margin-right: -($col-m-width / 2);
+                }
+                $skip: false;
+                $i-m: $i-m + 1;
+            }
         }
-        $i: $i + 1;                           // Count the iterations
-        $col-width: $col-width-1 * $i;        // Column width = original column width * iterations
+    }
+    @media screen and (min-width: $bp-wide) { /* wide */
+        @while $i-l < $cols-l + 1 {
+            &#{$i-l} {
+                margin-right: -($col-l-width);
+            }
+            $i-l: $i-l + 1;
+            $col-l-width: $original-col-l-width * $i-l;
+            // $col-l-width: $col-l-width: * $i;
+        }
     }
 }
 

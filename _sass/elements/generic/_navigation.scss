@@ -73,14 +73,15 @@ nav.projects-nav {
         display: block;
         float: left;
         height: 50vw;
-        width: 50%;
+        width: 100%;
         @media screen and (min-width: $bp-narrow) {
             height: 33.333333vh;
+            height: calc(33.333333vh - 0.416667em);
         }
         @media screen and (min-width: $bp-wide) {
             border: 0;
             height: 100vh;
-            width: 16.666667%;
+            width: 33.333333%;
         }
         h3 {
             @include ir;
@@ -245,8 +246,8 @@ a.close {
     background-repeat: no-repeat;
     background-size: em(28,16), cover;
     height: em(38,16);
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
-    width: em(38,16);
+    width: em(38,16);\z-index: 3;
 }
