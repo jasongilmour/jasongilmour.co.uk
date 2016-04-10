@@ -69,19 +69,24 @@ nav.projects-nav {
         width: 75%;
     }
     a {
+        background-position: 0;
+        background-repeat: no-repeat;
+        background-size: 200%;
         border: 10px solid $white;
         display: block;
         float: left;
         height: 50vw;
-        width: 100%;
+        transition: background-position .4s;
+        width: 50%;
         @media screen and (min-width: $bp-narrow) {
-            height: 33.333333vh;
-            height: calc(33.333333vh - 0.416667em);
+            height: 25vh;
+            height: calc(25vh - 0.416667em);
+            width: 100%;
         }
         @media screen and (min-width: $bp-wide) {
             border: 0;
-            height: 100vh;
-            width: 33.333333%;
+            height: 50vh;
+            width: 50%;
         }
         h3 {
             @include ir;
@@ -94,46 +99,57 @@ nav.projects-nav {
         small {
             display: none;
         }
+        &:hover {
+            background-position: 100% 100%;
+            transition: background-position .4s;
+        }
         &.biondi {
-            background: linear-gradient(to bottom right, rgba(238,166,61,1) 0%, rgba(42,135,166,1) 100%);
+            background-image: linear-gradient(to bottom right, rgba(238,166,61,1) 0%, rgba(42,135,166,1) 50%, rgba(238,166,61,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-biondi.png');
                 background-size: 86px;
             }
         }
         &.chamonix {
-            background: linear-gradient(to bottom right, rgba(225,166,232,1) 0%, rgba(61,197,242,1) 100%);
+            background-image: linear-gradient(to bottom right, rgba(245,166,210,1) 0%, rgba(61,197,242,1) 50%, rgba(245,166,210,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-chamonix.png');
                 background-size: 62px;
             }
         }
         &.local-pinboard {
-            background: linear-gradient(to bottom right, rgba(18,165,168,1) 0%, rgba(26,200,55,1) 100%);
+            background-image: linear-gradient(to bottom right, rgba(18,165,168,1) 0%, rgba(26,200,55,1) 50%, rgba(18,165,168,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-localpinboard.png');
                 background-size: 43px;
             }
         }
         &.maxs-menu {
-            background: linear-gradient(to bottom right, rgba(255,0,0,1) 0%, rgba(155,51,51,1) 100%);
+            background-image: linear-gradient(to bottom right, rgba(255,0,0,1) 0%, rgba(155,51,51,1) 50%, rgba(255,0,0,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-maxs.png');
                 background-size: 90px;
             }
         }
         &.nike {
-            background: linear-gradient(to bottom right, rgba(248,187,18,1) 0%, rgba(213,19,255,1) 100%);
+            background-image: linear-gradient(to bottom right, rgba(248,187,18,1) 0%, rgba(213,19,255,1) 50%, rgba(248,187,18,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-nike.png');
                 background-size: 91px;
             }
         }
         &.smeds-miracle-brew {
-            background: linear-gradient(to bottom right, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 100%);
+            background-image: linear-gradient(to bottom right, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 50%, rgba(236,245,201,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-smeds.png');
                 background-size: 81px;
+            }
+        }
+        &.polyphonic {
+            background-image: linear-gradient(to bottom right, rgba(223,0,83,1) 0%, rgba(37,199,228,1) 50%, rgba(223,0,83,1) 100%);
+            h3 {
+                background-image: url('/img/ui/logo-polyphonic.svg');
+                background-size: 160px;
             }
         }
     }

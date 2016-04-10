@@ -2,41 +2,34 @@
 layout: default
 ---
 
-<header class="project-header">
-	{% if page.slug %}
-	<span itemprop="name" class="artist-name"><perch:content id="artistname" /></span>
-	<picture>
-		<!--[if IE 9]><video style="display: none;"><![endif]-->
-		<source srcset="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-xxl.png" media="(min-width: 120em)" width="2560" height="1440">
-		<source srcset="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-xl.png" media="(min-width: 80em)" width="1920" height="1080">
-		<source srcset="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-l.png" media="(min-width: 64em)" width="1280" height="720">
-		<source srcset="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-m.png" media="(min-width: 48em)" width="1024" height="576">
-		<source srcset="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-s.png" media="(min-width: 20em)" width="768" height="432">
-		<source srcset="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-xs.png" media="(min-resolution: 93dpi), (min-resolution: 1.3dppx), (-webkit-min-device-pixel-ratio: 1.3)" width="640" height="360">
-		 <!--[if IE 9]></video><![endif]-->
-		<img srcset="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-xxs.png" media="(min-width: 1em)" alt="" width="320" height="180" class="banner">
-	</picture>
-	{% endif %}
-	<div class="introduction">
-		<h1 class="post-title">{{ page.title }}{% if page.projecttype %}<span class="secondary project-type"> {{ page.projecttype }}</span>{% endif %}</h1>
-		<p>{{ page.introduction }}</p>
-		{% if page.secondintroduction %}<p>{{ page.secondintroduction }}</p>{% endif %}
-	</div>
-	<a href="/" class="close">Close</a>
-</header>
+<main itemscope itemtype="http://schema.org/CreativeWork">
+	<header class="project-header">
+		{% if page.slug %}
+		<span itemprop="name" class="artist-name"><perch:content id="artistname" /></span>
+		<img src="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-xs.png" width="640" height="360">
+		{% endif %}
+		<div class="introduction">
+			<h1 class="post-title" itemprop="name" content="{{ page.title }}">{{ page.title }}{% if page.projecttype %}<span class="secondary project-type"> {{ page.projecttype }}</span>{% endif %}</h1>
+			<meta itemprop="author" content="Jason Gilmour">
+			<p>{{ page.introduction }}</p>
+			{% if page.secondintroduction %}<p>{{ page.secondintroduction }}</p>{% endif %}
+		</div>
+		<a href="/" class="close">Close</a>
+	</header>
 
-<article class="project-content">
-	{{ content }}
-	<nav class="project-page projects-nav">
-	  <h2>Other projects</h2>
-	  {% for post in site.categories.projects reversed %}
-		{% if post.url != page.url %}
-		  <a href="{{ post.url }}" class="{{ post.slug }}">
-		    <h3>{{ post.title }}</h3>
-		    {% if post.projecttype %}<small>({{ post.projecttype }})</small>{% endif %}
-		  </a>
-	    {% endif %}
-	  {% endfor %}
-	</nav>
-</article>
-{% include footer.html %}
+	<article class="project-content">
+		{{ content }}
+		<nav class="project-page projects-nav">
+		  <h2>Other projects</h2>
+		  {% for post in site.categories.projects reversed %}
+			{% if post.url != page.url %}
+			  <a href="{{ post.url }}" class="{{ post.slug }}">
+			    <h3>{{ post.title }}</h3>
+			    {% if post.projecttype %}<small>({{ post.projecttype }})</small>{% endif %}
+			  </a>
+		    {% endif %}
+		  {% endfor %}
+		</nav>
+	</article>
+	{% include footer.html %}
+</main>

@@ -18,14 +18,16 @@ header.project-header {
 		float: left;
 		margin: -17% auto 0;
 		overflow: hidden;
-		padding: em(20,16) em(20,16);
+		padding: em(20,16) em(20,16) em(28,16);
 		@media screen and (min-width: $bp-narrow) {
-			width: 75%;
+			bottom: auto;
 			left: 12.5%;
-			margin: 0 auto 0;
+			margin: 0 auto;
 			padding: em(28,16);
 			position: absolute;
-			// top: 43.75%;
+			top: 48%;
+			transform: translateY(-50%);
+			width: 75%;
 		}
 		@media screen and (min-width: $bp-wide) {
 			width: 50%;
@@ -49,6 +51,9 @@ header.project-header {
 			font-size: em(18,16);
 			line-height: 1.25;
 			margin: em(28,18) 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 	img.banner {
@@ -67,4 +72,5 @@ header.project-header {
 
 article.project-content {
 	background-color: $white;
+	padding-top: em(40,16);
 }

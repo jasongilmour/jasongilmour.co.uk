@@ -7,6 +7,7 @@
 	flex-direction: column;
 	height: 100vh;
 	justify-content: center;
+	padding: em(20,16);
 	@media screen and (min-width: $bp-narrow) {
 		width: 50%;
 	}

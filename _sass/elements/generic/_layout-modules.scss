@@ -25,29 +25,39 @@
 
 .row {
 	@include clearfix;
-	margin: em(12,16) auto;
+	margin: 0 auto;
 	position: relative;
 	width: 100%;
-	@media screen and (min-width: $bp-narrow) {
-		margin: em(20,16) auto;
+	.flexbox & {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	@media screen and (min-width: $bp-wide) {
+		margin: 0 auto;
 		padding: 0 em(14,16);
 	}
 	img {
-		width: 100%;
-		margin-bottom: em(20,16);
-		// margin: em(52,16) auto em(40,16);
-		@media screen and (min-width: $bp-narrow) {
-			// margin: em(112,16) auto;
+		display: block;
+		margin: 0 auto;
+		@media screen and (min-width: $bp-wide) {
+			width: 100%;
+			margin-bottom: 0;
 		}
 	}
 	.module {
 		position: relative;
-		padding: 0 em(14,16);
-		@media screen and (min-width: $bp-narrow) {
+		padding: em(40,16) em(14,16);
+		&[class*="pull-"] {
 			padding: em(14,16);
 		}
-		&:last-child p,
-		& p:last-child {
+		@media screen and (min-width: $bp-wide) {
+			padding: em(80,16) em(14,16);
+			&[class*="pull-"] {
+				padding: em(14,16);
+			}
+		}
+		p:last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -59,12 +69,12 @@
 		z-index: 1;
 	}
 	.image-right {
-		@media screen and (min-width: $bp-narrow) {
+		@media screen and (min-width: $bp-wide) {
 			text-align: right;
 		}
 	}
 	.overlapping {
-		@media screen and (min-width: $bp-narrow) {
+		@media screen and (min-width: $bp-wide) {
 			border: em(14,16) solid $white;
 		}
 	}
@@ -75,13 +85,13 @@
 	}
 	&.borderless-right,
 	.borderless-right {
-			@media screen and (min-width: $bp-narrow) {
+			@media screen and (min-width: $bp-wide) {
 			padding-right: 0;
 		}
 	}
 	&.borderless-left,
 	.borderless-left {
-			@media screen and (min-width: $bp-narrow) {
+			@media screen and (min-width: $bp-wide) {
 			padding-left: 0;
 		}
 	}

@@ -8,7 +8,7 @@ s3_bucket: jasongilmour.co.uk
 site: _site
 
 index_document: index.html
-error_document: error.html
+error_document: 404.html
 
 # max_age:
 #   "assets/*": 6000
@@ -18,7 +18,13 @@ gzip:
   - .html
   - .css
   - .js
-  - .md
+  - .png
+  - .svg
+  - .jpg
+  - .eot
+  - .ttf
+  - .woff
+  - .woff2
 # gzip_zopfli: true
 
 # See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints
@@ -37,20 +43,22 @@ exclude_from_upload:
 
 cloudfront_distribution_id: E2TOXHSAZ5N518
 
-# cloudfront_distribution_config:
-#   default_cache_behavior:
-#     min_TTL: <%= 60 * 60 * 24 %>
+cloudfront_distribution_config:
+  default_cache_behavior:
+    min_TTL: <%= 60 * 60 * 24 %>
 #   aliases:
 #     quantity: 1
 #     items:
 #       CNAME: your.website.com
 
-# cloudfront_invalidate_root: true
+cache_control: public, no-transform, max-age=1200, s-maxage=1200
 
-# concurrency_level: 5
+cloudfront_invalidate_root: true
 
-redirects:
-  index.html: /
+concurrency_level: 5
+
+# redirects:
+#   index.html: /
 #   index.php: /
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
