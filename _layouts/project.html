@@ -5,8 +5,9 @@ layout: default
 <main itemscope itemtype="http://schema.org/CreativeWork">
 	<header class="project-header">
 		{% if page.slug %}
-		<span itemprop="name" class="artist-name"><perch:content id="artistname" /></span>
-		<img src="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-xs.png" width="640" height="360" data-sizes='{"xs":{"width":"340","height":"360","suffix":"xs"},"s":{"width":"768","height":"432","suffix":"s"},"m":{"width":"1024","height":"576","suffix":"m"},"l":{"width":"1280","height":"720","suffix":"l"},"xl":{"width":"1920","height":"1080","suffix":"xl"},"xxl":{"width":"2560","height":"1440","suffix":"xxl"}}' data-initialSrc='/img/projects/{{ page.slug }}/{{ page.slug }}-hero.png'>
+		<meta itemprop="name" class="artist-name" content="{{ page.title }}">
+		<img src="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-xs.png" alt="{{ page.title }}" data-initialSrc='/img/projects/{{ page.slug }}/{{ page.slug }}-hero.png' data-sizes='{"xs":{"width":"340","height":"360","suffix":"xs"},"s":{"width":"768","height":"432","suffix":"s"},"m":{"width":"1024","height":"576","suffix":"m"},"l":{"width":"1280","height":"720","suffix":"l"},"xl":{"width":"1920","height":"1080","suffix":"xl"},"xxl":{"width":"2560","height":"1440","suffix":"xxl"}}'>
+		<noscript><img src="/img/projects/{{ page.slug }}/{{ page.slug }}-hero-xs.png" alt="{{ page.title }}"></noscript>
 		{% endif %}
 		<div class="introduction">
 			<h1 class="post-title" itemprop="name" content="{{ page.title }}">{{ page.title }}{% if page.projecttype %}<span class="secondary project-type"> {{ page.projecttype }}</span>{% endif %}</h1>

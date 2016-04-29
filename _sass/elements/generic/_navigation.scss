@@ -239,14 +239,19 @@ nav.social {
         background-repeat: no-repeat;
         background-size: 18px;
         height: 18px;
+        margin-left: 12px;
         position: relative;
         top: 3px;
+        transition: transform .2s ease;
         width: 18px;
         &:hover {
-            background-position: center -18px;
+            // background-position: center -18px;
+            transform: scale(1.5);
+            transition: transform .2s ease;
         }
         &.twitter {
             background-image: url('/img/ui/twitter-icon.svg');
+            top: 4px;
         }
         &.linkedin {
             background-image: url('/img/ui/linkedin-icon.svg');
@@ -257,19 +262,53 @@ nav.social {
 a.close {
     @include ir;
     background-color: $white;
-    background: url('/img/ui/close.svg'), linear-gradient(225deg, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255 ,0) 85%, rgba(255, 255, 255 ,0) 100%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: em(28,16), cover;
+    background: linear-gradient(225deg, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255 ,0) 85%, rgba(255, 255, 255 ,0) 100%);
+    // background-position: center;
+    // background-repeat: no-repeat;
+    background-size: cover;
     height: em(38,16);
+    overflow: hidden;
     position: fixed;
-    top: 0;
     right: 0;
+    text-indent: -999em;
+    top: 0;
     width: em(38,16);
     z-index: 3;
     @media screen and (min-width: $bp-wide) {
-        background-size: em(40,16), cover;
         height: em(60,16);
         width: em(60,16);   
+    }
+    &:before,
+    &:after {
+        background-color: $black;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        right: 9px;
+        top: 17px;
+        transition: transform .3s ease;
+        width: 18px;
+        @media screen and (min-width: $bp-wide) {
+            right: 16px;
+            top: 27px;
+            width: 24px;
+        }
+    }
+    &:before {
+        transform: rotate(-45deg);
+    }
+    &:after {
+        transform: rotate(45deg);
+    }
+    &:hover:before,
+    &:focus:before {
+        transform: rotate(45deg);
+        transition: transform .3s ease;
+    }
+    &:hover:after,
+    &:focus:after {
+        transform: rotate(135deg);
+        transition: transform .3s ease;
     }
 }
