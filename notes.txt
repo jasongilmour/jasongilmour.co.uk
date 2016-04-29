@@ -1,3 +1,83 @@
+// Large macbook
+
+{
+	"xs": {
+		"width": "347",
+		"height": "200",
+		"suffix": "xs"
+	},
+	"s": {
+		"width": "644",
+		"height": "372",
+		"suffix": "s"
+	},
+	"m": {
+		"width": "1068",
+		"height": "616",
+		"suffix": "m"
+	},
+	"l": {
+		"width": "1628",
+		"height": "940",
+		"suffix": "l"
+	},
+	"xl": {
+		"width": "2188",
+		"height": "1263",
+		"suffix": "xl"
+	}
+}
+
+// Smaller macbook
+
+{
+	"xs": {
+		"width": "347",
+		"height": "200",
+		"suffix": "xs"
+	},
+	"s": {
+		"width": "452",
+		"height": "261",
+		"suffix": "s"
+	},
+	"m": {
+		"width": "755",
+		"height": "435",
+		"suffix": "m"
+	},
+	"l": {
+		"width": "1155",
+		"height": "666",
+		"suffix": "l"
+	},
+	"xl": {
+		"width": "1555",
+		"height": "898",
+		"suffix": "xl"
+	}
+}
+
+// Phones
+
+{
+	"s": {
+		"width": "285",
+		"height": "581",
+		"suffix": "s"
+	},
+	"m": {
+		"width": "445",
+		"height": "907",
+		"suffix": "m"
+	},
+	"l": {
+		"width": "605",
+		"height": "1234",
+		"suffix": "l"
+	}
+}
+
 Sort out grid mixin
 
 Top priority:

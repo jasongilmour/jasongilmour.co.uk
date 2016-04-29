@@ -23,6 +23,18 @@
 	text-align: center;
 }
 
+.vertical-center {
+	@media screen and (min-width: $bp-narrow) {
+		height: auto;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		&.right {
+			right: 0;
+		}
+	}
+}
+
 .row {
 	@include clearfix;
 	margin: 0 auto;
@@ -46,8 +58,11 @@
 		}
 	}
 	.module {
-		position: relative;
+		// position: relative;
 		padding: em(40,16) em(14,16);
+		&.right {
+			float: right;
+		}
 		&[class*="pull-"] {
 			padding: em(14,16);
 		}

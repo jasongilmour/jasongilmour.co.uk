@@ -18,7 +18,9 @@ header.project-header {
 		float: left;
 		margin: -17% auto 0;
 		overflow: hidden;
+		position: relative;
 		padding: em(20,16) em(20,16) em(28,16);
+		z-index: 2;
 		@media screen and (min-width: $bp-narrow) {
 			bottom: auto;
 			left: 12.5%;

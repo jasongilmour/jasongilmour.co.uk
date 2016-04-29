@@ -1,5 +1,13 @@
 "use strict";
 
+// Stole from http://stackoverflow.com/questions/18837735/check-if-image-exists-on-server-using-javascript
+// function imageExists(image_url){
+// 	var http = new XMLHttpRequest();
+// 	http.open('HEAD', image_url, false);
+// 	http.send();
+// 	return http.status != 404;
+// }
+
 function responsiveImage(selector) {
 	// Get image and container
 	var element = document.querySelectorAll(selector);
@@ -8,7 +16,7 @@ function responsiveImage(selector) {
 
 		// image = current element
 		var image = element[i];
-		var desiredWidth = image.offsetWidth;
+		var desiredWidth = image.parentNode.offsetWidth;
 
 		// Parse the data into an object
 		var sizes = JSON.parse(image.getAttribute('data-sizes'));
@@ -42,25 +50,23 @@ function responsiveImage(selector) {
 		}
 
 		// Set the new source of the image
-		var source = image.getAttribute('src');
+		if ( image.hasAttribute('data-initialSrc') ) {
+			var source = image.getAttribute('data-initialSrc');
+		} else {
+			var source = image.getAttribute('src');
+		}
+
 		// console.table(suffix);
 		var n = source.lastIndexOf('.');
 		var newSource = source.substring(0,n) + "-" + suffix + source.substring(n);
 
 		var imageSource = location.origin = location.protocol + "//" + location.host + newSource;
 
-		if (new XMLHttpRequest(imageSource).status != 404) {
-			image.setAttribute('src', newSource);
-			console.log(imageSource);
-			console.log(new XMLHttpRequest(imageSource).status);
-		} else {
-			console.log('2');
-		}
+		// if (imageExists(imageSource)) {
+		image.setAttribute('src', newSource);
+		// }
 	});
 };
 
 responsiveImage('img[data-sizes]');
-
-
-
-
+window.onresize = function(){ responsiveImage('img[data-sizes]') };

@@ -1,0 +1,54 @@
+.chamonix-screens {
+	@media only screen and (min-width: $bp-narrow) {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+		// background-image: url(/img/projects/chamonix/tmp.jpg);
+		// background-size: cover;
+		padding: 100px 0;
+	}
+	.module {
+		&:nth-child(2n-1) {
+			transform: translate(10%, -10%) rotate(45deg);
+		}
+		&:nth-child(2n) {
+			transform: translate(10%, 40%) rotate(-45deg);
+		}
+		// &:nth-child(3) {
+		// 	transform: translate(69%, -29%) rotate(45deg) scale(.86);
+		// }
+		// &:nth-child(4) {
+		// 	transform: translate(-37%, 25%) rotate(45deg) scale(.86);
+		// }
+		// &:nth-child(5) {
+		// 	transform: translate(-10%, -2%) rotate(-45deg) scale(.86);
+		// }
+		@media only screen and (min-width: $bp-narrow) {
+			display: inline-block;
+			float: none;
+			position: relative;
+			&:nth-child(1) {
+				transform: translate(6%, -28%) rotate(45deg) scale(.86);
+			}
+			&:nth-child(2) {
+				transform: translate(36%, -2%) rotate(-45deg) scale(.86);
+			}
+			&:nth-child(3) {
+				transform: translate(69%, -29%) rotate(45deg) scale(.86);
+			}
+			&:nth-child(4) {
+				transform: translate(-37%, 25%) rotate(45deg) scale(.86);
+			}
+			&:nth-child(5) {
+				transform: translate(-10%, -2%) rotate(-45deg) scale(.86);
+			}
+		}
+	}
+	// Larger on mobile
+	@media only screen and (max-width: $bp-narrow) {
+		.span-3 {
+			width: 50%;
+		}
+	}
+}
