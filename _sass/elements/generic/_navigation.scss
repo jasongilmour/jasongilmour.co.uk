@@ -84,6 +84,35 @@ nav.projects-nav {
             height: calc(25vh - 0.416667em);
             width: 100%;
         }
+        // @media screen and (min-width: $bp-narrow) {
+        //     border: 0;
+        //     height: 25%;
+        //     // height: calc(25vh - 0.416667em);
+        //     left: 50%;
+        //     position: fixed;
+        //     right: 0;
+        //     top: 0;
+        //     // transition: left .3s ease, right .3s ease, top .3s ease, width .3s ease, height .3s ease;
+        //     width: 50%;
+        //     will-change: height, left, width, top;
+        //     &:nth-child(2) {
+        //         top: 25%;
+        //     }
+        //     &:nth-child(3) {
+        //         top: 50%;
+        //     }
+        //     &:nth-child(4) {
+        //         top: 75%;
+        //     }
+        //     &.loading {
+        //         height: 100%;
+        //         left: 0;
+        //         top: 0;
+        //         transition: height .3s ease, left .3s ease, width .3s ease, top .3s ease;
+        //         width: 100%;
+        //         z-index: 4;
+        //     }
+        // }
         @media screen and (min-width: $bp-wide) {
             border: 0;
             height: 50vh;

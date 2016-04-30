@@ -120,11 +120,12 @@ function ajaxPageLoad(e) {
 		responsiveImage('img[data-sizes]');
 		scroll(0,0);
 		// Remove loading class
+		var thinggy = 'loading';
 		if (screen.classList) {
-			screen.classList.remove(className);
+			screen.classList.remove(thinggy);
 		}
 		else {
-			screen.className = screen.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+			screen.thinggy = screen.thinggy.replace(new RegExp('(^|\\b)' + thinggy.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 		}
 	}, 500 );
 }
@@ -133,4 +134,11 @@ var selector = document.querySelectorAll('a.ajax');
 for (var i = 0; i < selector.length; i++) {
 	selector[i].addEventListener('click', ajaxPageLoad, false);
 }
+
+// Handle browser back button clicks (load the homepage properly)
+window.onpopstate = function () {
+	if (window.location.pathname === '/') {
+		getPage(window.location.pathname, '#main')
+	}
+};
 
