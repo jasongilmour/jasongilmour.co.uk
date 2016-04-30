@@ -11,6 +11,9 @@ header.project-header {
 	padding-bottom: 56.25%;
 	position: relative;
 	width: 100%;
+	img {
+		min-width: 100%;
+	}
 	.introduction {
 		background-color: $white;
 		background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 1) 93%, rgba(255, 255, 255 ,0) 93%, rgba(255, 255, 255 ,0) 100%);

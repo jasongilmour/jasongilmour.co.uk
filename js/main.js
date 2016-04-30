@@ -8,7 +8,7 @@
 // 	return http.status != 404;
 // }
 
-function responsiveImage(selector) {
+var responsiveImage = function responsiveImage(selector) {
 	// Get image and container
 	var element = document.querySelectorAll(selector);
 
@@ -60,7 +60,7 @@ function responsiveImage(selector) {
 		var n = source.lastIndexOf('.');
 		var newSource = source.substring(0,n) + "-" + suffix + source.substring(n);
 
-		var imageSource = location.origin = location.protocol + "//" + location.host + newSource;
+		// var imageSource = location.origin = location.protocol + "//" + location.host + newSource;
 
 		// if (imageExists(imageSource)) {
 		image.setAttribute('src', newSource);
@@ -70,3 +70,67 @@ function responsiveImage(selector) {
 
 responsiveImage('img[data-sizes]');
 window.onresize = function(){ responsiveImage('img[data-sizes]') };
+
+// Ajax!
+function getPage(url, from, to) {
+	var cached=sessionStorage[url];
+	if(!from){from="body";} // default to grabbing body tag
+	if(to && to.split){to=document.querySelector(to);} // a string TO turns into an element
+	if(!to){to=document.querySelector(from);} // default re-using the source elm as the target elm
+	if(cached){return to.innerHTML=cached;} // cache responses for instant re-use re-use
+
+	var XHRt = new XMLHttpRequest; // new ajax
+	XHRt.responseType='document';  // ajax2 context and onload() event
+	XHRt.onload= function() { sessionStorage[url]=to.innerHTML= XHRt.response.querySelector(from).innerHTML;};
+	XHRt.open("GET", url, true);
+	XHRt.send();
+	return XHRt;
+}
+
+var htmlString = '<div id="screen"></div>'
+document.querySelector('main').insertAdjacentHTML('afterend', htmlString);
+var screen = document.getElementById('screen');
+
+function ajaxPageLoad(e) {
+	e.preventDefault();
+	// Animate the link by adding the loading class
+	// Add the slug class name to colour the loading screen
+	var className = this.classList[0];
+	if (screen.classList) {
+		screen.classList.add(className);
+	}
+	else {
+		screen.className += ' ' + className;
+	}
+	// Add the loading class to begin animation
+	var className = 'loading';
+	if (screen.classList) {
+		screen.classList.add(className);
+	}
+	else {
+		screen.className += ' ' + className;
+	}
+	// Load the page
+	var href = this.href;
+	setTimeout( function() {
+		var newPage = href;
+		var newSelector = '#main';
+		getPage(newPage, newSelector);
+		history.pushState(null, null, href);
+		responsiveImage('img[data-sizes]');
+		scroll(0,0);
+		// Remove loading class
+		if (screen.classList) {
+			screen.classList.remove(className);
+		}
+		else {
+			screen.className = screen.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+		}
+	}, 500 );
+}
+
+var selector = document.querySelectorAll('a.ajax');
+for (var i = 0; i < selector.length; i++) {
+	selector[i].addEventListener('click', ajaxPageLoad, false);
+}
+
