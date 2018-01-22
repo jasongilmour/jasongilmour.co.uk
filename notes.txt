@@ -28,6 +28,21 @@
 	}
 }
 
+// Max's
+
+{
+	"s": {
+		"width": "1024",
+		"height": "768",
+		"suffix": "s"
+	},
+	"l": {
+		"width": "1920",
+		"height": "1080",
+		"suffix": "l"
+	}
+}
+
 // Smaller macbook
 
 {

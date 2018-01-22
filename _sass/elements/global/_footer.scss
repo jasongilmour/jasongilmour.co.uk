@@ -10,7 +10,7 @@
 		@media screen and (min-width: $bp-narrow) {
 			bottom: 0;
 			left: 0;
-			position: absolute;
+			position: fixed;
 			width: 50%;
 		}
 		@media screen and (min-width: $bp-wide) {

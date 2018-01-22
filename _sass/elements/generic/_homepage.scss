@@ -1,5 +1,6 @@
 .home section {
 	float: left;
+	padding-bottom: em(60,16);
 	padding-top: em(116,16);
 
 	@media screen and (min-width: $bp-narrow) {

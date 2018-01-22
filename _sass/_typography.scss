@@ -14,9 +14,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'solomon-normal';
     src: url('/fonts/solomon_normal.eot');
@@ -28,9 +25,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'solomon-light';
@@ -113,6 +107,7 @@ p {
     }
 }
 strong {
+    font-family: 'solomon-black', sans-serif;
     font-weight: $bold;
 }
 em {
