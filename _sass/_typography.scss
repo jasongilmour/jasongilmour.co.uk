@@ -88,18 +88,21 @@ h6, .h6 {
 }
 p {
     font-family: "solomon-normal";
-    font-size: em(14,16);
+    font-size: em(16,16);
     line-height: 1.428571;
-    margin: 0 0 em(16,14);
+    margin: 0 0 em(20,16);
+
     @media screen and (min-width: $bp-wide) {
-        font-size: em(18,16);
-        line-height: 1.333333;
-        margin: 0 0 em(20,18);
+        font-size: em(20,16);
+        line-height: (28/20);
+        margin: 0 0 em(20,20);
     }
+
     img {
         float: left;
         margin-right: em(28,14);
         vertical-align: baseline;
+
         &.alignright {
             float: right;
             margin-left: em(28,14);

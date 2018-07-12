@@ -2,10 +2,11 @@
 	@include clearfix;
 	background-color: $white;
 	color: $green;
-	font-size: em(12,16);
+	font-size: em(14,16);
 	line-height: 1;
 	padding: em(20,12);
 	width: 100%;
+
 	.home & {
 		@media screen and (min-width: $bp-narrow) {
 			bottom: 0;
@@ -17,10 +18,12 @@
 			width: 25%;
 		}
 	}
+
 	nav.footer-nav {
 		margin-top: em(7,12);
 		float: left;
 	}
+
 	nav.social {
 		float: right;
 	}
