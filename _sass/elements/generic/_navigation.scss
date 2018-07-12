@@ -79,7 +79,7 @@ nav.projects-nav {
         display: block;
         float: left;
         height: 50vw;
-        transition: background-position .4s;
+        transition: background-position .4s ease;
         width: 50%;
         @media screen and (min-width: $bp-narrow) {
             min-height: 150px;
@@ -88,76 +88,60 @@ nav.projects-nav {
         }
         @media screen and (min-width: $bp-wide) {
             border: 0;
-            height: 33.333333vh;
+            height: 50vh;
             width: 50%;
         }
         @media screen and (min-width: $bp-x-wide) {
             border: 0;
             height: 50vh;
-            width: 33.333333%;
+            width: 50%;
         }
         h3 {
             @include ir;
             background-position: center;
             background-repeat: no-repeat;
+            background-size: contain;
             margin: 0;
             height: 100%;
+            transition: transform .4s ease;
             width: 100%;
+
+            @media screen and (min-width: $bp-wide) {
+                background-size: 50%;
+            }
         }
         small {
             display: none;
         }
         &:hover {
             background-position: 100% 100%;
-            transition: background-position .4s;
+
+            h3 {
+                transform: scale(1.1);
+            }
         }
         &.biondi {
-            background-image: linear-gradient(to bottom right, rgba(238,166,61,1) 0%, rgba(42,135,166,1) 50%, rgba(238,166,61,1) 100%);
+            background-image: radial-gradient(circle at bottom right, rgba(238,166,61,1) 0%, rgba(42,135,166,1) 50%, rgba(238,166,61,1) 100%);
             h3 {
-                background-image: url('/img/ui/logo-biondi.png');
-                background-size: 86px;
-            }
-        }
-        &.chamonix {
-            background-image: linear-gradient(to bottom right, rgba(245,166,210,1) 0%, rgba(61,197,242,1) 50%, rgba(245,166,210,1) 100%);
-            h3 {
-                background-image: url('/img/ui/logo-chamonix.png');
-                background-size: 62px;
-            }
-        }
-        &.local-pinboard {
-            background-image: linear-gradient(to bottom right, rgba(18,165,168,1) 0%, rgba(26,200,55,1) 50%, rgba(18,165,168,1) 100%);
-            h3 {
-                background-image: url('/img/ui/logo-localpinboard.png');
-                background-size: 43px;
+                background-image: url('/img/ui/logo-biondi.svg');
             }
         }
         &.maxs-menu {
-            background-image: linear-gradient(to bottom right, rgba(255,0,0,1) 0%, rgba(155,51,51,1) 50%, rgba(255,0,0,1) 100%);
+            background-image: radial-gradient(circle at bottom right, rgba(255,0,0,1) 0%, rgba(155,51,51,1) 50%, rgba(255,0,0,1) 100%);
             h3 {
-                background-image: url('/img/ui/logo-maxs.png');
-                background-size: 90px;
-            }
-        }
-        &.nike {
-            background-image: linear-gradient(to bottom right, rgba(248,187,18,1) 0%, rgba(213,19,255,1) 50%, rgba(248,187,18,1) 100%);
-            h3 {
-                background-image: url('/img/ui/logo-nike.png');
-                background-size: 91px;
+                background-image: url('/img/ui/logo-maxs.svg');
             }
         }
         &.smeds-miracle-brew {
-            background-image: linear-gradient(to bottom right, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 50%, rgba(236,245,201,1) 100%);
+            background-image: radial-gradient(circle at bottom right, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 50%, rgba(236,245,201,1) 100%);
             h3 {
-                background-image: url('/img/ui/logo-smeds.png');
-                background-size: 81px;
+                background-image: url('/img/ui/logo-smeds.svg');
             }
         }
         &.polyphonic {
-            background-image: linear-gradient(to bottom right, rgba(223,0,83,1) 0%, rgba(37,199,228,1) 50%, rgba(223,0,83,1) 100%);
+            background-image: radial-gradient(circle at bottom right, rgba(223,0,83,1) 0%, rgba(37,199,228,1) 50%, rgba(223,0,83,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-polyphonic.svg');
-                background-size: 160px;
             }
         }
     }

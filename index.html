@@ -2,19 +2,18 @@
 layout: home
 ---
 <section id="intro">
-  <h1 itemprop="name">Jason Gilmour</h1>
-  <h3 itemprop="jobTitle">Senior Web Designer</h3>
+    <h1 itemprop="name">Jason Gilmour</h1>
+    <h3 itemprop="jobTitle">Senior Web Designer</h3>
+    <meta itemprop="url">http://jasongilmour.co.uk</meta>
     <p>I'm a Senior Designer working in Edinburgh with a focus on UX, strategy, and business. I love working from first principles to create great products. <strong>I'm Open to opportunities in Canada</strong> at the moment, as I plan to relocate later this year.</p>
     <p>I have a very broad skillset ranging from product, UX and visual design to front end development. In the past year my design work has been featured on the App Store home page, and appears in the top 100 US Entertainment apps.</p>
     <p>I also led the design of a new talent management system, <a href="https://hailto.com/" target="blank" rel="noopener">HailTo</a>, from inception to launch and beyond. This included working on the branding and marketing site, but focused on a management web app and mobile app, which are currently being used by some of the biggest names in US Television.</p>
 </section>
 <nav class="home projects-nav">
-  {% for post in site.categories.projects reversed %}
-    <a href="{{ post.url }}" class="{{ post.slug }} project ajax">
-      <h3>{{ post.title }}</h3>
-      {% if post.projecttype %}<small>({{ post.projecttype }})</small>{% endif %}
-    </a>
-  {% endfor %}
+    {% for post in site.categories.projects reversed %}
+        <a href="{{ post.url }}" class="{{ post.slug }} project ajax">
+            <h3>{{ post.title }}</h3>
+            {% if post.projecttype %}<small>({{ post.projecttype }})</small>{% endif %}
+        </a>
+    {% endfor %}
 </nav>
-<div id="tmp"></div>
-<!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
