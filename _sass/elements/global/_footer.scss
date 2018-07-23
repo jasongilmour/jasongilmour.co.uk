@@ -4,9 +4,10 @@
     animation-fill-mode: forwards;
 	background-color: $white;
 	color: $green;
-	font-size: em(14,16);
+	float: left;
+	font-size: em(16,16);
 	line-height: 1;
-	padding: em(20,12);
+	padding: em(20,16);
 	width: 100%;
 
 	.home & {
@@ -22,7 +23,7 @@
 	}
 
 	nav.footer-nav {
-		margin-top: em(7,12);
+		margin-top: em(8,16);
 		float: left;
 	}
 

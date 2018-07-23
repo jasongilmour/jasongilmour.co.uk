@@ -4,6 +4,7 @@
 
 @font-face {
     font-family: 'solomon-black';
+    font-display: swap;
     src: url('/fonts/solomon_black.eot');
     src: url('/fonts/solomon_black.eot?#iefix') format('embedded-opentype'),
          url('/fonts/solomon_black.woff2') format('woff2'),
@@ -16,6 +17,7 @@
 
 @font-face {
     font-family: 'solomon-normal';
+    font-display: swap;
     src: url('/fonts/solomon_normal.eot');
     src: url('/fonts/solomon_normal.eot?#iefix') format('embedded-opentype'),
          url('/fonts/solomon_normal.woff2') format('woff2'),
@@ -28,6 +30,7 @@
 
 @font-face {
     font-family: 'solomon-light';
+    font-display: swap;
     src: url('/fonts/solomon_light.eot');
     src: url('/fonts/solomon_light.eot?#iefix') format('embedded-opentype'),
          url('/fonts/solomon_light.woff2') format('woff2'),
@@ -153,6 +156,22 @@ a, .a {
     text-decoration: none;
     &:hover, &:active {
         color: $dark-green;
+    }
+}
+
+p a,
+.footer-nav a {
+    box-shadow: 0 2px 0 $green;
+    color: $black;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $green;
+        color: #333;
+        text-decoration: none;
     }
 }
 
