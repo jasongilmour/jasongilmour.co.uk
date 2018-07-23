@@ -1,5 +1,17 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .home section {
+    animation: fade-in 0.75s 1 ease-in;
+    animation-fill-mode: forwards;
 	float: left;
+    opacity: 0;
 	padding-bottom: em(60,16);
 	padding-top: em(116,16);
 

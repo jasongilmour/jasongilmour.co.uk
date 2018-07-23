@@ -1,5 +1,7 @@
 .global-footer {
 	@include clearfix;
+    animation: fade-in 0.75s 1 ease-out;
+    animation-fill-mode: forwards;
 	background-color: $white;
 	color: $green;
 	font-size: em(14,16);

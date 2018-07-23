@@ -53,6 +53,16 @@ nav {
     }
 }
 
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 nav.projects-nav {
     @include clearfix;
     float: right;
@@ -71,6 +81,22 @@ nav.projects-nav {
         @media screen and (min-width: $bp-wide) {
             padding: 0;
             width: 75%;
+        }
+
+        a {
+            animation: fade-in-down 0.4s 1 ease-out;
+            animation-fill-mode: forwards;
+            opacity: 0;
+
+            &:nth-of-type(2) { animation-delay: 0.1s }
+
+            &:nth-of-type(3) { animation-delay: 0.2s }
+
+            &:nth-of-type(4) { animation-delay: 0.3s }
+
+            &:nth-of-type(5) { animation-delay: 0.4s }
+
+            &:nth-of-type(6) { animation-delay: 0.5s }
         }
     }
     a {
@@ -152,10 +178,20 @@ nav.projects-nav {
     border-bottom: 1px solid $light-gray;
     border-top: 1px solid $light-gray;
     margin: rem(48) 0 0;
-    padding: rem(16) rem(20) rem(20);;
+    padding: rem(16) rem(20) rem(20);
     position: relative;
     text-align: center;
     width: 100%;
+
+    @media screen and (min-width: $bp-narrow) {
+        padding-top: rem(40);
+        padding-bottom: rem(40);
+    }
+
+    @media screen and (min-width: $bp-wide) {
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+    }
 
     h2 {
         font-size: rem(14);
@@ -180,6 +216,7 @@ nav.projects-nav {
         display: flex;
         float: none;
         justify-content: center;
+        overflow: hidden;
         padding: 0;
 
         @media screen and (min-width: $bp-narrow) {
