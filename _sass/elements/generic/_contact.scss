@@ -8,14 +8,46 @@
 	height: 100vh;
 	justify-content: center;
 	padding: em(20,16);
+
 	@media screen and (min-width: $bp-narrow) {
+		width: 75%;
+	}
+	@media screen and (min-width: $bp-wide) {
 		width: 50%;
 	}
-	address {
-		padding-bottom: em(100,16);
+	.contact-details {
+		border-right: 2px solid $light-gray;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: em(100,16);
+		max-width: em(600,16);
+		padding: 0;
+		width: 100%;
+
+		@media screen and (min-width: $bp-narrow) {
+			flex-direction: row;
+		}
+
+		.photo {
+			align-self: flex-start;
+		}
+
+		.text {
+			align-self: stretch;
+		}
 	}
-	.logo {
-		margin-bottom: em(32,16);
-		width: em(72,16);
-	}
+}
+
+.portrait-photo {
+	border-radius: 100px;
+	float: left;
+	height: em(108,16);
+	margin-bottom: em(20,16);
+	margin-right: em(20,16);
+	width: em(108,16);
+
+	@media screen and (min-width: $bp-narrow) {
+		margin-bottom: 0;
+		margin-right: em(32,16);
+}
 }

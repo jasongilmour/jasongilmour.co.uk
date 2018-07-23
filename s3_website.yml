@@ -41,7 +41,7 @@ exclude_from_upload:
 
 # s3_reduced_redundancy: true
 
-cloudfront_distribution_id: E2TOXHSAZ5N518
+cloudfront_distribution_id: EQXBTDIOQ4ZPH
 
 cloudfront_distribution_config:
   default_cache_behavior:

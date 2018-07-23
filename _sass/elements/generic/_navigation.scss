@@ -60,16 +60,18 @@ nav.projects-nav {
     overflow-y: auto;
     padding: em(10,16);
     width: 100%;
-    @media screen and (min-width: $bp-narrow) {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 50%;
-        z-index: 2;
-    }
-    @media screen and (min-width: $bp-wide) {
-        padding: 0;
-        width: 75%;
+    &.home {
+        @media screen and (min-width: $bp-narrow) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            z-index: 2;
+        }
+        @media screen and (min-width: $bp-wide) {
+            padding: 0;
+            width: 75%;
+        }
     }
     a {
         background-position: 0;
@@ -82,7 +84,6 @@ nav.projects-nav {
         transition: background-position .4s ease;
         width: 50%;
         @media screen and (min-width: $bp-narrow) {
-            min-height: 150px;
             height: 25vh;
             width: 100%;
         }
@@ -145,80 +146,63 @@ nav.projects-nav {
             }
         }
     }
-    &.project-page {
-        border-bottom: 1px solid $light-gray;
-        border-top: 1px solid $light-gray;
-        font-size: 0;
-        margin: rem(48) 0 0;
-        padding: rem(16) 0 rem(20);
-        position: relative;
-        text-align: center;
-        width: 100%;
-        &:before {
-            border-bottom: 1px solid $light-gray;
-            content: '';
-            display: block;
-            left: 0;
-            position: absolute;
-            top: -8px;
-            right: 0;
-        }
+}
+
+.project-page-footer {
+    border-bottom: 1px solid $light-gray;
+    border-top: 1px solid $light-gray;
+    margin: rem(48) 0 0;
+    padding: rem(16) rem(20) rem(20);;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    h2 {
+        font-size: rem(14);
+        line-height: 1.142857;
+        margin: 0 auto em(16,14);
+        text-align: left;
+        text-transform: uppercase;
         &:after {
-            border-bottom: 1px solid $light-gray;
-            content: '';
-            display: block;
-            left: 0;
-            position: absolute;
-            bottom: -8px;
-            right: 0;
+            content: ' //';
+            color: $green;
         }
-        h2 {
-            font-size: rem(14);
-            line-height: 1.142857;
-            margin: 0 auto em(16,14);
-            padding: 0 em(20,14);
-            text-align: left;
-            text-transform: uppercase;
-            @media screen and (min-width: $bp-narrow) {
-                font-size: rem(18);
-                line-height: 1.111111;
-                padding: 0;
-                width: 62.5%;
-            }
-            &:after {
-                content: ' //';
-                color: $green;
-            }
+        @media screen and (min-width: $bp-narrow) {
+            font-size: rem(18);
+            line-height: 1.111111;
+            padding: 0;
+            width: 62.5%;
+        }
+    }
+
+    nav.projects-nav {
+        align-items: center;
+        display: flex;
+        float: none;
+        justify-content: center;
+        padding: 0;
+
+        @media screen and (min-width: $bp-narrow) {
+            margin: 0 auto;
+            width: 62.5%;
         }
         a {
             border: 0;
             display: inline-block;
             float: none;
-            height: 0;
-            padding-bottom: 20%;
+            height: auto;
             position: relative;
-            width: 20%;
-            @media screen and (min-width: $bp-narrow) {
-                padding-bottom: 12.5%;
-                width: 12.5%;
-            }
             h3 {
-                background-size: 60%;
-                bottom: 0;
-                left: 0;
+                background-size: contain;
+                display: block;
+                height: 0;
                 margin: 0;
-                position: absolute;
-                top: 0;
-                right: 0;
-            }
-            &.chamonix h3 {
-                background-size: 45%;
-            }
-            &.localpinboard h3 {
-                background-size: 55%;
-            }
-            &.nike h3 {
-                background-size: 65%;
+                padding-bottom: 100%;
+                width: 100%;
+
+                span {
+                    @include visuallyhidden;
+                }
             }
         }
     }
