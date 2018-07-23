@@ -88,15 +88,11 @@ nav.projects-nav {
             animation-fill-mode: forwards;
             opacity: 0;
 
-            &:nth-of-type(2) { animation-delay: 0.1s }
+            &:nth-of-type(4) { animation-delay: 0.1s }
 
-            &:nth-of-type(3) { animation-delay: 0.2s }
+            &:nth-of-type(1) { animation-delay: 0.2s }
 
-            &:nth-of-type(4) { animation-delay: 0.3s }
-
-            &:nth-of-type(5) { animation-delay: 0.4s }
-
-            &:nth-of-type(6) { animation-delay: 0.5s }
+            &:nth-of-type(2) { animation-delay: 0.3s }
         }
     }
     a {
@@ -194,7 +190,7 @@ nav.projects-nav {
     }
 
     h2 {
-        font-size: rem(14);
+        font-size: rem(20);
         line-height: 1.142857;
         margin: 0 auto em(16,14);
         text-align: left;
@@ -204,7 +200,7 @@ nav.projects-nav {
             color: $green;
         }
         @media screen and (min-width: $bp-narrow) {
-            font-size: rem(18);
+            font-size: rem(24);
             line-height: 1.111111;
             padding: 0;
             width: 62.5%;
@@ -330,45 +326,4 @@ a.close {
         transform: rotate(135deg);
         transition: transform .3s ease;
     }
-}
-
-// Ajax navigation screens
-#screen {
-    content: '';
-    display: block;
-    height: 0;
-    left: 0;
-    opacity: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    transition: height .7s ease, opacity .7s ease-in;
-    z-index: 3;
-}
-#screen.loading {
-    height: 100vh;
-    opacity: 1;
-    top: 0;
-    transition: height .3s ease, opacity .2s ease-in;
-}
-#screen.biondi {
-    background-image: linear-gradient(to bottom, rgba(238,166,61,1) 0%, rgba(42,135,166,1) 100%);
-}
-#screen.chamonix {
-    background-image: linear-gradient(to bottom, rgba(245,166,210,1) 0%, rgba(61,197,242,1) 100%);
-}
-#screen.local-pinboard {
-    background-image: linear-gradient(to bottom, rgba(18,165,168,1) 0%, rgba(26,200,55,1) 100%);
-}
-#screen.maxs-menu {
-    background-image: linear-gradient(to bottom, rgba(255,0,0,1) 0%, rgba(155,51,51,1) 100%);
-}
-#screen.nike {
-    background-image: linear-gradient(to bottom, rgba(248,187,18,1) 0%, rgba(213,19,255,1) 100%);
-}
-#screen.smeds-miracle-brew {
-    background-image: linear-gradient(to bottom, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 100%);
-}
-#screen.polyphonic {
-    background-image: linear-gradient(to bottom, rgba(223,0,83,1) 0%, rgba(37,199,228,1) 100%);
 }

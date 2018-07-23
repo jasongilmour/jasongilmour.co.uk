@@ -51,7 +51,7 @@ cloudfront_distribution_config:
 #     items:
 #       CNAME: your.website.com
 
-cache_control: public, no-transform, max-age=1200, s-maxage=1200
+cache_control: public, no-transform, max-age=86400, s-maxage=86400
 
 cloudfront_invalidate_root: true
 
