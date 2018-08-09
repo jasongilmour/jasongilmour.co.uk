@@ -63,16 +63,22 @@ var responsiveImage = function responsiveImage(selector) {
 responsiveImage('img[data-sizes]');
 window.onresize = function(){ responsiveImage('img[data-sizes]') };
 
+// New responsive image handler
 const responsivize = function responsivize() {
 	// Get all images with the responsivize attribute
 	let images = document.querySelectorAll('[responsivize]');
 	// Record the pixel ratio
 	let multiplier = window.devicePixelRatio;
-	for (const value of images) {
+	for (const image of images) {
+		let imageSlug = image.getAttribute('slug');
 		// For each image, work out the width of the parent element, multiple by pixel ratio and round up to the nearest 100px
-		let x = Math.ceil( (value.parentElement.offsetWidth * multiplier) / 100) * 100;
+		let x = Math.ceil( (image.parentElement.offsetWidth * multiplier) / 100) * 100;
 		// Swap out the image for the best size
-		value.src = 'https://duhg9m9sh0lp8.cloudfront.net/fit-in/' + x + 'x0' + value.getAttribute('slug');
+		image.src = 'https://duhg9m9sh0lp8.cloudfront.net/fit-in/' + x + 'x0' + imageSlug;
+		// Handle error by falling back to the slug
+		image.addEventListener('error', function imageErroHandler() {
+			image.src = imageSlug;
+		});
 
 	}
 }
