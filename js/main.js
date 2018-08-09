@@ -1,13 +1,5 @@
 "use strict";
 
-// Stole from http://stackoverflow.com/questions/18837735/check-if-image-exists-on-server-using-javascript
-// function imageExists(image_url){
-// 	var http = new XMLHttpRequest();
-// 	http.open('HEAD', image_url, false);
-// 	http.send();
-// 	return http.status != 404;
-// }
-
 var responsiveImage = function responsiveImage(selector) {
 	// Get image and container
 	var element = document.querySelectorAll(selector);
@@ -70,3 +62,19 @@ var responsiveImage = function responsiveImage(selector) {
 
 responsiveImage('img[data-sizes]');
 window.onresize = function(){ responsiveImage('img[data-sizes]') };
+
+const responsivize = function responsivize() {
+	// Get all images with the responsivize attribute
+	let images = document.querySelectorAll('[responsivize]');
+	// Record the pixel ratio
+	let multiplier = window.devicePixelRatio;
+	for (const value of images) {
+		// For each image, work out the width of the parent element, multiple by pixel ratio and round up to the nearest 100px
+		let x = Math.ceil( (value.parentElement.offsetWidth * multiplier) / 100) * 100;
+		// Swap out the image for the best size
+		value.src = 'https://duhg9m9sh0lp8.cloudfront.net/fit-in/' + x + 'x0' + value.getAttribute('slug');
+
+	}
+}
+
+responsivize();
