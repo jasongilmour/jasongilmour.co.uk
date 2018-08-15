@@ -5,16 +5,15 @@ introduction: Get in touch with Jason Gilmour
 <main class="contact">
 	<section class="contact-details" itemscope itemtype="http://schema.org/Person">
 		<div class="photo">
-			<img src="/img/ui/face.jpg" width="72" height="72" class="portrait-photo" alt="Jason Gilmour" itemprop="photo">
+			<img src="/img/ui/face.jpg" width="72" height="72" class="portrait-photo" alt="Jason Gilmour">
 		</div>
 		<div class="text">
-			<h1 itemprop="name">Jason Gilmour</h1>
-			<h3 itemprop="jobTitle">Senior Web Designer</h3>
-			<span class="metadata" itemprop="url">https://jasongilmour.co.uk</span>
-			<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-				<span itemprop="addressLocality">Edinburgh</span>
+			<h1>Jason Gilmour</h1>
+			<h3>Senior Web Designer</h3>
+			<div itemscope itemtype="http://schema.org/PostalAddress">
+				<span>Edinburgh</span>
 			</div>
-			<div><a href="mailto:hello@jasongilmour.co.uk" itemprop="email">hello@jasongilmour.co.uk</a></div>
+			<div><a href="mailto:hello@jasongilmour.co.uk">hello@jasongilmour.co.uk</a></div>
 		</div>
 	</section>
 	<a href="/" id="contact-close" class="close">Close</a>
@@ -25,4 +24,21 @@ introduction: Get in touch with Jason Gilmour
         var theReferer = document.referrer;
         document.getElementById("contact-close").setAttribute('href', theReferer);
     }
+</script>
+
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Person",
+	"name": "Jason Gilmour",
+	"disambiguatingDescription": "Senior Designer",
+	"image": "https://jasongilmour.co.uk/img/ui/face.jpg",
+	"url": "https://jasongilmour.co.uk",
+	"sameAs": [
+		"https://www.twitter.com/jasongilmour94",
+		"https://www.linkedin.com/in/jason-gilmour-1805b474",
+		"https://github.com/jasongilmour",
+		"https://medium.com/@jasongilmour94"
+	]
+}
 </script>
