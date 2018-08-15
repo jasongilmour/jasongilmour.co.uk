@@ -35,8 +35,8 @@ nav {
             padding: 0;
             width: auto;
             a, .a {
-                border-radius: 50%;
                 @extend .ir;
+                border-radius: 50%;
                 background-color: #fff;
                 background-image: url(/img/ui/nav-sprite.png);
                 background-repeat: no-repeat;
@@ -156,15 +156,21 @@ nav.projects-nav {
             }
         }
         &.smeds-miracle-brew {
-            background-image: radial-gradient(circle at bottom right, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 50%, rgba(236,245,201,1) 100%);
+            background-image: radial-gradient(circle at bottom left, rgba(236,245,201,1) 0%, rgba(217,151,40,1) 50%, rgba(236,245,201,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-smeds.svg');
             }
         }
         &.polyphonic {
-            background-image: radial-gradient(circle at bottom right, rgba(223,0,83,1) 0%, rgba(37,199,228,1) 50%, rgba(223,0,83,1) 100%);
+            background-image: radial-gradient(circle at top right, rgba(223,0,83,1) 0%, rgba(37,199,228,1) 50%, rgba(223,0,83,1) 100%);
             h3 {
                 background-image: url('/img/ui/logo-polyphonic.svg');
+            }
+        }
+        &.hailto {
+            background-image: radial-gradient(circle at top left, #2EA185 0%, #4A75C9 50%, #682EB8 100%);
+            h3 {
+                background-image: url('/img/ui/logo-hailto.svg');
             }
         }
     }
@@ -291,7 +297,7 @@ a.close {
     z-index: 3;
     @media screen and (min-width: $bp-wide) {
         height: em(60,16);
-        width: em(60,16);   
+        width: em(60,16);
     }
     &:before,
     &:after {

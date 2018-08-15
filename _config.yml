@@ -12,6 +12,9 @@ sass:
   style: expanded
 permalink: :categories/:title/
 
-plugins: [
-  jekyll-sitemap
-]
+plugins:
+  - jekyll-sitemap
+  - jekyll-offline
+
+offline:
+  strategy: network-first-cache-fallback
