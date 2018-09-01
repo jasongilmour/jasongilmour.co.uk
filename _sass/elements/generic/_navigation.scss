@@ -72,6 +72,7 @@ nav.projects-nav {
     width: 100%;
     &.home {
         @media screen and (min-width: $bp-narrow) {
+            overflow: hidden;
             position: fixed;
             top: 0;
             right: 0;
