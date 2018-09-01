@@ -48,11 +48,7 @@
 h1,h2,h3,h4,h5,h6,td {
     overflow: hidden;
 }
-h1,h2,h3,h4,h5,h6,p {
-    span {
-        display: block;
-    }
-}
+
 h1, .h1 {
     font-family: 'solomon-light';
     font-size: em(26,16);
@@ -116,16 +112,45 @@ p {
         }
     }
 }
+
+
+ol, ul {
+    font-family: "solomon-normal";
+    font-size: em(16,16);
+    line-height: (28/16);
+    margin: 0 0 em(20,16);
+
+    @media screen and (min-width: $bp-wide) {
+        font-size: em(20,16);
+        line-height: (32/20);
+        margin: 0 0 em(20,20);
+    }
+
+    li {
+        font-size: 1em;
+    }
+}
+
 strong {
     font-family: 'solomon-black', sans-serif;
     font-weight: $bold;
 }
-em {
+
+em, figcaption {
     font-style: italic;
 }
+
+figcaption {
+    font-size: em(12,16);
+    line-height: (16/12);
+    margin: 4px 0 em(20,12);
+    text-align: center;
+}
+
 mark {
     background: $light-gray;
 }
+
 pre {
     border-radius: 0.5em;
     overflow-x: auto;

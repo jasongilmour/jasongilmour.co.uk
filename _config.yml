@@ -17,4 +17,4 @@ plugins:
   - jekyll-offline
 
 offline:
-  strategy: network-first-cache-fallback
+  strategy: network-only
