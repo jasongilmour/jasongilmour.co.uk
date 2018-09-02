@@ -112,24 +112,6 @@ p {
     }
 }
 
-ol, ul {
-    font-family: "solomon-normal";
-    font-size: em(16,16);
-    line-height: (28/16);
-    margin: 0 0 em(40,16);
-
-    @media screen and (min-width: $bp-wide) {
-        font-size: em(20,16);
-        line-height: (32/20);
-        margin: 0 0 em(42,20);
-    }
-
-    li {
-        font-size: 1em;
-        margin-bottom: 0.5em;
-    }
-}
-
 strong {
     font-family: 'solomon-black', sans-serif;
     font-weight: $bold;
@@ -200,17 +182,33 @@ p a,
 }
 
 // Lists
-ul, ol {
-    margin: 1em 0;
-    padding: 0 0 0 1em;
-    ul, ol {
-        margin: 0 0 0 1em;
+
+ol, ul {
+    font-family: "solomon-normal";
+    font-size: em(16,16);
+    line-height: (28/16);
+    margin: 0 0 em(40,16);
+
+    @media screen and (min-width: $bp-wide) {
+        font-size: em(20,16);
+        line-height: (32/20);
+        margin: 0 0 em(42,20);
+    }
+
+    li {
+        font-size: 1em;
+        margin-bottom: 0.5em;
     }
 }
-ol ol { list-style-type: upper-roman; }
+
+ol ol {
+    list-style-type: upper-roman;
+}
+
 dl {
     margin: 1em 0;
     padding: 0;
+
     dd {
         font-style: italic;
         line-height: 1;
