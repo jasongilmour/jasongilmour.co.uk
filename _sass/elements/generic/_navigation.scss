@@ -7,7 +7,7 @@ nav {
         a {
             &:before {
                 content: ' • ';
-                color: $black;
+                color: $text-color;
                 padding: 0 .25em;
             }
             &:first-child:before {
@@ -302,7 +302,7 @@ a.close {
     }
     &:before,
     &:after {
-        background-color: $black;
+        background-color: $text-color;
         content: '';
         display: block;
         height: 2px;

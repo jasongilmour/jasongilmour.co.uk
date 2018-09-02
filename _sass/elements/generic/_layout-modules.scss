@@ -122,3 +122,40 @@
 	margin: 20px auto;
 	max-width: 75vw;
 }
+
+.article-layout {
+	margin: 0 auto;
+	max-width: 48em;
+
+	.row &.module {
+		padding-top: 0;
+	}
+
+	@media screen and (min-width: $bp-narrow) {
+		width: (10/16 * 100%);
+	}
+
+	@media screen and (min-width: $bp-wide) {
+		width: (8/16 * 100%);
+	}
+}
+
+.article-image {
+	@media screen and (min-width: $bp-narrow) {
+		margin: 0 (-100vw / 16);
+		min-width: calc(100% + (-100vw / 8));
+		padding: em(42,16) 0;
+	}
+
+	+ hr {
+		@media screen and (min-width: $bp-narrow) {
+			margin-top: -12px;
+		}
+	}
+}
+
+.gist-container {
+	margin-bottom: em(36,20);
+	max-width: calc(100vw - (0.875em * 2));
+	overflow: auto;
+}

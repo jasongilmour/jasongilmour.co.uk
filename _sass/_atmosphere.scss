@@ -7,7 +7,7 @@ button,
 input,
 select,
 textarea {
-    color: $black;
+    color: $text-color;
     font-family: $default-font-stack;
 }
 
@@ -59,15 +59,33 @@ address {
     line-height: 1.555556;
 }
 
-// A better looking default horizontal rule
-
 hr {
     display: block;
-    height: 1px;
+    height: 0.5em;
     border: 0;
-    border-top: 1px solid $gray;
-    margin: 0 0 1em 0;
+    margin: 3em 0;
     padding: 0;
+    position: relative;
+
+    &:before,
+    &:after {
+        border-top: 1px solid $light-gray;
+        content: '';
+        display: block;
+        left: 50%;
+        max-width: 100%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 10em;
+    }
+
+    &:before {
+        top: 0;
+    }
+
+    &:after {
+        bottom: 0;
+    }
 }
 hr.secondary { border-color: $light-gray; }
 

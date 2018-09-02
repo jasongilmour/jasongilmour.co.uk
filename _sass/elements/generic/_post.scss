@@ -2,9 +2,6 @@
 // Posts
 // ==========================================================================
 
-// article.post {
-// }
-
 @keyframes intro-fade-in-up-mobile {
 	0% {
 		opacity: 0;
@@ -34,9 +31,11 @@ header.project-header {
 	padding-bottom: 56.25%;
 	position: relative;
 	width: 100%;
+
 	img {
 		min-width: 100%;
 	}
+
 	.introduction {
 		animation: intro-fade-in-up-mobile 0.45s 1 ease-out;
 		animation-delay: 0.1s;
@@ -86,6 +85,7 @@ header.project-header {
 				text-transform: uppercase;
 			}
 		}
+
 		p {
 			margin: em(28,20) 0;
 

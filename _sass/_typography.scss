@@ -46,37 +46,36 @@
 }
 
 h1,h2,h3,h4,h5,h6,td {
+    color: $black;
     overflow: hidden;
 }
 
 h1, .h1 {
     font-family: 'solomon-light';
-    font-size: em(26,16);
-    line-height: 1.076923;
-    margin: 0 0 em(4,30);
+    font-size: em(44,16);
+    line-height: (52/44);
+    margin: 0 0 em(6,44);
 }
 
 h2, .h2 {
     font-family: 'solomon-light';
-    font-size: em(20,16);
-    line-height: 1.2;
-    margin: 0 0 em(20,24);
+    font-size: em(36,16);
+    line-height: (42/36);
+    margin: 0 0 em(32,36);
 }
 
 h3, .h3 {
     font-family: 'solomon-light';
-    font-size: em(14,16);
-    letter-spacing: em(2,14);
-    line-height: 1.428571;
-    margin: em(8,18) 0 em(28,18);
-    text-transform: uppercase;
+    font-size: em(28,16);
+    line-height: (34/28);
+    margin: 0 0 em(32,28);
 }
 
 h4, .h4 {
-    font-family: 'solomon-light';
-    font-size: em(18,16);
-    line-height: 1.222222;
-    margin: em(25,18) 0;
+    font-family: 'solomon-normal';
+    font-size: em(24,16);
+    line-height: (28/24);
+    margin: em(32,28) 0;
 }
 h5, .h5 {
     font-family: 'solomon-black';
@@ -92,13 +91,13 @@ h6, .h6 {
 p {
     font-family: "solomon-normal";
     font-size: em(16,16);
-    line-height: 1.428571;
-    margin: 0 0 em(20,16);
+    line-height: (24/16);
+    margin: 0 0 em(40,16);
 
     @media screen and (min-width: $bp-wide) {
         font-size: em(20,16);
         line-height: (28/20);
-        margin: 0 0 em(20,20);
+        margin: 0 0 em(42,20);
     }
 
     img {
@@ -113,21 +112,21 @@ p {
     }
 }
 
-
 ol, ul {
     font-family: "solomon-normal";
     font-size: em(16,16);
     line-height: (28/16);
-    margin: 0 0 em(20,16);
+    margin: 0 0 em(40,16);
 
     @media screen and (min-width: $bp-wide) {
         font-size: em(20,16);
         line-height: (32/20);
-        margin: 0 0 em(20,20);
+        margin: 0 0 em(42,20);
     }
 
     li {
         font-size: 1em;
+        margin-bottom: 0.5em;
     }
 }
 
@@ -167,8 +166,8 @@ pre {
     }
 }
 code {
-    background-color: $black;
-    border: 1px solid $black;
+    background-color: $text-color;
+    border: 1px solid $text-color;
     color: $white;
     display: inline-block;
     -webkit-font-smoothing: antialiased;
@@ -187,7 +186,7 @@ a, .a {
 p a,
 .footer-nav a {
     box-shadow: 0 2px 0 $green;
-    color: $black;
+    color: $text-color;
     text-decoration: none;
     transition: background-color 0.2s ease;
 
@@ -221,7 +220,7 @@ dl {
 
 // Quptes & citations
 blockquote {
-    border-left: 0.25em solid $black;
+    border-left: 0.25em solid $text-color;
     font-size: 1em;
     margin: 0;
     padding-left: em(18,18);
