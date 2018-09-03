@@ -197,7 +197,15 @@ ol, ul {
 
     li {
         font-size: 1em;
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
+    }
+
+    p + & {
+        margin-top: -16px;
+
+        @media screen and (min-width: $bp-wide) {
+            margin-top: -22px;
+        }
     }
 }
 

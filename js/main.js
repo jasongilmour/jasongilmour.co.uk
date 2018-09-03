@@ -75,6 +75,10 @@ const responsivize = function responsivize() {
 		let x = Math.ceil( (image.parentElement.offsetWidth * multiplier) / 100) * 100;
 		// Swap out the image for the best size
 		image.src = 'https://duhg9m9sh0lp8.cloudfront.net/fit-in/' + x + 'x0' + imageSlug;
+		// Remove loading class
+		image.onload = function imageLoadHandler() {
+			image.classList.remove('loading');
+		};
 		// Handle error by falling back to the slug
 		image.addEventListener('error', function imageErroHandler() {
 			image.src = imageSlug;
