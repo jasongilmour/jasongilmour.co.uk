@@ -11,3 +11,6 @@ twitter_username: jasongilmour94
 sass:
   style: expanded
 permalink: :categories/:title/
+
+# plugins:
+#   - jekyll-sitemap
