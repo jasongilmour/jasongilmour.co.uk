@@ -1,0 +1,22 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './{{pascalCase name}}.module.scss';
+
+const {{pascalCase name}} = props => {
+  const { title } = props;
+  return (
+    <div className={styles.{{~camelCase name~}}}>
+      {title}
+    </div>
+  );
+};
+
+{{pascalCase name}}.defaultProps = {
+  title: PropTypes.string,
+};
+
+{{pascalCase name}}.propTypes = {
+  title: '',
+};
+
+export default {{pascalCase name}};

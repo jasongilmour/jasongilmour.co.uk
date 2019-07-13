@@ -1,0 +1,11 @@
+.pageContainer {
+  padding: 80px;
+}
+
+.letter {
+    color: red;
+
+    &.initial {
+        outline: 1px solid red;
+    }
+}

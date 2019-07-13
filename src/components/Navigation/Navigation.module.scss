@@ -1,0 +1,128 @@
+@import '../../styles/tooling';
+
+$bp: 720px;
+
+.globalNav {
+    background: linear-gradient(30deg, #24A306 23%, #0ED8A8 75%);
+    height: 100vh;
+    left: 0;
+    overflow-y: auto;
+    padding-left: 32px;
+    padding-top: 32px;
+    position: fixed;
+    top: 0;
+    transition: transform 0.4s cubic-bezier(0.35, 0, 0.2, 1);
+    transform: translateX(-100%);
+    width: 25vw;
+    -webkit-overflow-scrolling: touch; // double check this is right
+
+    @media screen and (min-width: $bp) {
+        box-shadow: inset 80px 0 rgba(black, 0.2);
+        padding-left: 120px;
+        padding-top: 80px;
+    }
+
+    a {
+        color: $white;
+        display: block;
+        font-size: 48px;
+        line-height: (58/48);
+        margin-bottom: 40px;
+    }
+
+    &.navOpen {
+        transition: transform 0.4s cubic-bezier(0.8, 0, 0.65, 1); // background-color: white;
+        transform: translateX(0);
+    }
+}
+
+.hamburger {
+    align-content: center;
+    display: flex;
+    height: 32px;
+    left: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 32px;
+    z-index: 2;
+
+    @media screen and (min-width: $bp) {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+.line {
+    background-color: $green;
+    border-radius: 2px;
+    height: 2px;
+    left: 4px;
+    width: 19px;
+    position: relative;
+    transition: background-color 0.4s linear;
+
+    @media screen and (min-width: $bp) {
+        height: 4px;
+        left: 19px;
+        width: 34px;
+    }
+
+    &:before,
+    &:after {
+        border-radius: 2px;
+        content: '';
+        display: block;
+        height: 100%;
+        background-color: $green;
+        position: absolute;
+        transform-origin: 1px;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.5, 1.5),
+            width 0.2s ease-in-out, background-color 0.4s linear;
+        will-change: transform, width;
+    }
+
+    &:before {
+        transform: translateY(-5px);
+        width: 22px;
+
+        @media screen and (min-width: $bp) {
+            transform: translateY(-12px);
+            width: 40px;
+        }
+    }
+
+    &:after {
+        transform: translateY(5px);
+        width: 24px;
+
+        @media screen and (min-width: $bp) {
+            transform: translateY(12px);
+            width: 42px;
+        }
+    }
+
+    .btnOpen & {
+        background-color: $white;
+    }
+
+    .btnOpen &:before,
+    .btnOpen &:after {
+        background-color: $white;
+        bottom: 0;
+        top: 0;
+        width: 8px;
+
+        @media screen and (min-width: $bp) {
+            width: 16px;
+        }
+    }
+
+    .btnOpen &:before {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    .btnOpen &:after {
+        transform: translateY(0) rotate(45deg);
+    }
+}
