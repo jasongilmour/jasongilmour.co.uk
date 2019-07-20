@@ -56,9 +56,14 @@ h2,
 h3,
 .h3 {
 	font-family: 'solomon-bold';
-	font-size: em(28, 16);
-	line-height: (34/28);
-	margin: 0 0 em(32, 28);
+	font-size: em(38, 16);
+	line-height: (52/38);
+	margin: 0;
+
+	@media (min-width: $bp-xl) {
+		font-size: vw(82);
+		line-height: (106/82);
+	}
 }
 
 h4,

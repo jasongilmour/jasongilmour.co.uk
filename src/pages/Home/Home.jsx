@@ -39,6 +39,13 @@ const Home = () => {
             </h1>
             <div className={styles.pageBorder}>
                 <article className={`${styles.page} ${styles.intro}`}>
+                    <div className={styles.introBackgroundContainer}>
+                        <img
+                            src="/img/page-backgrounds/background-intro.svg"
+                            alt=""
+                            role="presentation"
+                        />
+                    </div>
                     <div className="row">
                         <div className="col offset-lg-3 col-lg-3">
                             <h2 className={styles.introHeadline}>
@@ -84,12 +91,14 @@ const Home = () => {
                 </div>
             </article>
             <article className={`${styles.page} ${styles.projects}`}>
-                <div className="row justify-content-center">
-                    <div className="col-lg-4">
-                        <h2 className="gradient-text">Projects.</h2>
-                    </div>
-                </div>
+                <h2 className={`gradient-text ${styles.projectsHeadline}`}>
+                    Projects.
+                </h2>
                 <ProjectCard
+                    img={
+                        process.env.PUBLIC_URL +
+                        '/img/projects/hailto/cover.png'
+                    }
                     shortDesc="Harness the relationship between your talent and their fans to amplify your message"
                     slug="hailto"
                     title="HailTo"

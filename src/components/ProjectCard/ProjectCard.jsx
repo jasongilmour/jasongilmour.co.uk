@@ -4,26 +4,33 @@ import { Link } from 'react-router-dom';
 import styles from './ProjectCard.module.scss';
 
 const ProjectCard = props => {
-    const { shortDesc, slug, title } = props;
+    const { img, shortDesc, slug, title } = props;
     return (
         <div className={styles.projectCard}>
-            <h3>{title}</h3>
-            {shortDesc && (
-                <p>
-                    {shortDesc} <Link to={`/${slug}`}>More</Link>
-                </p>
+            <div className={styles.projectInfo}>
+                <h3>{title}</h3>
+                {shortDesc && (
+                    <p>
+                        {shortDesc}&hellip; <Link to={`/${slug}`}>More</Link>
+                    </p>
+                )}
+            </div>
+            {img && (
+                <img src={img} alt={title} className={styles.projectImage} />
             )}
         </div>
     );
 };
 
 ProjectCard.defaultProps = {
+    img: PropTypes.string,
     shortDesc: PropTypes.string,
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
 };
 
 ProjectCard.propTypes = {
+    img: '',
     shortDesc: '',
 };
 

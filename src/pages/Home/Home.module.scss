@@ -1,16 +1,17 @@
 @import '../../styles/tooling';
 
 .pageBorder {
-    padding: 80px;
+	padding: 80px;
 
-    .page {
-        padding: 80px;
-    }
+	.page {
+		padding: 80px;
+	}
 }
 
 .page {
 	min-height: calc(100vh - 160px);
 	padding: 80px 160px;
+	position: relative;
 
 	&.intro {
 		background: linear-gradient(62deg, #24A306 0%, #0ED8A8 100%);
@@ -61,8 +62,28 @@
 	}
 }
 
+.introBackgroundContainer {
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+
+	img {
+		// position: absolute;
+		// top: 50%;
+		// left: 50%;
+		// transform: translate(-50%, -50%);
+		width: 100%;
+	}
+}
+
 .services {
-	background: url('/img/page-backgrounds/background-services.svg') right bottom / contain no-repeat;
+	background: url('/img/page-backgrounds/background-services.svg') right bottom /
+		contain no-repeat,
+		radial-gradient(660px at 100% 100%, #3C453E 0%, rgba(48, 48, 48, 0) 100%);
 }
 
 .serviceList {
@@ -84,6 +105,12 @@
 	}
 }
 
+.projectsHeadline {
+	padding-left: 111px;
+}
+
 .contact {
-	background: url('/img/page-backgrounds/background-contact.png') center / cover no-repeat;
+	background: url('/img/page-backgrounds/background-contact.png') center / cover
+		no-repeat;
+	min-height: calc(100vh - 80px);
 }

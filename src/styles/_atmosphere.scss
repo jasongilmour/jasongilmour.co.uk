@@ -109,9 +109,9 @@ audio,
 canvas,
 img,
 video {
-	vertical-align: middle;
+	display: block;
 	height: auto;
-	margin: 0 auto 1em;
+	margin: 0;
 	width: auto;
 	max-width: 100%;
 }
