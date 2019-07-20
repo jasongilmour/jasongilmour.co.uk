@@ -1,11 +1,89 @@
-.pageContainer {
-  padding: 80px;
+@import '../../styles/tooling';
+
+.pageBorder {
+    padding: 80px;
+
+    .page {
+        padding: 80px;
+    }
+}
+
+.page {
+	min-height: calc(100vh - 160px);
+	padding: 80px 160px;
+
+	&.intro {
+		background: linear-gradient(62deg, #24A306 0%, #0ED8A8 100%);
+	}
+}
+
+.jrg {
+	left: 0;
+	position: absolute;
+	top: 120px;
+	z-index: 1;
+}
+
+.word {
+	display: flex;
+	padding-left: 80px;
 }
 
 .letter {
-    color: red;
+	align-content: center;
+	color: $white;
+	display: flex;
+	font-weight: bold;
+	height: 80px;
+	justify-content: center;
+	line-height: 80px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 80px;
 
-    &.initial {
-        outline: 1px solid red;
-    }
+	&.initial {
+		color: $green;
+		left: 0;
+		position: fixed;
+		z-index: 3;
+	}
+}
+
+.introHeadline {
+	font-size: rem(32);
+	line-height: (40/32);
+	margin: rem(48) 0 rem(48);
+
+	@media (min-width: $bp-lg) {
+		font-size: vw(74);
+		line-height: (98/74);
+		margin: rem(40) 0 rem(80);
+	}
+}
+
+.services {
+	background: url('/img/page-backgrounds/background-services.svg') right bottom / contain no-repeat;
+}
+
+.serviceList {
+	@include textGradient(linear-gradient(77deg, #83e46c 0%, #95f3dd 100%));
+	font-family: 'solomon-bold';
+	list-style: none;
+	font-size: rem(38);
+	line-height: (52/38);
+	margin: 0;
+	padding: 0;
+
+	@media (min-width: $bp-lg) {
+		font-size: vw(82);
+		line-height: (106/82);
+	}
+
+	li {
+		margin: 0;
+	}
+}
+
+.contact {
+	background: url('/img/page-backgrounds/background-contact.png') center / cover no-repeat;
 }

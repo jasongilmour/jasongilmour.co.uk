@@ -1,79 +1,130 @@
 import React from 'react';
 import styles from './Home.module.scss';
+import { ProjectCard } from 'components';
 
-const Home = props => {
+const Home = () => {
     return (
-        <div className={styles.pageContainer}>
-            <h1>
-                <span className={`${styles.initial} ${styles.letter}`}>J</span>
-                <span className={styles.letter}>a</span>
-                <span className={styles.letter}>s</span>
-                <span className={styles.letter}>o</span>
-                <span className={styles.letter}>n</span>{' '}
-                <span className={`${styles.initial} ${styles.letter}`}>R</span>
-                <span className={styles.letter}>o</span>
-                <span className={styles.letter}>b</span>
-                <span className={styles.letter}>e</span>
-                <span className={styles.letter}>r</span>
-                <span className={styles.letter}>t</span>{' '}
-                <span className={`${styles.initial} ${styles.letter}`}>G</span>
-                <span className={styles.letter}>i</span>
-                <span className={styles.letter}>l</span>
-                <span className={styles.letter}>m</span>
-                <span className={styles.letter}>o</span>
-                <span className={styles.letter}>u</span>
-                <span className={styles.letter}>r</span>
+        <main>
+            <h1 className={styles.jrg}>
+                <div className={styles.word}>
+                    <div className={`${styles.initial} ${styles.letter}`}>
+                        J
+                    </div>
+                    <div className={styles.letter}>a</div>
+                    <div className={styles.letter}>s</div>
+                    <div className={styles.letter}>o</div>
+                    <div className={styles.letter}>n</div>{' '}
+                </div>
+                <div className={styles.word}>
+                    <div className={`${styles.initial} ${styles.letter}`}>
+                        R
+                    </div>
+                    <div className={styles.letter}>o</div>
+                    <div className={styles.letter}>b</div>
+                    <div className={styles.letter}>e</div>
+                    <div className={styles.letter}>r</div>
+                    <div className={styles.letter}>t</div>{' '}
+                </div>
+                <div className={styles.word}>
+                    <div className={`${styles.initial} ${styles.letter}`}>
+                        G
+                    </div>
+                    <div className={styles.letter}>i</div>
+                    <div className={styles.letter}>l</div>
+                    <div className={styles.letter}>m</div>
+                    <div className={styles.letter}>o</div>
+                    <div className={styles.letter}>u</div>
+                    <div className={styles.letter}>r</div>
+                </div>
             </h1>
-            <article className="page intro">
-                <h2>Pragmatic Digital Product Design.</h2>
-                <p>
-                    With over 5 years experience in creating digital products
-                    for some of the biggest and smallest companies in the world,
-                    I can be an asset on any team working in the digital product
-                    design space.
-                </p>
-                <p>
-                    Having trained as a Graphic Designer, honed my digital
-                    skills through a desire to see my designs come to life, and
-                    to understand everything that’s needed to&hellip;{' '}
-                    <button type="button">read more.</button>
-                </p>
-            </article>
+            <div className={styles.pageBorder}>
+                <article className={`${styles.page} ${styles.intro}`}>
+                    <div className="row">
+                        <div className="col offset-lg-3 col-lg-3">
+                            <h2 className={styles.introHeadline}>
+                                Pragmatic
+                                <br /> Digital Product
+                                <br /> Design.
+                            </h2>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col offset-lg-3 col-lg-2">
+                            <p>
+                                With over 5 years experience in creating digital
+                                products for some of the biggest and smallest
+                                companies in the world, I can be an asset on any
+                                team working in the digital product design
+                                space.
+                            </p>
+                            <p>
+                                Having trained as a Graphic Designer, honed my
+                                digital skills through a desire to see my
+                                designs come to life, and to understand
+                                everything that’s needed to&hellip;{' '}
+                                <button type="button">read more.</button>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
             <article className={`${styles.page} ${styles.services}`}>
-                <h2>Services.</h2>
-                <ul className={styles.serviceList}>
-                    <li>Product</li>
-                    <li>Design</li>
-                    <li>Strategy</li>
-                    <li>UX & UI</li>
-                    <li>Prototyping</li>
-                    <li>Frontend</li>
-                </ul>
+                <div className="row justify-content-center">
+                    <div className="col-lg-4">
+                        <h2 className="gradient-text">Services.</h2>
+                        <ul className={styles.serviceList}>
+                            <li>Product</li>
+                            <li>Design</li>
+                            <li>Strategy</li>
+                            <li>UX & UI</li>
+                            <li>Prototyping</li>
+                            <li>Frontend</li>
+                        </ul>
+                    </div>
+                </div>
             </article>
             <article className={`${styles.page} ${styles.projects}`}>
-                <h2>Projects.</h2>
-                <ul className={styles.projectList}>
-                    <li>HailTo</li>
-                    <li>Hallmark</li>
-                    <li>Storyteller</li>
-                </ul>
-            </article>
-            <article className={`${styles.page} ${styles.contact}`}>
-                <h2>Contact.</h2>
-                <div className={styles.contactDetails}>
-                    <div>Jason Gilmour Design & Consulting</div>
-                    <div>BCCN 3854926540</div>
-                    <div>hello@jasongilmour.co.uk</div>
-                    <div>+1 (604) 500 8985</div>
+                <div className="row justify-content-center">
+                    <div className="col-lg-4">
+                        <h2 className="gradient-text">Projects.</h2>
+                    </div>
                 </div>
-                <div className={styles.contactAddress}>
-                    <div>319 West Hastings Street #400,</div>
-                    <div>Vancouver, BC</div>
-                    <div>Canada</div>
-                    <div>V6B 1H6</div>
-                </div>
+                <ProjectCard
+                    shortDesc="Harness the relationship between your talent and their fans to amplify your message"
+                    slug="hailto"
+                    title="HailTo"
+                />
             </article>
-        </div>
+            <div className={styles.pageBorder}>
+                <article className={`${styles.page} ${styles.contact}`}>
+                    <div className="row justify-content-center">
+                        <div className="col-lg-4">
+                            <h2 className="gradient-text">Contact.</h2>
+                            <p className={styles.contactDetails}>
+                                <div>Jason Gilmour Design & Consulting</div>
+                                <div>BCCN 3854926540</div>
+                                <div>
+                                    <a href="mailto:hello@jasongilmour.co.uk">
+                                        hello@jasongilmour.co.uk
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="tel:+16045008985">
+                                        +1 (604) 500 8985
+                                    </a>
+                                </div>
+                            </p>
+                            <p className={styles.contactAddress}>
+                                <div>319 West Hastings Street #400,</div>
+                                <div>Vancouver, BC</div>
+                                <div>Canada</div>
+                                <div>V6B 1H6</div>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
     );
 };
 

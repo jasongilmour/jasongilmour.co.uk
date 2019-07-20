@@ -3,43 +3,18 @@
 // ==========================================================================
 
 @font-face {
-    font-family: 'solomon-black';
-    font-display: swap;
-    src: url('/fonts/solomon_black.eot');
-    src: url('/fonts/solomon_black.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/solomon_black.woff2') format('woff2'),
-        url('/fonts/solomon_black.woff') format('woff'),
-        url('/fonts/solomon_black.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+	font-family: 'solomon-bold';
+	font-display: swap url('/fonts/solomon-bold.woff2') format('woff2'),
+		url('/fonts/solomon-bold.woff') format('woff'),
+		url('/fonts/solomon-bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
-@font-face {
-    font-family: 'solomon-normal';
-    font-display: swap;
-    src: url('/fonts/solomon_normal.eot');
-    src: url('/fonts/solomon_normal.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/solomon_normal.woff2') format('woff2'),
-        url('/fonts/solomon_normal.woff') format('woff'),
-        url('/fonts/solomon_normal.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'solomon-light';
-    font-display: swap;
-    src: url('/fonts/solomon_light.eot');
-    src: url('/fonts/solomon_light.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/solomon_light.woff2') format('woff2'),
-        url('/fonts/solomon_light.woff') format('woff'),
-        url('/fonts/solomon_light.ttf') format('truetype');
-    font-weight: light;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap');
 
 .metadata {
-    @include visuallyhidden;
+	@include visuallyhidden;
 }
 
 h1,
@@ -49,215 +24,202 @@ h4,
 h5,
 h6,
 td {
-    color: $black;
-    overflow: hidden;
+	color: inherit;
+	overflow: hidden;
 }
 
 h1,
 .h1 {
-    font-family: 'solomon-light';
-    font-size: em(44, 16);
-    line-height: (52/44);
-    margin: 0 0 em(6, 44);
+	font-family: 'solomon-bold';
+	font-size: em(44, 16);
+	line-height: (52/44);
+	margin: 0 0 em(6, 44);
 }
 
 h2,
 .h2 {
-    font-family: 'solomon-light';
-    font-size: em(36, 16);
-    line-height: (42/36);
-    margin: 0 0 em(32, 36);
+	font-family: 'solomon-bold';
+	font-size: rem(62);
+	line-height: (74/62);
+	margin: 0 0 rem(32);
+
+	@media (min-width: $bp-xl) {
+		font-size: vw(162);
+		line-height: (210/162);
+	}
+}
+
+.gradient-text {
+    @include textGradient(linear-gradient(77deg, #83E46C 0%, #95F3DD 100%));
 }
 
 h3,
 .h3 {
-    font-family: 'solomon-light';
-    font-size: em(28, 16);
-    line-height: (34/28);
-    margin: 0 0 em(32, 28);
+	font-family: 'solomon-bold';
+	font-size: em(28, 16);
+	line-height: (34/28);
+	margin: 0 0 em(32, 28);
 }
 
 h4,
 .h4 {
-    font-family: 'solomon-normal';
-    font-size: em(24, 16);
-    line-height: (28/24);
-    margin: em(32, 28) 0;
+	font-family: 'solomon-bold';
+	font-size: em(24, 16);
+	line-height: (28/24);
+	margin: em(32, 28) 0;
 }
 
 h5,
 .h5 {
-    font-family: 'solomon-black';
-    font-size: em(12, 16);
-    line-height: 2.083333;
-    margin: em(25, 12) 0;
+	font-family: 'solomon-bold';
+	font-size: em(12, 16);
+	line-height: 2.083333;
+	margin: em(25, 12) 0;
 }
 
 h6,
 .h6 {
-    font-size: em(8, 16);
-    line-height: 1.5625;
-    margin: em(12.5, 8) 0;
+	font-size: em(8, 16);
+	line-height: 1.5625;
+	margin: em(12.5, 8) 0;
 }
 
 p {
-    font-family: 'solomon-normal';
-    font-size: em(16, 16);
-    line-height: (24/16);
-    margin: 0 0 em(40, 16);
+	font-size: em(16, 16);
+	line-height: (24/16);
+	margin: 0 0 em(40, 16);
 
-    @media screen and (min-width: $bp-wide) {
-        font-size: em(20, 16);
-        line-height: (28/20);
-        margin: 0 0 em(42, 20);
-    }
+	@media screen and (min-width: $bp-xl) {
+		font-size: vw(21);
+		line-height: (32/21);
+		margin: 0 0 em(42, 21);
+	}
 
-    img {
-        float: left;
-        margin-right: em(28, 14);
-        vertical-align: baseline;
+	img {
+		float: left;
+		margin-right: em(28, 14);
+		vertical-align: baseline;
 
-        &.alignright {
-            float: right;
-            margin-left: em(28, 14);
-        }
-    }
+		&.alignright {
+			float: right;
+			margin-left: em(28, 14);
+		}
+	}
 }
 
 strong {
-    font-family: 'solomon-black', sans-serif;
-    font-weight: $bold;
+	font-weight: $bold;
 }
 
 em,
 figcaption {
-    font-style: italic;
+	font-style: italic;
 }
 
 figcaption {
-    font-size: em(12, 16);
-    line-height: (16/12);
-    margin: 4px 0 em(20, 12);
-    text-align: center;
+	font-size: em(12, 16);
+	line-height: (16/12);
+	margin: 4px 0 em(20, 12);
+	text-align: center;
 }
 
 mark {
-    background: $light-gray;
+	background: $light-gray;
 }
 
 pre {
-    border-radius: 0.5em;
-    overflow-x: auto;
-    white-space: pre;
-    word-break: normal;
-    word-wrap: normal;
+	border-radius: 0.5em;
+	overflow-x: auto;
+	white-space: pre;
+	word-break: normal;
+	word-wrap: normal;
 
-    code {
-        border-radius: 0.5em;
-        padding: 0.5em 1em;
-    }
+	code {
+		border-radius: 0.5em;
+		padding: 0.5em 1em;
+	}
 
-    &.code {
-        padding: 0;
-        border-radius: 0;
-    }
+	&.code {
+		padding: 0;
+		border-radius: 0;
+	}
 }
 
 code {
-    background-color: $text-color;
-    border: 1px solid $text-color;
-    color: $white;
-    display: inline-block;
-    -webkit-font-smoothing: antialiased;
+	background-color: $text-color;
+	border: 1px solid $text-color;
+	color: $white;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
 }
 
 // links
 
-a,
-.a {
-    color: $green;
-    cursor: pointer;
-    text-decoration: none;
+a {
+	color: $green;
+	cursor: pointer;
+	text-decoration: underline;
 
-    &:hover,
-    &:active {
-        color: $dark-green;
-    }
-}
-
-p a,
-.footer-nav a {
-    box-shadow: 0 2px 0 $green;
-    color: $text-color;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: $green;
-        color: #333;
-        text-decoration: none;
-    }
+	&:hover,
+	&:active {
+		color: $light-green;
+	}
 }
 
 // Lists
-
 ol,
 ul {
-    font-family: 'solomon-normal';
-    font-size: em(16, 16);
-    line-height: (28/16);
-    margin: 0 0 em(40, 16);
+	font-size: em(16, 16);
+	line-height: (28/16);
+	margin: 0 0 em(40, 16);
 
-    @media screen and (min-width: $bp-wide) {
-        font-size: em(20, 16);
-        line-height: (32/20);
-        margin: 0 0 em(42, 20);
-    }
+	@media screen and (min-width: $bp-wide) {
+		font-size: em(20, 16);
+		line-height: (32/20);
+		margin: 0 0 em(42, 20);
+	}
 
-    li {
-        font-size: 1em;
-        margin-bottom: 1em;
-    }
+	li {
+		font-size: 1em;
+		margin-bottom: 1em;
+	}
 
-    p + & {
-        margin-top: -16px;
+	p + & {
+		margin-top: -16px;
 
-        @media screen and (min-width: $bp-wide) {
-            margin-top: -22px;
-        }
-    }
+		@media screen and (min-width: $bp-wide) {
+			margin-top: -22px;
+		}
+	}
 }
 
 ol ol {
-    list-style-type: upper-roman;
+	list-style-type: upper-roman;
 }
 
 dl {
-    margin: 1em 0;
-    padding: 0;
+	margin: 1em 0;
+	padding: 0;
 
-    dd {
-        font-style: italic;
-        line-height: 1;
-        margin: 0 0 0.5em 1em;
-    }
+	dd {
+		font-style: italic;
+		line-height: 1;
+		margin: 0 0 0.5em 1em;
+	}
 }
 
-// Quptes & citations
-
+// Quotes & citations
 blockquote {
-    border-left: 0.25em solid $text-color;
-    font-size: 1em;
-    margin: 0;
-    padding-left: em(18, 18);
-    text-indent: 1em;
+	border-left: 0.25em solid $text-color;
+	font-size: 1em;
+	margin: 0;
+	padding-left: em(18, 18);
+	text-indent: 1em;
 }
 
 cite {
-    font-size: 0.75em;
-    font-size: 0.75rem;
-    font-style: italic;
-    font-weight: $regular;
+	font-size: 0.75em;
+	font-size: 0.75rem;
+	font-style: italic;
+	font-weight: $regular;
 }

@@ -1,7 +1,15 @@
-// Typography
+// Layout
+$bp-sm: 520px;
+$bp-md: 740px;
+$bp-lg: 1000px;
+$bp-xl: 1200px;
 
-$default-font-stack: 'solomon-normal', sans-serif;
-$serif-font-stack: 'solomon-light', sans-serif;
+// Overwriting bootstrap settings
+$grid-columns: 6;
+$grid-gutter-width: 80px;
+
+// Typography
+$default-font-stack: 'Work Sans', sans-serif;
 $thin: 200;
 $light: 300;
 $regular: 400;
@@ -9,26 +17,18 @@ $bold: 600;
 $weight-black: 700;
 
 // Colors
-
-//  Default color for HRs, borders, default font color etc
-//  as used in the top of _atmosphere.scss, can differ
-//  from primary brand color.
-
 $black: #191B18;
-$text-color: #585855;
+$background-color: #303030;
 $white: #FFF;
+$text-color: $white;
 $gray: #838383;
 $dark-gray: #757C72;
 $light-gray: #D0D6C9;
 
 // Brand colours
+$light-green: #8DEDA8;
 $green: #35D80E;
 $dark-green: #2E8915;
-
-// Message colors
-$warning-color: red;
-$information-color: blue;
-$success-color: green;
 
 // Button colors
 $cta-background: lightgreen;

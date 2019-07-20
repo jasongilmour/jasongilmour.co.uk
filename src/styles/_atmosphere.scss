@@ -7,208 +7,198 @@ button,
 input,
 select,
 textarea {
-    color: $text-color;
-    font-family: $default-font-stack;
+	color: $text-color;
+	font-family: $default-font-stack;
 }
 
 html {
-    font-size: 1em;
-    // text-rendering: optimizeLegibility;
-    position: relative;
-    min-height: 100%;
+	font-size: 1em;
 }
 
-// apply a natural box layout model to all elements, but allowing components to change
-
-html {
-    box-sizing: border-box;
+body {
+	background-color: $background-color;
+	color: $text-color;
+	font-size: 1em;
+	position: relative;
+	min-height: 100vh;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
+
+// button:focus,
+// input:focus,
+// select:focus,
+// textarea:focus,
+// label:focus {
+//     border-radius: 0.1px;
+//     outline: none;
+//     box-shadow: 0 0 0 2px rgab(currentColor, 0, 2);
+// }
 
 main,
 .main {
-    // align-items: center;
-    // display: flex;
-    // justify-content: center;
-    margin: auto;
-    min-height: 100vh;
-    position: relative;
+	// align-items: center;
+	// display: flex;
+	// justify-content: center;
+	margin: auto;
+	min-height: 100vh;
+	position: relative;
 
-    > section {
-        padding: em(20, 16);
-    }
+	> section {
+		padding: em(20, 16);
+	}
 }
 
 section {
-    margin: 0 auto;
-    padding: em(10, 16) em(20, 16);
-    @media screen and (min-width: $bp-wide) {
-        padding: em(24, 16) em(20, 16);
-        width: 50%;
-    }
+	margin: 0 auto;
+	padding: em(10, 16) em(20, 16);
+	@media screen and (min-width: $bp-wide) {
+		padding: em(24, 16) em(20, 16);
+		width: 50%;
+	}
 }
 
 article {
-    @include clearfix;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 address {
-    font-size: em(18, 16);
-    font-style: normal;
-    line-height: 1.555556;
+	font-size: em(18, 16);
+	font-style: normal;
+	line-height: 1.555556;
 }
 
 hr {
-    display: block;
-    height: 0.5em;
-    border: 0;
-    margin: 3em 0;
-    padding: 0;
-    position: relative;
+	display: block;
+	height: 0.5em;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	position: relative;
 
-    &:before,
-    &:after {
-        border-top: 1px solid $light-gray;
-        content: '';
-        display: block;
-        left: 50%;
-        max-width: 100%;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 10em;
-    }
+	&:before,
+	&:after {
+		border-top: 1px solid $light-gray;
+		content: '';
+		display: block;
+		left: 50%;
+		max-width: 100%;
+		position: absolute;
+		transform: translateX(-50%);
+		width: 10em;
+	}
 
-    &:before {
-        top: 0;
-    }
+	&:before {
+		top: 0;
+	}
 
-    &:after {
-        bottom: 0;
-    }
+	&:after {
+		bottom: 0;
+	}
 }
 
 hr.secondary {
-    border-color: $light-gray;
+	border-color: $light-gray;
 }
 
 audio,
 canvas,
 img,
 video {
-    vertical-align: middle;
-    height: auto;
-    margin: 0 auto 1em;
-    width: auto;
-    max-width: 100%;
+	vertical-align: middle;
+	height: auto;
+	margin: 0 auto 1em;
+	width: auto;
+	max-width: 100%;
 }
 
 audio {
-    width: 100%;
+	width: 100%;
 }
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
 }
 
 textarea {
-    margin-bottom: em(12, 16);
-    resize: vertical;
+	margin-bottom: em(12, 16);
+	resize: vertical;
 }
 
 ::-moz-selection {
-    background: tint($green, 50);
-    text-shadow: none;
+	background: tint($green, 50);
+	text-shadow: none;
 }
 
 ::selection {
-    background: tint($green, 50);
-    text-shadow: none;
-}
-
-// ==========================================================================
-// Browse Happy prompt
-// ==========================================================================
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #CCC;
-    color: #000;
-    padding: 0.2em 0;
+	background: tint($green, 50);
+	text-shadow: none;
 }
 
 // ==========================================================================
 // Helper classes
 // ==========================================================================
 
-.js .jshidden {
-    @include visuallyhidden;
-}
-
-.js-hidden {
-    @include visuallyhidden;
+.sr-only {
+	@include visuallyhidden;
 }
 
 // Tables
-
 table {
-    margin-bottom: 1em;
-    width: 100%;
+	margin-bottom: 1em;
+	width: 100%;
 
-    tr {
-        &:nth-child(odd) {
-            background-color: #F6F8FA;
-        }
-    }
+	tr {
+		&:nth-child(odd) {
+			background-color: #F6F8FA;
+		}
+	}
 
-    th {
-        border-left: 1px solid $gray;
-        overflow: auto;
-        padding: 0.25em 0.5em;
-        text-align: left;
+	th {
+		border-left: 1px solid $gray;
+		overflow: auto;
+		padding: 0.25em 0.5em;
+		text-align: left;
 
-        &:first-child {
-            border-left: 0;
-        }
-    }
+		&:first-child {
+			border-left: 0;
+		}
+	}
 
-    td {
-        border-left: 1px solid $gray;
-        padding: 0.25em 0.5em;
+	td {
+		border-left: 1px solid $gray;
+		padding: 0.25em 0.5em;
 
-        &:first-child {
-            border-left: 0;
-        }
-    }
+		&:first-child {
+			border-left: 0;
+		}
+	}
 }
 
 // For wide tables
-
 .table-container {
-    overflow-x: auto;
+	overflow-x: auto;
 
-    table {
-        table-layout: initial;
-        white-space: nowrap;
-        width: initial;
+	table {
+		table-layout: initial;
+		white-space: nowrap;
+		width: initial;
 
-        td,
-        th {
-            white-space: normal;
-        }
-    }
+		td,
+		th {
+			white-space: normal;
+		}
+	}
 }
 
 // Images
-
 img,
 span {
-    max-width: 100%;
+	max-width: 100%;
 }

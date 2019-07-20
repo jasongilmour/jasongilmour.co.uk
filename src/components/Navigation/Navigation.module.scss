@@ -14,6 +14,7 @@ $bp: 720px;
     transition: transform 0.4s cubic-bezier(0.35, 0, 0.2, 1);
     transform: translateX(-100%);
     width: 25vw;
+    z-index: 2;
     -webkit-overflow-scrolling: touch; // double check this is right
 
     @media screen and (min-width: $bp) {
@@ -38,6 +39,7 @@ $bp: 720px;
 
 .hamburger {
     align-content: center;
+    color: $green;
     display: flex;
     height: 32px;
     left: 0;
@@ -45,7 +47,12 @@ $bp: 720px;
     position: fixed;
     top: 0;
     width: 32px;
-    z-index: 2;
+    z-index: 3;
+    // fix this stuff
+    appearance: none;
+    background: none;
+    outline: 0;
+    border: 0;
 
     @media screen and (min-width: $bp) {
         height: 80px;

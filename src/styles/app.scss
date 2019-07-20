@@ -1,7 +1,17 @@
-@import '~bootstrap/scss/bootstrap.scss';
-@import 'normalize';
 @import 'mixins';
 @import 'variables';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~bootstrap/scss/mixins/grid-framework';
+@import '~bootstrap/scss/mixins/grid';
+
+@import '~bootstrap/scss/grid';
+
+@import 'normalize';
 @import 'typography';
 @import 'atmosphere';
+@import 'layout';
 @import 'print';

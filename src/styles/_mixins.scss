@@ -1,21 +1,13 @@
 // ==========================================================================
-// Fuctions & useful shortcuts
+// Functions & useful shortcuts
 // ==========================================================================
 
 // Slightly lighten a color
-// @access public
-// @param {Color} $color - color to tint
-// @param {Number} $percentage - percentage of `tint` in returned color
-// @return {Color}
 @function tint($color, $percentage) {
     @return mix(white, $color, $percentage);
 }
 
 // Slightly darken a color
-// @access public
-// @param {Color} $color - color to shade
-// @param {Number} $percentage - percentage of `shade` in returned color
-// @return {Color}
 @function shade($color, $percentage) {
     @return mix(black, $color, $percentage);
 }
@@ -30,41 +22,9 @@
     @return ($px / 16) * 1rem;
 }
 
-// Backgrounds
-@mixin backgrounds($filename, $filetype, $position, $repeat) {
-    background-image: url('/img/#{$filename}.#{$filetype}');
-    background-position: $position;
-    background-repeat: $repeat;
-    @media screen and (min-resolution: 93dpi), screen and (min-resolution: 1.3dppx), screen and (-webkit-min-device-pixel-ratio: 1.3) {
-        background-image: url('/img/#{$filename}@2x.#{$filetype}');
-    }
-}
-
-// ==========================================================================
-// Buttons
-// ==========================================================================
-
-@mixin button {
-    background-color: $green;
-    border: 0;
-    border-radius: 1em;
-    color: $white;
-    display: inline-block;
-    line-height: 1;
-    padding: em(5, 16) em(18, 16) em(7, 16);
-    transition: background 0.2s;
-
-    &:hover {
-        background-color: tint($green, 15);
-        color: $white;
-        transition: background 0.2s;
-    }
-
-    &:active {
-        background-color: tint($green, 30);
-        color: $white;
-        transition: background 0.2s;
-    }
+// vw values at 1920
+@function vw($px) {
+    @return ($px / 1920) * 100vw;
 }
 
 // ==========================================================================
@@ -74,318 +34,19 @@
 // Grid classes
 @mixin grid-class($cols) {
     $i: 1;
+    $cols: $cols;
+    $col-width: 100% / $cols;
+    $original-col-width: 100% / $cols;
 
-    $i-m: 1;
-    $cols-m: $cols / 2;
-    $col-m-width: 100% / $cols-m;
-    $original-col-m-width: 100% / $cols-m;
+    @media screen and (min-width: $bp-wide) {
 
-    $i-l: 1;
-    $cols-l: $cols;
-    $col-l-width: 100% / $cols-l;
-    $original-col-l-width: 100% / $cols-l;
-
-    @while $i < $cols + 1 {
-        &#{$i} {
-            float: left;
-            width: 100%;
+        /* wide */
+        @while $i < $cols + 1 {
+            & .col-#{$i} {
+                width: $col-width;
+            }
             $i: $i + 1;
-        }
-    }
-
-    @media screen and (min-width: $bp-narrow) {
-
-        /* narrow */
-        $skip: false;
-        @while $i-m < $cols + 1 {
-            // <=16
-            @if $skip == false {
-                @if $i-m == 1 {
-                    &#{$i-m} {
-                        width: $col-m-width / 2 + $original-col-l-width;
-                    }
-                    $skip: true;
-                    $i-m: $i-m + 1;
-                }
-                @if $skip == false {
-                    @if $i-m > 1 {
-                        &#{$i-m} {
-                            width: $col-m-width / 2 + $original-col-m-width;
-                        }
-                        $skip: true;
-                        $i-m: $i-m + 1;
-                    }
-                }
-            }
-            @if $skip == true {
-                $col-m-width: $original-col-m-width * $i-m;
-
-                &#{$i-m} {
-                    width: $col-m-width / 2;
-                }
-                $skip: false;
-                $i-m: $i-m + 1;
-            }
-        }
-    }
-    @media screen and (min-width: $bp-wide) {
-
-        /* wide */
-        @while $i-l < $cols-l + 1 {
-            &#{$i-l} {
-                width: $col-l-width;
-            }
-            $i-l: $i-l + 1;
-            $col-l-width: $original-col-l-width * $i-l;
-            // $col-l-width: $col-l-width: * $i;
-        }
-    }
-}
-
-// Margin left
-@mixin grid-push($cols) {
-    $i-m: 1;
-    $cols-m: $cols / 2;
-    $col-m-width: 100% / $cols-m;
-    $original-col-m-width: 100% / $cols-m;
-
-    $i-l: 1;
-    $cols-l: $cols;
-    $col-l-width: 100% / $cols-l;
-    $original-col-l-width: 100% / $cols-l;
-
-    @media screen and (min-width: $bp-narrow) {
-
-        /* narrow */
-        $skip: false;
-        @while $i-m < $cols + 1 {
-            // <=16
-            @if $skip == false {
-                @if $i-m == 1 {
-                    &#{$i-m} {
-                        margin-left: 0; /* 0 */
-                    }
-                    $skip: true;
-                    $i-m: $i-m + 1;
-                }
-                @if $skip == false {
-                    @if $i-m > 1 {
-                        &#{$i-m} {
-                            margin-left: $col-m-width /
-                                2 +
-                                $original-col-l-width; /* 1 */
-                        }
-                        $skip: true;
-                        $i-m: $i-m + 1;
-                    }
-                }
-            }
-            @if $skip == true {
-                $col-m-width: $original-col-m-width * $i-m;
-
-                &#{$i-m} {
-                    margin-left: $col-m-width / 2; /* 2 */
-                }
-                $skip: false;
-                $i-m: $i-m + 1;
-            }
-        }
-    }
-    @media screen and (min-width: $bp-wide) {
-
-        /* wide */
-        @while $i-l < $cols-l + 1 {
-            &#{$i-l} {
-                margin-left: $col-l-width;
-            }
-            $i-l: $i-l + 1;
-            $col-l-width: $original-col-l-width * $i-l;
-            // $col-l-width: $col-l-width: * $i;
-        }
-    }
-}
-
-// Negative margin left
-@mixin grid-pull($cols) {
-    $i-m: 1;
-    $cols-m: $cols / 2;
-    $col-m-width: 100% / $cols-m;
-    $original-col-m-width: 100% / $cols-m;
-
-    $i-l: 1;
-    $cols-l: $cols;
-    $col-l-width: 100% / $cols-l;
-    $original-col-l-width: 100% / $cols-l;
-
-    @media screen and (min-width: $bp-narrow) {
-
-        /* narrow */
-        $skip: false;
-        @while $i-m < $cols + 1 {
-            // <=16
-            @if $skip == false {
-                @if $i-m == 1 {
-                    &#{$i-m} {
-                        margin-left: -($col-m-width / 2 + $original-col-l-width);
-                    }
-                    $skip: true;
-                    $i-m: $i-m + 1;
-                }
-                @if $skip == false {
-                    @if $i-m > 1 {
-                        &#{$i-m} {
-                            margin-left: -($col-m-width / 2 + $original-col-m-width);
-                        }
-                        $skip: true;
-                        $i-m: $i-m + 1;
-                    }
-                }
-            }
-            @if $skip == true {
-                $col-m-width: $original-col-m-width * $i-m;
-
-                &#{$i-m} {
-                    margin-left: -($col-m-width / 2);
-                }
-                $skip: false;
-                $i-m: $i-m + 1;
-            }
-        }
-    }
-    @media screen and (min-width: $bp-wide) {
-
-        /* wide */
-        @while $i-l < $cols-l + 1 {
-            &#{$i-l} {
-                margin-left: -($col-l-width);
-            }
-            $i-l: $i-l + 1;
-            $col-l-width: $original-col-l-width * $i-l;
-            // $col-l-width: $col-l-width: * $i;
-        }
-    }
-}
-
-// Margin right
-@mixin grid-post($cols) {
-    $i-m: 1;
-    $cols-m: $cols / 2;
-    $col-m-width: 100% / $cols-m;
-    $original-col-m-width: 100% / $cols-m;
-
-    $i-l: 1;
-    $cols-l: $cols;
-    $col-l-width: 100% / $cols-l;
-    $original-col-l-width: 100% / $cols-l;
-
-    @media screen and (min-width: $bp-narrow) {
-
-        /* narrow */
-        $skip: false;
-        @while $i-m < $cols + 1 {
-            // <=16
-            @if $skip == false {
-                @if $i-m == 1 {
-                    &#{$i-m} {
-                        margin-right: $col-m-width / 2 + $original-col-l-width;
-                    }
-                    $skip: true;
-                    $i-m: $i-m + 1;
-                }
-                @if $skip == false {
-                    @if $i-m > 1 {
-                        &#{$i-m} {
-                            margin-right: $col-m-width /
-                                2 +
-                                $original-col-m-width;
-                        }
-                        $skip: true;
-                        $i-m: $i-m + 1;
-                    }
-                }
-            }
-            @if $skip == true {
-                $col-m-width: $original-col-m-width * $i-m;
-
-                &#{$i-m} {
-                    margin-right: $col-m-width / 2;
-                }
-                $skip: false;
-                $i-m: $i-m + 1;
-            }
-        }
-    }
-    @media screen and (min-width: $bp-wide) {
-
-        /* wide */
-        @while $i-l < $cols-l + 1 {
-            &#{$i-l} {
-                margin-right: $col-l-width;
-            }
-            $i-l: $i-l + 1;
-            $col-l-width: $original-col-l-width * $i-l;
-            // $col-l-width: $col-l-width: * $i;
-        }
-    }
-}
-
-// Negative margin right
-@mixin grid-post-pull($cols) {
-    $i-m: 1;
-    $cols-m: $cols / 2;
-    $col-m-width: 100% / $cols-m;
-    $original-col-m-width: 100% / $cols-m;
-
-    $i-l: 1;
-    $cols-l: $cols;
-    $col-l-width: 100% / $cols-l;
-    $original-col-l-width: 100% / $cols-l;
-
-    @media screen and (min-width: $bp-narrow) {
-
-        /* narrow */
-        $skip: false;
-        @while $i-m < $cols + 1 {
-            // <=16
-            @if $skip == false {
-                @if $i-m == 1 {
-                    &#{$i-m} {
-                        margin-right: -($col-m-width / 2 + $original-col-l-width);
-                    }
-                    $skip: true;
-                    $i-m: $i-m + 1;
-                }
-                @if $skip == false {
-                    @if $i-m > 1 {
-                        &#{$i-m} {
-                            margin-right: -($col-m-width / 2 + $original-col-m-width);
-                        }
-                        $skip: true;
-                        $i-m: $i-m + 1;
-                    }
-                }
-            }
-            @if $skip == true {
-                $col-m-width: $original-col-m-width * $i-m;
-
-                &#{$i-m} {
-                    margin-right: -($col-m-width / 2);
-                }
-                $skip: false;
-                $i-m: $i-m + 1;
-            }
-        }
-    }
-    @media screen and (min-width: $bp-wide) {
-
-        /* wide */
-        @while $i-l < $cols-l + 1 {
-            &#{$i-l} {
-                margin-right: -($col-l-width);
-            }
-            $i-l: $i-l + 1;
-            $col-l-width: $original-col-l-width * $i-l;
-            // $col-l-width: $col-l-width: * $i;
+            $col-width: $original-col-width * $i;
         }
     }
 }
@@ -394,9 +55,15 @@
 // Helper mixins
 // ==========================================================================
 
-/*
- * Image replacement
- */
+@mixin textGradient($gradient) {
+    & {
+        @supports (-webkit-background-clip: text) {
+            background: $gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+	}
+}
 
 @mixin ir() {
     background-color: transparent;
@@ -415,18 +82,10 @@
     }
 }
 
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
 @mixin hidden {
     display: none !important;
     visibility: hidden;
 }
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
 
 @mixin visuallyhidden {
     border: 0;
@@ -449,42 +108,6 @@
     }
 }
 
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
 @mixin invisible {
     visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-@mixin clearfix {
-    *zoom: 1;
-
-    &:before,
-    &:after {
-        content: ' '; // 1
-        display: table; // 2
-    }
-
-    &:after {
-        clear: both;
-    }
-}
-
-.group,
-nav,
-.grid {
-    @include clearfix();
 }

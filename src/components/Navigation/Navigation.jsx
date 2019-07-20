@@ -7,7 +7,7 @@ class Navigation extends Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
-        this.state = { open: true };
+        this.state = { open: false };
     }
 
     toggle() {
@@ -24,7 +24,7 @@ class Navigation extends Component {
                 <button
                     type="button"
                     onClick={this.toggle}
-                    className={classnames(`btn ${styles.hamburger}`, {
+                    className={classnames(styles.hamburger, {
                         [`${styles.btnOpen}`]: open,
                     })}
                 >
