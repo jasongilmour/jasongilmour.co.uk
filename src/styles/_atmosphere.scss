@@ -166,7 +166,7 @@ table {
 		padding: 0.25em 0.5em;
 		text-align: left;
 
-		&:first-child {
+		&:first-of-type {
 			border-left: 0;
 		}
 	}
@@ -175,7 +175,7 @@ table {
 		border-left: 1px solid $gray;
 		padding: 0.25em 0.5em;
 
-		&:first-child {
+		&:first-of-type {
 			border-left: 0;
 		}
 	}

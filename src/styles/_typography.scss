@@ -113,7 +113,7 @@ p {
 }
 
 strong {
-	font-weight: $bold;
+	font-weight: $font-bold;
 }
 
 em,
@@ -226,5 +226,5 @@ cite {
 	font-size: 0.75em;
 	font-size: 0.75rem;
 	font-style: italic;
-	font-weight: $regular;
+	font-weight: $font-regular;
 }

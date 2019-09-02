@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Home.module.scss';
-import { ProjectCard } from 'components';
+import { Button, ProjectCard } from 'components';
 
 const Home = () => {
     return (
@@ -69,7 +69,7 @@ const Home = () => {
                                 digital skills through a desire to see my
                                 designs come to life, and to understand
                                 everything that’s needed to&hellip;{' '}
-                                <button type="button">read more.</button>
+                                <Button unstyled>read more.</Button>
                             </p>
                         </div>
                     </div>

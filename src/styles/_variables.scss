@@ -10,11 +10,11 @@ $grid-gutter-width: 80px;
 
 // Typography
 $default-font-stack: 'Work Sans', sans-serif;
-$thin: 200;
-$light: 300;
-$regular: 400;
-$bold: 600;
-$weight-black: 700;
+$font-thin: 200;
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 600;
+$font-black: 700;
 
 // Colors
 $black: #191B18;
@@ -31,9 +31,13 @@ $green: #35D80E;
 $dark-green: #2E8915;
 
 // Button colors
-$cta-background: lightgreen;
+$cta-background: $light-green;
 
 // Breakpoints
 $bp-narrow: 40em;
 $bp-wide: 64em;
 $bp-x-wide: 84em;
+
+// Bootstrap overwrites
+$body-bg: $background-color;
+$body-color: $text-color;
