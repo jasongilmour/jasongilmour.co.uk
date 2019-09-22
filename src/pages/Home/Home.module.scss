@@ -1,10 +1,18 @@
 @import '../../styles/tooling';
 
 .pageBorder {
-	padding: 80px;
+	padding: 4vw;
+
+	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		padding: 80px;
+	}
 
 	.page {
-		padding: 80px;
+		padding: 4vw;
+
+		@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+			padding: 80px;
+		}
 	}
 }
 
@@ -12,22 +20,40 @@
 	min-height: calc(100vh - 160px);
 	padding: 80px 160px;
 	position: relative;
-
-	&.intro {
-		background: linear-gradient(62deg, #24A306 0%, #0ED8A8 100%);
-	}
 }
 
 .jrg {
-	left: 0;
+	display: flex;
+	font-family: 'solomon-bold';
+	font-size: 6vw;
+	line-height: (32/24);
 	position: absolute;
-	top: 120px;
+	right: 4vw;
+	top: 3vw;
 	z-index: 1;
+
+	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		display: block;
+		font-size: em(44, 16);
+		left: 0;
+		line-height: (52/44);
+		margin: 0 0 em(6, 44);
+		top: 120px;
+		width: 560px;
+	}
 }
 
 .word {
 	display: flex;
-	padding-left: 80px;
+	flex-direction: column;
+	position: relative;
+	width: 8vw;
+
+	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		flex-direction: row;
+		padding-left: 80px;
+		width: auto;
+	}
 }
 
 .letter {
@@ -35,35 +61,84 @@
 	color: $white;
 	display: flex;
 	font-weight: bold;
-	height: 80px;
 	justify-content: center;
-	line-height: 80px;
 	text-align: center;
 	text-transform: uppercase;
-	width: 80px;
+
+	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		height: 80px;
+		line-height: 80px;
+		width: 80px;
+	}
 
 	&.initial {
 		color: $green;
 		left: 0;
-		position: fixed;
 		z-index: 3;
+
+		@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+			position: fixed;
+		}
+
+		&.r {
+			color: #18C161;
+		}
+
+		&.g {
+			color: #16C670;
+		}
+	}
+}
+
+.intro {
+	background: linear-gradient(-45deg, $green 0, $background-color 94%);
+	position: relative;
+
+	&:before {
+		content: '';
+		border-color: transparent $background-color transparent transparent;
+		border-style: solid;
+		border-width: 0 calc(100vw - 32px) calc(100vw - 32px) 0;
+		display: block;
+		height: 0;
+		position: absolute;
+		right: -64px;
+		top: 0;
+		width: 0;
+	}
+
+	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		background: linear-gradient(62deg, #24A306 0%, #0ED8A8 100%);
+
+		&:before {
+			content: normal;
+		}
 	}
 }
 
 .introHeadline {
-	font-size: rem(32);
+	font-size: 8vw;
+	letter-spacing: 0.03em;
 	line-height: (40/32);
-	margin: rem(48) 0 rem(48);
+	margin: 70vw 0 rem(48);
 
 	@media (min-width: $bp-lg) {
+		font-size: 6vw;
+		margin-top: 260px;
+	}
+
+	@media (min-width: $bp-xl) {
 		font-size: vw(74);
 		line-height: (98/74);
-		margin: rem(40) 0 rem(80);
+		margin: rem(40) 0;
 	}
 }
 
 .introBackgroundContainer {
+	align-items: center;
+	display: flex;
 	height: 100%;
+	justify-content: center;
 	left: 0;
 	overflow: hidden;
 	position: absolute;
@@ -72,11 +147,8 @@
 	width: 100%;
 
 	img {
-		// position: absolute;
-		// top: 50%;
-		// left: 50%;
-		// transform: translate(-50%, -50%);
-		width: 100%;
+		min-height: 100%;
+		max-width: none;
 	}
 }
 

@@ -7,13 +7,12 @@ $bp: 720px;
     height: 100vh;
     left: 0;
     overflow-y: auto;
-    padding-left: 32px;
-    padding-top: 32px;
+    padding: 64px 64px 64px 32px;
     position: fixed;
     top: 0;
     transition: transform 0.4s cubic-bezier(0.35, 0, 0.2, 1);
     transform: translateX(-100%);
-    width: 25vw;
+    min-width: 33.3vw;
     z-index: 2;
     -webkit-overflow-scrolling: touch; // double check this is right
 
@@ -26,9 +25,16 @@ $bp: 720px;
     a {
         color: $white;
         display: block;
-        font-size: 48px;
-        line-height: (58/48);
-        margin-bottom: 40px;
+        font-size: 28px;
+        line-height: (36/28);
+        margin-bottom: 18px;
+        text-decoration: none;
+
+        @media screen and (min-width: $bp-lg) {
+            font-size: 48px;
+            line-height: (58/48);
+            margin-bottom: 40px;
+        }
     }
 
     &.navOpen {
@@ -41,12 +47,12 @@ $bp: 720px;
     align-content: center;
     color: $green;
     display: flex;
-    height: 32px;
+    height: 50px;
     left: 0;
     padding: 0;
     position: fixed;
     top: 0;
-    width: 32px;
+    width: 64px;
     z-index: 3;
     // fix this stuff
     appearance: none;
@@ -64,8 +70,8 @@ $bp: 720px;
     background-color: $green;
     border-radius: 2px;
     height: 2px;
-    left: 4px;
-    width: 19px;
+    left: 16px;
+    width: 26px;
     position: relative;
     transition: background-color 0.4s linear;
 
@@ -90,8 +96,8 @@ $bp: 720px;
     }
 
     &:before {
-        transform: translateY(-5px);
-        width: 22px;
+        transform: translateY(-8px);
+        width: 30px;
 
         @media screen and (min-width: $bp) {
             transform: translateY(-12px);
@@ -100,8 +106,8 @@ $bp: 720px;
     }
 
     &:after {
-        transform: translateY(5px);
-        width: 24px;
+        transform: translateY(8px);
+        width: 32px;
 
         @media screen and (min-width: $bp) {
             transform: translateY(12px);
@@ -118,7 +124,7 @@ $bp: 720px;
         background-color: $white;
         bottom: 0;
         top: 0;
-        width: 8px;
+        width: 12px;
 
         @media screen and (min-width: $bp) {
             width: 16px;

@@ -3,6 +3,7 @@
 
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
+@import 'bootstrap-variables';
 
 @import '~bootstrap/scss/vendor/rfs';
 
@@ -15,6 +16,8 @@
 @import '~bootstrap/scss/mixins/grid';
 @import '~bootstrap/scss/mixins/hover';
 @import '~bootstrap/scss/mixins/transition';
+
+$theme-colors: map-remove($theme-colors, "info", "light", "dark");
 
 @import '~bootstrap/scss/buttons';
 @import '~bootstrap/scss/grid';

@@ -23,15 +23,6 @@ storiesOf('Components|Button', module)
                 <Button color="warning">Warning</Button>
             </div>
             <div style={{ margin: 20 }}>
-                <Button color="info">Info</Button>
-            </div>
-            <div style={{ margin: 20 }}>
-                <Button color="light">Light</Button>
-            </div>
-            <div style={{ margin: 20 }}>
-                <Button color="dark">Dark</Button>
-            </div>
-            <div style={{ margin: 20 }}>
                 <Button color="link">Link</Button>
             </div>
         </div>
@@ -64,21 +55,6 @@ storiesOf('Components|Button', module)
                 </Button>
             </div>
             <div style={{ margin: 20 }}>
-                <Button color="info" outline>
-                    Info
-                </Button>
-            </div>
-            <div style={{ margin: 20 }}>
-                <Button color="light" outline>
-                    Light
-                </Button>
-            </div>
-            <div style={{ margin: 20 }}>
-                <Button color="dark" outline>
-                    Dark
-                </Button>
-            </div>
-            <div style={{ margin: 20 }}>
                 <Button color="link" outline>
                     Link
                 </Button>
@@ -95,9 +71,6 @@ storiesOf('Components|Button', module)
                     'success',
                     'danger',
                     'warning',
-                    'info',
-                    'light',
-                    'dark',
                     'link',
                 ],
                 'primary'

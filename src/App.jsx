@@ -11,10 +11,10 @@ function App() {
         <Router>
             <header className="global-header">
                 <Navigation>
-                    <Link to="/">About</Link>
-                    <Link to="/">Services</Link>
-                    <Link to="/">Project</Link>
-                    <Link to="/">Contact</Link>
+                    <Link to="/#about">About</Link>
+                    <Link to="/#services">Services</Link>
+                    <Link to="/#projects">Projects</Link>
+                    <Link to="/#contact">Contact</Link>
                 </Navigation>
             </header>
             <AppRouter />

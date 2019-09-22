@@ -7,9 +7,12 @@ const Button = props => {
     const { children, color, outline, type, unstyled } = props;
     return (
         <button
-            className={classnames(`btn btn-${outline ? 'outline-' : ''}${color}`, {
-                unstyled,
-            })}
+            className={classnames(
+                `btn btn-${outline ? 'outline-' : ''}${color}`,
+                {
+                    unstyled,
+                }
+            )}
             type={type}
         >
             {console.log('unstyled = ' + unstyled)}
