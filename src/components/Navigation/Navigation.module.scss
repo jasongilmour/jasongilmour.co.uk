@@ -35,6 +35,11 @@ $bp: 720px;
             line-height: (58/48);
             margin-bottom: 40px;
         }
+
+        &:hover {
+            color: $white;
+            text-decoration: underline;
+        }
     }
 
     &.navOpen {

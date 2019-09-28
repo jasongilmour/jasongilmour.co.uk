@@ -1,18 +1,23 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
+
 import ProjectCard from './ProjectCard';
 
-// import imgSrc from
+export default {
+    title: 'Components|ProjectCard',
+    component: ProjectCard,
+    decorators: [withKnobs],
+};
 
-storiesOf('Components|ProjectCard', module)
-    .add('default', () => (
-        <ProjectCard title="ProjectCard" slug="project-card" />
-    ))
-    .add('with info', () => (
-        <ProjectCard
-            img={process.env.PUBLIC_URL + '/img/projects/hailto/cover.png'}
-            shortDesc="Harness the relationship between your talent and their fans to amplify your message"
-            slug="hailto"
-            title="HailTo"
-        />
-    ));
+export const Default = () => (
+    <ProjectCard title="ProjectCard" slug="project-card" />
+);
+
+export const WithInfo = () => (
+    <ProjectCard
+        img={process.env.PUBLIC_URL + '/img/projects/hailto/cover.png'}
+        shortDesc="Harness the relationship between your talent and their fans to amplify your message"
+        slug="hailto"
+        title="HailTo"
+    />
+);

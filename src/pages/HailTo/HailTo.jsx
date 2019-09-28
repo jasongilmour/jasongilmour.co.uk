@@ -23,11 +23,14 @@ const HailTo = () => {
                             knowledge, pragmatic design and the latest
                             technologies.
                         </p>
-                      </div>
+                    </div>
                     <div className="col col-md-3">
-                        <img src="https://placedog.net/768/768" alt="cover pupper" />
-                      </div>
-                      <div className="offset-lg-1 col-lg-4">
+                        <img
+                            src="https://placedog.net/768/768"
+                            alt="cover pupper"
+                        />
+                    </div>
+                    <div className="offset-lg-1 col-lg-4">
                         <p>
                             My role in creating HailTo was to lead the design of
                             our new product, from inception and definition,
@@ -52,7 +55,10 @@ const HailTo = () => {
                         </p>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/laptop-and-phone.png" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/laptop-and-phone.png"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 HailTo Admin interface and iPhone App
@@ -100,7 +106,10 @@ const HailTo = () => {
                         </ul>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/sketches-1.jpg" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/sketches-1.jpg"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 Considering the onboarding experience very early
@@ -180,7 +189,10 @@ const HailTo = () => {
                         </p>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/competitor-analysis.jpg" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/competitor-analysis.jpg"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 Some of the products we looked at for
@@ -266,7 +278,10 @@ const HailTo = () => {
                         </p>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/admin-assets-section.jpg" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/admin-assets-section.jpg"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 HTML prototype of the admin (left) and current
@@ -308,7 +323,10 @@ const HailTo = () => {
                         </p>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/sketches-2.jpg" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/sketches-2.jpg"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 Early sketches considering what data could be
@@ -326,7 +344,10 @@ const HailTo = () => {
                         </p>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/early-app-designs.jpg" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/early-app-designs.jpg"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 Early designs for the Share and Make sections of
@@ -344,7 +365,10 @@ const HailTo = () => {
                         </p>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/latest-share.jpg" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/latest-share.jpg"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 Share section and Share details
@@ -352,7 +376,10 @@ const HailTo = () => {
                         </div>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/latest-make.jpg" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/latest-make.jpg"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 Make section and Make details
@@ -411,7 +438,7 @@ const HailTo = () => {
                             <a
                                 href="https://github.com/HosseinKarami/fastshell"
                                 target="_blank"
-                                rel="noopener"
+                                rel="noopener noreferrer"
                             >
                                 Fastshell
                             </a>{' '}
@@ -482,7 +509,10 @@ const HailTo = () => {
                         </p>
                         <div className="article-image">
                             <figure>
-                                <img src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/latest-browse.jpg" />
+                                <img
+                                    src="https://duhg9m9sh0lp8.cloudfront.net/fit-in/2000x0/img/projects/hailto/latest-browse.jpg"
+                                    alt="cover pupper"
+                                />
                             </figure>
                             <figcaption>
                                 Designs for the assets section

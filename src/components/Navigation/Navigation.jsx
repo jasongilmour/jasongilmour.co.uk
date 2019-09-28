@@ -43,11 +43,11 @@ class Navigation extends Component {
     }
 }
 
-Navigation.defaultProps = {
+Navigation.propTypes = {
     children: PropTypes.node,
 };
 
-Navigation.propTypes = {
+Navigation.defaultProps = {
     children: null,
 };
 

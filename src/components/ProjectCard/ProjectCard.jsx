@@ -22,14 +22,14 @@ const ProjectCard = props => {
     );
 };
 
-ProjectCard.defaultProps = {
+ProjectCard.propTypes = {
     img: PropTypes.string,
     shortDesc: PropTypes.string,
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
 };
 
-ProjectCard.propTypes = {
+ProjectCard.defaultProps = {
     img: '',
     shortDesc: '',
 };

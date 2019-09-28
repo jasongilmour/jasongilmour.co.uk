@@ -17,9 +17,14 @@
 }
 
 .page {
-	min-height: calc(100vh - 160px);
-	padding: 80px 160px;
+	min-height: 92vh;
+	padding: 4vw;
 	position: relative;
+
+	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		min-height: calc(100vh - 160px);
+		padding: 80px 160px;
+	}
 }
 
 .jrg {
@@ -178,11 +183,13 @@
 }
 
 .projectsHeadline {
-	padding-left: 111px;
+	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		padding-left: 111px;
+	}
 }
 
 .contact {
-	background: url('/img/page-backgrounds/background-contact.png') center / cover
+	background: url('/img/page-backgrounds/background-contact.png') center top / cover
 		no-repeat;
 	min-height: calc(100vh - 80px);
 }

@@ -1,13 +1,16 @@
 import React from 'react';
+// import { Waypoint } from 'react-waypoint';
+import { ProjectCard } from 'components';
 import styles from './Home.module.scss';
-import { Button, ProjectCard } from 'components';
 
 const Home = () => {
     return (
         <main>
             <h1 className={styles.jrg}>
                 <div className={styles.word}>
-                    <div className={`${styles.initial} ${styles.j} ${styles.letter}`}>
+                    <div
+                        className={`${styles.initial} ${styles.j} ${styles.letter}`}
+                    >
                         J
                     </div>
                     <div className={styles.letter}>a</div>
@@ -16,7 +19,9 @@ const Home = () => {
                     <div className={styles.letter}>n</div>{' '}
                 </div>
                 <div className={styles.word}>
-                    <div className={`${styles.initial} ${styles.r} ${styles.letter}`}>
+                    <div
+                        className={`${styles.initial} ${styles.r} ${styles.letter}`}
+                    >
                         R
                     </div>
                     <div className={styles.letter}>o</div>
@@ -26,7 +31,9 @@ const Home = () => {
                     <div className={styles.letter}>t</div>{' '}
                 </div>
                 <div className={styles.word}>
-                    <div className={`${styles.initial} ${styles.g} ${styles.letter}`}>
+                    <div
+                        className={`${styles.initial} ${styles.g} ${styles.letter}`}
+                    >
                         G
                     </div>
                     <div className={styles.letter}>i</div>
@@ -80,6 +87,15 @@ const Home = () => {
                     </div>
                 </article>
             </div>
+            {/* <Waypoint
+                key={1}
+                onEnter={console.log('2 enter')}
+                onLeave={console.log('2 leave ')}
+                debug
+                scrollableAncestor={window}
+            >
+                <div>here</div>
+            </Waypoint> */}
             <article
                 className={`${styles.page} ${styles.services}`}
                 id="services"
@@ -148,40 +164,30 @@ const Home = () => {
                     title="Storm Ideas"
                 />
             </article>
-            <div className={styles.pageBorder}>
-                <article
-                    className={`${styles.page} ${styles.contact}`}
-                    id="contact"
-                >
-                    <div className="row justify-content-center">
-                        <div className="col-lg-4">
-                            <h2 className="`${gradient-text} section-header`">
-                                Contact.
-                            </h2>
-                            <p className={styles.contactDetails}>
-                                <div>Jason Gilmour Design & Consulting</div>
-                                <div>BCCN 3854926540</div>
-                                <div>
-                                    <a href="mailto:hello@jasongilmour.co.uk">
-                                        hello@jasongilmour.co.uk
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="tel:+16045008985">
-                                        +1 (604) 500 8985
-                                    </a>
-                                </div>
-                            </p>
-                            <p className={styles.contactAddress}>
-                                <div>319 West Hastings Street #400,</div>
-                                <div>Vancouver, BC</div>
-                                <div>Canada</div>
-                                <div>V6B 1H6</div>
-                            </p>
+
+            <article
+                className={`${styles.page} ${styles.contact}`}
+                id="contact"
+            >
+                <div className="row justify-content-center">
+                    <div className="col-lg-4">
+                        <h2 className="gradient-text section-header">
+                            Contact.
+                        </h2>
+                        <div className={styles.contactDetails}>
+                            <div>Jason Gilmour Design & Consulting</div>
+                            <div>
+                                <a href="mailto:hello@jasongilmour.co.uk">
+                                    hello@jasongilmour.co.uk
+                                </a>
+                            </div>
+                            <div>
+                                <a href="tel:+16045008985">+44 7949 01 9596</a>
+                            </div>
                         </div>
                     </div>
-                </article>
-            </div>
+                </div>
+            </article>
         </main>
     );
 };
