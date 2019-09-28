@@ -1,15 +1,36 @@
-import React from 'react';
-// import { Waypoint } from 'react-waypoint';
+import React, { useState } from 'react';
+import { Waypoint } from 'react-waypoint';
+import classnames from 'classnames';
 import { ProjectCard } from 'components';
+
 import styles from './Home.module.scss';
 
 const Home = () => {
+
+    const [startVisible, setStartVisible] = useState(true);
+
+    const startEnter = () => {
+        setStartVisible(true);
+    };
+
+    const startLeave = () => {
+        setStartVisible(false);
+    };
+
+    const introEnter = () => {
+        console.log('intro enter')
+    };
+
+    const introLeave = () => {
+        console.log('intro leave')
+    };
+
     return (
         <main>
-            <h1 className={styles.jrg}>
+            <h1 className={classnames(styles.jrg, {[styles.out]: !startVisible})}>
                 <div className={styles.word}>
                     <div
-                        className={`${styles.initial} ${styles.j} ${styles.letter}`}
+                        className={`${styles.initial} ${styles.j}`}
                     >
                         J
                     </div>
@@ -20,7 +41,7 @@ const Home = () => {
                 </div>
                 <div className={styles.word}>
                     <div
-                        className={`${styles.initial} ${styles.r} ${styles.letter}`}
+                        className={`${styles.initial} ${styles.r}`}
                     >
                         R
                     </div>
@@ -32,7 +53,7 @@ const Home = () => {
                 </div>
                 <div className={styles.word}>
                     <div
-                        className={`${styles.initial} ${styles.g} ${styles.letter}`}
+                        className={`${styles.initial} ${styles.g}`}
                     >
                         G
                     </div>
@@ -44,58 +65,61 @@ const Home = () => {
                     <div className={styles.letter}>r</div>
                 </div>
             </h1>
-            <div className={styles.pageBorder}>
-                <article className={`${styles.page} ${styles.intro}`}>
-                    <div className={styles.introBackgroundContainer}>
-                        <img
-                            src="/img/page-backgrounds/background-intro.svg"
-                            alt=""
-                            role="presentation"
-                        />
-                    </div>
-                    <div className="row">
-                        <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-3">
-                            <h2 className={`${styles.introHeadline}`}>
-                                Pragmatic
-                                <br /> Digital Product
-                                <br /> Design.
-                            </h2>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-2">
-                            <p>
-                                With over 5 years experience in creating digital
-                                products for some of the biggest and smallest
-                                companies in the world, I can be an asset on any
-                                team working in the digital product design
-                                space.
-                            </p>
-                            <p>
-                                Having trained as a Graphic Designer, honed my
-                                digital skills through a desire to see my
-                                designs come to life, and to understand
-                                everything that’s needed to&hellip;{' '}
-                                <button
-                                    type="button"
-                                    className="unstyled link strong"
-                                >
-                                    read more.
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            {/* <Waypoint
+            <Waypoint
                 key={1}
-                onEnter={console.log('2 enter')}
-                onLeave={console.log('2 leave ')}
-                debug
-                scrollableAncestor={window}
+                onEnter={() => startEnter()}
+                onLeave={() => startLeave()}
+                topOffset={-40}
+            />
+            <Waypoint
+                key={2}
+                onEnter={() => introEnter()}
+                onLeave={() => introLeave()}
             >
-                <div>here</div>
-            </Waypoint> */}
+                <div className={styles.pageBorder}>
+                    <article className={`${styles.page} ${styles.intro}`}>
+                        <div className={styles.introBackgroundContainer}>
+                            <img
+                                src="/img/page-backgrounds/background-intro.svg"
+                                alt=""
+                                role="presentation"
+                            />
+                        </div>
+                        <div className="row">
+                            <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-3">
+                                <h2 className={`${styles.introHeadline}`}>
+                                    Pragmatic
+                                    <br /> Digital Product
+                                    <br /> Design.
+                                </h2>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-2">
+                                <p>
+                                    With over 5 years experience in creating digital
+                                    products for some of the biggest and smallest
+                                    companies in the world, I can be an asset on any
+                                    team working in the digital product design
+                                    space.
+                                </p>
+                                <p>
+                                    Having trained as a Graphic Designer, honed my
+                                    digital skills through a desire to see my
+                                    designs come to life, and to understand
+                                    everything that’s needed to&hellip;{' '}
+                                    <button
+                                        type="button"
+                                        className="unstyled link strong"
+                                    >
+                                        read more.
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </Waypoint>
             <article
                 className={`${styles.page} ${styles.services}`}
                 id="services"

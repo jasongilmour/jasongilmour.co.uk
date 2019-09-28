@@ -32,6 +32,7 @@
 	font-family: 'solomon-bold';
 	font-size: 6vw;
 	line-height: (32/24);
+	overflow: visible;
 	position: absolute;
 	right: 4vw;
 	top: 3vw;
@@ -69,6 +70,7 @@
 	justify-content: center;
 	text-align: center;
 	text-transform: uppercase;
+	transition: transform 0.3s ease, opacity 0.3s ease;
 
 	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
 		height: 80px;
@@ -76,22 +78,92 @@
 		width: 80px;
 	}
 
-	&.initial {
-		color: $green;
-		left: 0;
-		z-index: 3;
+	&:nth-child(1) {
+		transition-delay: 0.05s;
+	}
 
-		@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
-			position: fixed;
+	&:nth-child(2) {
+		transition-delay: 0.1s;
+	}
+
+	&:nth-child(3) {
+		transition-delay: 0.15s;
+	}
+
+	&:nth-child(4) {
+		transition-delay: 0.2s;
+	}
+
+	&:nth-child(5) {
+		transition-delay: 0.25s;
+	}
+
+	&:nth-child(6) {
+		transition-delay: 0.3s;
+	}
+
+	&:nth-child(7) {
+		transition-delay: 0.35s;
+	}
+
+	.out & {
+		opacity: 0;
+		transform: translateY(-100%);
+
+		&:nth-child(7) {
+			transition-delay: 0.05s;
 		}
 
-		&.r {
-			color: #18C161;
+		&:nth-child(6) {
+			transition-delay: 0.1s;
 		}
 
-		&.g {
-			color: #16C670;
+		&:nth-child(5) {
+			transition-delay: 0.15s;
 		}
+
+		&:nth-child(4) {
+			transition-delay: 0.2s;
+		}
+
+		&:nth-child(3) {
+			transition-delay: 0.25s;
+		}
+
+		&:nth-child(2) {
+			transition-delay: 0.3s;
+		}
+
+		&:nth-child(1) {
+			transition-delay: 0.35s;
+		}
+	}
+}
+
+.initial {
+	align-content: center;
+	color: $green;
+	display: flex;
+	font-weight: bold;
+	justify-content: center;
+	left: 0;
+	text-align: center;
+	text-transform: uppercase;
+	z-index: 3;
+
+	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		height: 80px;
+		line-height: 80px;
+		position: fixed;
+		width: 80px;
+	}
+
+	&.r {
+		color: #18C161;
+	}
+
+	&.g {
+		color: #16C670;
 	}
 }
 
@@ -189,7 +261,7 @@
 }
 
 .contact {
-	background: url('/img/page-backgrounds/background-contact.png') center top / cover
-		no-repeat;
+	background: url('/img/page-backgrounds/background-contact.png') center top /
+		cover no-repeat;
 	min-height: calc(100vh - 80px);
 }

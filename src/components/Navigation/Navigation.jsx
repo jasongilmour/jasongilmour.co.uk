@@ -25,7 +25,7 @@ class Navigation extends Component {
                     type="button"
                     onClick={this.toggle}
                     className={classnames(styles.hamburger, {
-                        [`${styles.btnOpen}`]: open,
+                        [styles.btnOpen]: open,
                     })}
                 >
                     <div className={`${styles.line}`} role="presentation" />
