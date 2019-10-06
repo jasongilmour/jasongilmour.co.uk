@@ -8,6 +8,7 @@ import styles from './Home.module.scss';
 const Home = () => {
     const [startVisible, setStartVisible] = useState(true);
     const [servicesVisible, setServicesVisible] = useState(false);
+    const [contactVisible, setContactVisible] = useState(false);
 
     const startEnter = () => {
         setStartVisible(true);
@@ -23,6 +24,14 @@ const Home = () => {
 
     const servicesLeave = () => {
         setServicesVisible(false);
+    };
+
+    const contactEnter = () => {
+        setContactVisible(true);
+    };
+
+    const contactLeave = () => {
+        setContactVisible(false);
     };
 
     return (
@@ -183,9 +192,10 @@ const Home = () => {
                     title="Storm Ideas"
                 />
             </article>
-
             <article
-                className={`${styles.page} ${styles.contact}`}
+                className={classnames(styles.page, styles.contact, {
+                    [styles.out]: !contactVisible,
+                })}
                 id="contact"
             >
                 <div className="row justify-content-center">
@@ -193,17 +203,35 @@ const Home = () => {
                         <h2 className="gradient-text section-header">
                             Contact.
                         </h2>
-                        <div className={styles.contactDetails}>
-                            <div>Jason Gilmour Design & Consulting</div>
-                            <div>
-                                <a href="mailto:hello@jasongilmour.co.uk">
-                                    hello@jasongilmour.co.uk
-                                </a>
+                        <Waypoint
+                            key={2}
+                            onEnter={() => contactEnter()}
+                            onLeave={() => contactLeave()}
+                            topOffset="40%"
+                        >
+                            <div className={styles.contactDetails}>
+                                <div>Jason Gilmour Design & Consulting.</div>
+                                <div>Edinburgh, Scotland.</div>
+                                <div>
+                                    <a
+                                        href="mailto:hello@jasongilmour.co.uk"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.email}
+                                    >
+                                        hello@jasongilmour.co.uk
+                                    </a>
+                                </div>
+                                <div>
+                                    <a
+                                        href="tel:+16045008985"
+                                        className={styles.phone}
+                                    >
+                                        +44 7949 01 9596
+                                    </a>
+                                </div>
                             </div>
-                            <div>
-                                <a href="tel:+16045008985">+44 7949 01 9596</a>
-                            </div>
-                        </div>
+                        </Waypoint>
                     </div>
                 </div>
             </article>

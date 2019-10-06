@@ -315,3 +315,56 @@
 		cover no-repeat;
 	min-height: calc(100vh - 80px);
 }
+
+.contactDetails {
+	font-size: 3vw;
+
+	div {
+		margin-bottom: 0.6em;
+		opacity: 1;
+		transform: none;
+		transition: transform 0.8s ease-out, opacity 0.6s ease;
+
+		&:nth-child(2) {
+			transition-delay: 0.1s;
+		}
+
+		&:nth-child(3) {
+			transition-delay: 0.2s;
+		}
+
+		&:nth-child(4) {
+			transition-delay: 0.3s;
+		}
+
+		.out & {
+			opacity: 0;
+			transform: translateY(300%);
+			transition: transform 1.2s ease, opacity 0.6s ease;
+		}
+	}
+
+	a {
+		&:after {
+			opacity: 0;
+			transform: translateX(0) rotate(-25deg);
+			position: absolute;
+			transition: 0.6s transform ease, 0.2s opacity ease;
+		}
+
+		&:hover:after {
+			opacity: 1;
+			transform: translateX(0.25em) rotate(0);
+			transition: 0.4s transform cubic-bezier(0, 0, 0.11, 2.63), 0.3s opacity ease-in;
+		}
+	}
+
+	.email:after {
+		content: ' 📬';
+	}
+
+	.phone:after {
+		content: ' 🔔';
+		transform-origin: 50% 0%;
+	}
+}
