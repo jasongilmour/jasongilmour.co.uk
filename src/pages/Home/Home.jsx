@@ -6,8 +6,8 @@ import { ProjectCard } from 'components';
 import styles from './Home.module.scss';
 
 const Home = () => {
-
     const [startVisible, setStartVisible] = useState(true);
+    const [servicesVisible, setServicesVisible] = useState(false);
 
     const startEnter = () => {
         setStartVisible(true);
@@ -17,34 +17,30 @@ const Home = () => {
         setStartVisible(false);
     };
 
-    const introEnter = () => {
-        console.log('intro enter')
+    const servicesEnter = () => {
+        setServicesVisible(true);
     };
 
-    const introLeave = () => {
-        console.log('intro leave')
+    const servicesLeave = () => {
+        setServicesVisible(false);
     };
 
     return (
         <main>
-            <h1 className={classnames(styles.jrg, {[styles.out]: !startVisible})}>
+            <h1
+                className={classnames(styles.jrg, {
+                    [styles.out]: !startVisible,
+                })}
+            >
                 <div className={styles.word}>
-                    <div
-                        className={`${styles.initial} ${styles.j}`}
-                    >
-                        J
-                    </div>
+                    <div className={`${styles.initial} ${styles.j}`}>J</div>
                     <div className={styles.letter}>a</div>
                     <div className={styles.letter}>s</div>
                     <div className={styles.letter}>o</div>
                     <div className={styles.letter}>n</div>{' '}
                 </div>
                 <div className={styles.word}>
-                    <div
-                        className={`${styles.initial} ${styles.r}`}
-                    >
-                        R
-                    </div>
+                    <div className={`${styles.initial} ${styles.r}`}>R</div>
                     <div className={styles.letter}>o</div>
                     <div className={styles.letter}>b</div>
                     <div className={styles.letter}>e</div>
@@ -52,11 +48,7 @@ const Home = () => {
                     <div className={styles.letter}>t</div>{' '}
                 </div>
                 <div className={styles.word}>
-                    <div
-                        className={`${styles.initial} ${styles.g}`}
-                    >
-                        G
-                    </div>
+                    <div className={`${styles.initial} ${styles.g}`}>G</div>
                     <div className={styles.letter}>i</div>
                     <div className={styles.letter}>l</div>
                     <div className={styles.letter}>m</div>
@@ -71,57 +63,53 @@ const Home = () => {
                 onLeave={() => startLeave()}
                 topOffset={-40}
             />
-            <Waypoint
-                key={2}
-                onEnter={() => introEnter()}
-                onLeave={() => introLeave()}
-            >
-                <div className={styles.pageBorder}>
-                    <article className={`${styles.page} ${styles.intro}`}>
-                        <div className={styles.introBackgroundContainer}>
-                            <img
-                                src="/img/page-backgrounds/background-intro.svg"
-                                alt=""
-                                role="presentation"
-                            />
+            <div className={styles.pageBorder}>
+                <article className={`${styles.page} ${styles.intro}`}>
+                    <div className={styles.introBackgroundContainer}>
+                        <img
+                            src="/img/page-backgrounds/background-intro.svg"
+                            alt=""
+                            role="presentation"
+                        />
+                    </div>
+                    <div className="row">
+                        <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-3">
+                            <h2 className={`${styles.introHeadline}`}>
+                                Pragmatic
+                                <br /> Digital Product
+                                <br /> Design.
+                            </h2>
                         </div>
-                        <div className="row">
-                            <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-3">
-                                <h2 className={`${styles.introHeadline}`}>
-                                    Pragmatic
-                                    <br /> Digital Product
-                                    <br /> Design.
-                                </h2>
-                            </div>
+                    </div>
+                    <div className="row">
+                        <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-2">
+                            <p>
+                                With over 5 years experience in creating digital
+                                products for some of the biggest and smallest
+                                companies in the world, I can be an asset on any
+                                team working in the digital product design
+                                space.
+                            </p>
+                            <p>
+                                Having trained as a Graphic Designer, honed my
+                                digital skills through a desire to see my
+                                designs come to life, and to understand
+                                everything that’s needed to&hellip;{' '}
+                                <button
+                                    type="button"
+                                    className="unstyled link strong"
+                                >
+                                    read more.
+                                </button>
+                            </p>
                         </div>
-                        <div className="row">
-                            <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-2">
-                                <p>
-                                    With over 5 years experience in creating digital
-                                    products for some of the biggest and smallest
-                                    companies in the world, I can be an asset on any
-                                    team working in the digital product design
-                                    space.
-                                </p>
-                                <p>
-                                    Having trained as a Graphic Designer, honed my
-                                    digital skills through a desire to see my
-                                    designs come to life, and to understand
-                                    everything that’s needed to&hellip;{' '}
-                                    <button
-                                        type="button"
-                                        className="unstyled link strong"
-                                    >
-                                        read more.
-                                    </button>
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </Waypoint>
+                    </div>
+                </article>
+            </div>
             <article
-                className={`${styles.page} ${styles.services}`}
+                className={classnames(styles.page, styles.services, {
+                    [styles.out]: !servicesVisible,
+                })}
                 id="services"
             >
                 <div className="row justify-content-center">
@@ -129,14 +117,21 @@ const Home = () => {
                         <h2 className="gradient-text section-header">
                             Services.
                         </h2>
-                        <ul className={styles.serviceList}>
-                            <li>Product</li>
-                            <li>Design</li>
-                            <li>Strategy</li>
-                            <li>UX & UI</li>
-                            <li>Prototyping</li>
-                            <li>Frontend</li>
-                        </ul>
+                        <Waypoint
+                            key={2}
+                            onEnter={() => servicesEnter()}
+                            onLeave={() => servicesLeave()}
+                            topOffset="30%"
+                        >
+                            <ul className={styles.serviceList}>
+                                <li className={styles.service}>Product</li>
+                                <li className={styles.service}>Design</li>
+                                <li className={styles.service}>Strategy</li>
+                                <li className={styles.service}>UX & UI</li>
+                                <li className={styles.service}>Prototyping</li>
+                                <li className={styles.service}>Frontend</li>
+                            </ul>
+                        </Waypoint>
                     </div>
                 </div>
             </article>
