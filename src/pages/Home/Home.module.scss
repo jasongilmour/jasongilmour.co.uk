@@ -249,7 +249,7 @@
 	}
 
 	li.service {
-		@include textGradient(linear-gradient(77deg, #83e46c 0%, #95f3dd 100%));
+		@include textGradient(linear-gradient(0deg, #83e46c 0%, #95f3dd 100%));
 		display: block;
 		margin: 0;
 		opacity: 1;

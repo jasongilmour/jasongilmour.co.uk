@@ -158,36 +158,36 @@ const Home = () => {
                         process.env.PUBLIC_URL +
                         '/img/projects/hailto/cover.png'
                     }
-                    shortDesc="Harness the relationship between your talent and their fans to amplify your message."
+                    shortDesc="Harness the relationship between your talent and their fans to amplify your message"
                     slug="hailto"
                     title="HailTo"
                 />
                 <ProjectCard
                     img={
                         process.env.PUBLIC_URL +
-                        '/img/projects/hailto/cover.png'
+                        '/img/projects/daily/cover.png'
                     }
                     layout="B"
-                    shortDesc="Daily is a beautifully focused app that provides a straightforward aid for forming good habits. It does this by helping you keep track of what you do each day and how often you do it."
+                    shortDesc="Daily is a beautifully focused app that provides a straightforward aid for forming good habits. It does this by helping you keep track of what you do each day and how often you do it"
                     slug="daily"
                     title="Daily"
                 />
                 <ProjectCard
                     img={
                         process.env.PUBLIC_URL +
-                        '/img/projects/hailto/cover.png'
+                        '/img/projects/storm-sdk/cover.png'
                     }
-                    shortDesc="Building a toolkit for better products and better process."
+                    shortDesc="Building a toolkit for better products and better process"
                     slug="cms-design-system"
                     title="CMS Design System"
                 />
                 <ProjectCard
                     img={
                         process.env.PUBLIC_URL +
-                        '/img/projects/hailto/cover.png'
+                        '/img/projects/storm-ideas/cover.png'
                     }
                     layout="B"
-                    shortDesc="While employed by Storm Ideas, I was tasked with redesigning the agency website and updating its aesthetics in 2018."
+                    shortDesc="While employed by Storm Ideas, I was tasked with redesigning the agency website and updating its aesthetics in 2018"
                     slug="storm-ideas"
                     title="Storm Ideas"
                 />

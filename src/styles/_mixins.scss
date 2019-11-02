@@ -35,6 +35,7 @@
     & {
         @supports (-webkit-background-clip: text) {
             background: $gradient;
+            background-attachment: fixed;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -46,9 +47,6 @@
     border: 0;
     display: inline-block;
     overflow: hidden;
-
-    /* IE 6/7 fallback */
-    *text-indent: -9999em;
 
     &:before {
         content: '';

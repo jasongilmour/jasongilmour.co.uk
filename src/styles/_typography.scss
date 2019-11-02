@@ -68,7 +68,7 @@ h2,
 }
 
 .gradient-text {
-    @include textGradient(linear-gradient(77deg, #83E46C 0%, #95F3DD 100%));
+    @include textGradient(linear-gradient(0deg, #83E46C 0%, #95F3DD 100%));
 }
 
 h3,
