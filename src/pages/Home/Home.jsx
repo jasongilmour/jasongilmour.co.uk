@@ -73,7 +73,10 @@ const Home = () => {
                 topOffset={-40}
             />
             <div className={styles.pageBorder}>
-                <article className={`${styles.page} ${styles.intro}`}>
+                <article
+                    className={`${styles.page} ${styles.intro}`}
+                    id="about"
+                >
                     <div className={styles.introBackgroundContainer}>
                         <img
                             src="/img/page-backgrounds/background-intro.svg"
@@ -164,8 +167,7 @@ const Home = () => {
                 />
                 <ProjectCard
                     img={
-                        process.env.PUBLIC_URL +
-                        '/img/projects/daily/cover.png'
+                        process.env.PUBLIC_URL + '/img/projects/daily/cover.png'
                     }
                     layout="B"
                     shortDesc="Daily is a beautifully focused app that provides a straightforward aid for forming good habits. It does this by helping you keep track of what you do each day and how often you do it"

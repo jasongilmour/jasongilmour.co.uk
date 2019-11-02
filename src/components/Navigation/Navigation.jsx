@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { HashLink as Link } from 'react-router-hash-link';
 import styles from './Navigation.module.scss';
 
 class Navigation extends Component {
@@ -17,7 +17,6 @@ class Navigation extends Component {
 
     render() {
         const { open } = this.state;
-        const { children } = this.props;
 
         return (
             <React.Fragment>
@@ -36,19 +35,22 @@ class Navigation extends Component {
                         [`${styles.navOpen}`]: open,
                     })}
                 >
-                    {children}
+                    <Link smooth to="/#about" onClick={this.toggle}>
+                        About
+                    </Link>
+                    <Link smooth to="/#services" onClick={this.toggle}>
+                        Services
+                    </Link>
+                    <Link smooth to="/#projects" onClick={this.toggle}>
+                        Projects
+                    </Link>
+                    <Link smooth to="/#contact" onClick={this.toggle}>
+                        Contact
+                    </Link>
                 </nav>
             </React.Fragment>
         );
     }
 }
-
-Navigation.propTypes = {
-    children: PropTypes.node,
-};
-
-Navigation.defaultProps = {
-    children: null,
-};
 
 export default Navigation;
