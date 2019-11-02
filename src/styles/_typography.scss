@@ -36,7 +36,7 @@ td {
 	margin: 0 0 rem(32);
 
 	@media (min-width: $bp-xl) {
-		font-size: vw(162);
+		font-size: 162px;
 		line-height: (210/162);
 	}
 }
@@ -49,7 +49,7 @@ h1,
 	margin: 0 0 rem(32);
 
 	@media (min-width: $bp-xl) {
-		font-size: vw(118);
+		font-size: 118px;
 		line-height: (132/118);
 	}
 }
@@ -62,7 +62,7 @@ h2,
 	margin: 0;
 
 	@media (min-width: $bp-xl) {
-		font-size: vw(102);
+		font-size: 102px;
 		line-height: (118/102);
 	}
 }
@@ -79,8 +79,8 @@ h3,
 	margin: 0;
 
 	@media (min-width: $bp-xl) {
-		font-size: vw(82);
-		line-height: (106/82);
+		font-size: 82px;
+		line-height: (88/82);
 	}
 }
 
@@ -121,7 +121,7 @@ p {
 	}
 
 	@media screen and (min-width: $bp-xl) {
-		font-size: vw(21);
+		font-size: 21px;
 		line-height: (32/21);
 		margin: 0 0 em(42, 21);
 	}

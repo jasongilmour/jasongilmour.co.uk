@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import classnames from 'classnames';
+import { HashLink as Link } from 'react-router-hash-link';
 import { ProjectCard } from 'components';
 
 import styles from './Home.module.scss';
@@ -74,10 +75,10 @@ const Home = () => {
             />
             <div className={styles.pageBorder}>
                 <article
-                    className={`${styles.page} ${styles.intro}`}
+                    className={`${styles.page} ${styles.about}`}
                     id="about"
                 >
-                    <div className={styles.introBackgroundContainer}>
+                    <div className={styles.aboutBackgroundContainer}>
                         <img
                             src="/img/page-backgrounds/background-intro.svg"
                             alt=""
@@ -86,7 +87,7 @@ const Home = () => {
                     </div>
                     <div className="row">
                         <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-3">
-                            <h2 className={`${styles.introHeadline}`}>
+                            <h2 className={`${styles.aboutHeadline}`}>
                                 Pragmatic
                                 <br /> Digital Product
                                 <br /> Design.
@@ -96,23 +97,36 @@ const Home = () => {
                     <div className="row">
                         <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-2">
                             <p>
-                                With over 5 years experience in creating digital
-                                products for some of the biggest and smallest
-                                companies in the world, I can be an asset on any
-                                team working in the digital product design
-                                space.
+                                I am an experienced Digital Product Designer
+                                with a talent for UX, strategy, and creating
+                                innovative solutions from first principles.
                             </p>
                             <p>
-                                Having trained as a Graphic Designer, honed my
-                                digital skills through a desire to see my
-                                designs come to life, and to understand
-                                everything that’s needed to&hellip;{' '}
-                                <button
-                                    type="button"
-                                    className="unstyled link strong"
+                                I have a consistent record of leading successful
+                                projects throughout my career, taking products
+                                from zero to one and onwards with a high degree
+                                of ownership, pragmatism, professionalism and
+                                pride in my work.
+                            </p>
+                            <p>
+                                I offer a variety of{' '}
+                                <Link smooth to="/#services">
+                                    services
+                                </Link>{' '}
+                                on a freelance basis, honed over the years
+                                through various{' '}
+                                <Link smooth to="/#projects">
+                                    successful projects
+                                </Link>
+                                . Please{' '}
+                                <a
+                                    href="mailto:hello@jasongilmour.co.uk"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-                                    read more.
-                                </button>
+                                    get in touch
+                                </a>{' '}
+                                if you'd like to work with me.
                             </p>
                         </div>
                     </div>

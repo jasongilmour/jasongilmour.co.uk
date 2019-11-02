@@ -167,7 +167,7 @@
 	}
 }
 
-.intro {
+.about {
 	background: linear-gradient(-45deg, $green 0, $background-color 94%);
 	position: relative;
 
@@ -191,9 +191,14 @@
 			content: normal;
 		}
 	}
+
+	p a {
+		color: inherit;
+		font-weight: $font-bold;
+	}
 }
 
-.introHeadline {
+.aboutHeadline {
 	font-size: 8vw;
 	letter-spacing: 0.03em;
 	line-height: (40/32);
@@ -205,13 +210,13 @@
 	}
 
 	@media (min-width: $bp-xl) {
-		font-size: vw(74);
+		font-size: 74px;
 		line-height: (98/74);
 		margin: rem(40) 0;
 	}
 }
 
-.introBackgroundContainer {
+.aboutBackgroundContainer {
 	align-items: center;
 	display: flex;
 	height: 100%;
@@ -244,7 +249,7 @@
 	padding: 0;
 
 	@media (min-width: $bp-lg) {
-		font-size: vw(82);
+		font-size: 82px;
 		line-height: (106/82);
 	}
 

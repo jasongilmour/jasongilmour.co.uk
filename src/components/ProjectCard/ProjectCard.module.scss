@@ -1,6 +1,7 @@
 @import '../../styles/tooling';
 
 .projectCard {
+	align-items: center;
 	border: 4px solid $black;
 	display: flex;
 	margin: 32px 0;
@@ -35,6 +36,10 @@
 				left: -60px;
 			}
 		}
+	}
+
+	h3 {
+		margin-bottom: 0.2em;
 	}
 
 	@media screen and (min-width: $bp-lg) {
@@ -77,13 +82,9 @@
 }
 
 .projectImage {
-	align-self: flex-end;
-
 	@media screen and (min-width: $bp-lg) {
 		position: relative;
 		right: -60px;
-		width: auto;
-		height: 120%;
-		max-height: 60vh;
+		max-width: 50%;
 	}
 }

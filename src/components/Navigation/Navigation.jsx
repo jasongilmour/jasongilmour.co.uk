@@ -47,6 +47,68 @@ class Navigation extends Component {
                     <Link smooth to="/#contact" onClick={this.toggle}>
                         Contact
                     </Link>
+                    <div className={styles.social}>
+                        <a
+                            onClick={this.toggle}
+                            className={styles.socialLink}
+                            href="https://www.linkedin.com/in/jasongilmour/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <img
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    '/img/ui/icon-linkedin.svg'
+                                }
+                                alt="LinkedIn"
+                            />
+                        </a>
+                        <a
+                            onClick={this.toggle}
+                            className={styles.socialLink}
+                            href="https://www.toptal.com#incorporate-only-acute-mobile-app-designers"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <img
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    '/img/ui/icon-toptal.svg'
+                                }
+                                alt="Toptal"
+                            />
+                        </a>
+                        <a
+                            onClick={this.toggle}
+                            className={styles.socialLink}
+                            href="https://github.com/jasongilmour"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <img
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    '/img/ui/icon-github.svg'
+                                }
+                                alt="Github"
+                            />
+                        </a>
+                        <a
+                            onClick={this.toggle}
+                            className={styles.socialLink}
+                            href="https://twitter.com/jasongilmour94"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <img
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    '/img/ui/icon-twitter.svg'
+                                }
+                                alt="Twitter"
+                            />
+                        </a>
+                    </div>
                 </nav>
             </React.Fragment>
         );
