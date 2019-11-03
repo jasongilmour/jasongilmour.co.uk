@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Link } from 'react-router-dom';
 import styles from './ProjectCard.module.scss';
 
 const ProjectCard = props => {
@@ -10,11 +9,7 @@ const ProjectCard = props => {
         <div className={classnames(styles.projectCard, styles[slug])}>
             <div className={styles.projectInfo}>
                 <h3>{title}</h3>
-                {shortDesc && (
-                    <p>
-                        {shortDesc}&hellip; <Link to={`/${slug}`}>More</Link>
-                    </p>
-                )}
+                {shortDesc}
             </div>
             {img && (
                 <div className={styles.projectImage}>

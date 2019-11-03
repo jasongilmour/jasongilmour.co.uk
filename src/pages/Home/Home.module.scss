@@ -332,7 +332,23 @@
 }
 
 .contactDetails {
-	font-size: 3vw;
+	font-size: em(16, 16);
+	line-height: (24/16);
+	margin: 0 0 em(40, 16);
+
+	@media screen and (min-width: $bp-sm) {
+		font-size: 22px;
+	}
+
+	@media screen and (min-width: $bp-md) {
+		font-size: 26px;
+	}
+
+	@media screen and (min-width: $bp-xl) {
+		font-size: 42px;
+		line-height: (52/42);
+		margin: 0 0 1em;
+	}
 
 	div {
 		margin-bottom: 0.6em;

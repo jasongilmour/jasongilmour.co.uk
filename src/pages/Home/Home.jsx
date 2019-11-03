@@ -73,11 +73,8 @@ const Home = () => {
                 onLeave={() => startLeave()}
                 topOffset={-40}
             />
-            <div className={styles.pageBorder}>
-                <article
-                    className={`${styles.page} ${styles.about}`}
-                    id="about"
-                >
+            <div className={styles.pageBorder} id="about">
+                <article className={`${styles.page} ${styles.about}`}>
                     <div className={styles.aboutBackgroundContainer}>
                         <img
                             src="/img/page-backgrounds/background-intro.svg"
@@ -97,9 +94,10 @@ const Home = () => {
                     <div className="row">
                         <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-2">
                             <p>
-                                I am an experienced Digital Product Designer
-                                with a talent for UX, strategy, and creating
-                                innovative solutions from first principles.
+                                I am an experienced Freelance Digital Product
+                                Designer with a talent for UX, strategy, and
+                                creating innovative solutions from first
+                                principles.
                             </p>
                             <p>
                                 I have a consistent record of leading successful
@@ -128,6 +126,7 @@ const Home = () => {
                                 </a>{' '}
                                 if you'd like to work with me.
                             </p>
+                            <p>Based in Edinburgh, serving clients anywhere.</p>
                         </div>
                     </div>
                 </article>
@@ -175,11 +174,27 @@ const Home = () => {
                         process.env.PUBLIC_URL +
                         '/img/projects/hailto/cover.png'
                     }
-                    shortDesc="Harness the relationship between your talent and their fans to amplify your message"
+                    shortDesc={
+                        <React.Fragment>
+                            <p>
+                                The HailTo App serves up official assets for TV
+                                stars so they can promote their own shows in an
+                                effective, coordinated way on social media.
+                            </p>
+                            <a
+                                href="https://medium.com/@jasongilmour94/designing-hailto-c08225062352"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-outline-primary project-link"
+                            >
+                                Case study
+                            </a>
+                        </React.Fragment>
+                    }
                     slug="hailto"
                     title="HailTo"
                 />
-                <ProjectCard
+                {/* <ProjectCard
                     img={
                         process.env.PUBLIC_URL + '/img/projects/daily/cover.png'
                     }
@@ -187,44 +202,75 @@ const Home = () => {
                     shortDesc="Daily is a beautifully focused app that provides a straightforward aid for forming good habits. It does this by helping you keep track of what you do each day and how often you do it"
                     slug="daily"
                     title="Daily"
-                />
-                <ProjectCard
-                    img={
-                        process.env.PUBLIC_URL +
-                        '/img/projects/storm-sdk/cover.png'
-                    }
-                    shortDesc="Building a toolkit for better products and better process"
-                    slug="cms-design-system"
-                    title="CMS Design System"
-                />
+                /> */}
                 <ProjectCard
                     img={
                         process.env.PUBLIC_URL +
                         '/img/projects/storm-ideas/cover.png'
                     }
                     layout="B"
-                    shortDesc="While employed by Storm Ideas, I was tasked with redesigning the agency website and updating its aesthetics in 2018"
+                    shortDesc={
+                        <React.Fragment>
+                            <p>
+                                While employed by Storm Ideas in 2018, I was
+                                tasked with redesigning the agency website and
+                                refreshing the aesthetics.
+                            </p>
+                            <a
+                                href="https://stormideas.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-outline-primary project-link"
+                            >
+                                Website
+                            </a>
+                            <a
+                                href="https://www.toptal.com#project=storm-ideas-agency-website&image=1#incorporate-only-acute-mobile-app-designers"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-outline-secondary project-link"
+                            >
+                                Learn more
+                            </a>
+                        </React.Fragment>
+                    }
                     slug="storm-ideas"
                     title="Storm Ideas"
                 />
+                <ProjectCard
+                    img={
+                        process.env.PUBLIC_URL +
+                        '/img/projects/storm-sdk/cover.png'
+                    }
+                    shortDesc={
+                        <p>
+                            Building a toolkit for better products, and better
+                            processes.
+                            <br />
+                            Case study coming soon.
+                        </p>
+                    }
+                    slug="cms-design-system"
+                    title="CMS Design System"
+                />
             </article>
-            <article
-                className={classnames(styles.page, styles.contact, {
-                    [styles.out]: !contactVisible,
-                })}
-                id="contact"
+            <Waypoint
+                key={2}
+                onEnter={() => contactEnter()}
+                onLeave={() => contactLeave()}
+                topOffset="40%"
             >
-                <div className="row justify-content-center">
-                    <div className="col-lg-4">
-                        <h2 className="gradient-text section-header">
-                            Contact.
-                        </h2>
-                        <Waypoint
-                            key={2}
-                            onEnter={() => contactEnter()}
-                            onLeave={() => contactLeave()}
-                            topOffset="40%"
-                        >
+                <article
+                    className={classnames(styles.page, styles.contact, {
+                        [styles.out]: !contactVisible,
+                    })}
+                    id="contact"
+                >
+                    <div className="row justify-content-center">
+                        <div className="col-lg-4">
+                            <h2 className="gradient-text section-header">
+                                Contact.
+                            </h2>
                             <div className={styles.contactDetails}>
                                 <div>Jason Gilmour Design & Consulting.</div>
                                 <div>Edinburgh, Scotland.</div>
@@ -247,10 +293,10 @@ const Home = () => {
                                     </a>
                                 </div>
                             </div>
-                        </Waypoint>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </Waypoint>
         </main>
     );
 };

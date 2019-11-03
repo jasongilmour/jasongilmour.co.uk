@@ -16,14 +16,14 @@
 
 	@media screen and (min-width: $bp-md) {
 		border-width: 8px;
-		margin: 80px 20px;
+		margin: 80px 20px 120px;
 		padding: 48px;
 	}
 
 	@media screen and (min-width: $bp-lg) {
 		border-width: 11px;
 		flex-direction: row;
-		margin: 120px 40px;
+		margin: 80px 40px 200px;
 		padding: 60px;
 
 		&:nth-child(2n - 1) {
@@ -86,5 +86,14 @@
 		position: relative;
 		right: -60px;
 		max-width: 50%;
+	}
+}
+
+:global {
+	.btn.project-link {
+		display: block;
+		float: left;
+		margin: 0 2em 2em 0;
+		width: auto;
 	}
 }
