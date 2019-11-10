@@ -72,6 +72,10 @@
 	text-transform: uppercase;
 	transition: transform 0.3s ease, opacity 0.3s ease;
 
+	@media (prefers-color-scheme: light) {
+		color: $text-color-alt;
+	}
+
 	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		height: 80px;
 		line-height: 80px;
@@ -171,6 +175,11 @@
 	background: linear-gradient(-45deg, $green 0, $background-color 94%);
 	position: relative;
 
+	@media (prefers-color-scheme: light) {
+		background-color: $white;
+		color: $text-color-alt;
+	}
+
 	&:before {
 		content: '';
 		border-color: transparent $background-color transparent transparent;
@@ -182,6 +191,10 @@
 		right: -64px;
 		top: 0;
 		width: 0;
+
+		@media (prefers-color-scheme: light) {
+			border-color: transparent $white transparent transparent;
+		}
 	}
 
 	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
@@ -192,9 +205,14 @@
 		}
 	}
 
-	p a {
-		color: inherit;
-		font-weight: $font-bold;
+	p {
+		@media (prefers-color-scheme: light) {
+			color: $text-color;
+		}
+		a {
+			color: inherit;
+			font-weight: $font-bold;
+		}
 	}
 }
 
@@ -213,6 +231,10 @@
 		font-size: 74px;
 		line-height: (98/74);
 		margin: rem(40) 0;
+	}
+
+	@media (prefers-color-scheme: light) {
+		color: $text-color;
 	}
 }
 

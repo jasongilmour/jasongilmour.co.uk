@@ -9,6 +9,10 @@ select,
 textarea {
 	color: $text-color;
 	font-family: $default-font-stack;
+
+	@media (prefers-color-scheme: light) {
+		color: $text-color-alt;
+	}
 }
 
 html {
@@ -21,6 +25,11 @@ body {
 	font-size: 1em;
 	position: relative;
 	min-height: 100vh;
+
+	@media (prefers-color-scheme: light) {
+		background-color: $white;
+		color: $text-color-alt;
+	}
 }
 
 *,
