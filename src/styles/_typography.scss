@@ -59,11 +59,11 @@ h2,
 	font-family: 'solomon-bold';
 	font-size: em(46, 16);
 	line-height: (62/46);
-	margin: 0;
+	margin: 0.6em 0;
 
 	@media (min-width: $bp-xl) {
-		font-size: 102px;
-		line-height: (118/102);
+		font-size: 64px;
+		line-height: (68/64);
 	}
 }
 
@@ -76,11 +76,11 @@ h3,
 	font-family: 'solomon-bold';
 	font-size: em(38, 16);
 	line-height: (44/38);
-	margin: 0;
+	margin: 0.6em 0;
 
 	@media (min-width: $bp-xl) {
-		font-size: 82px;
-		line-height: (88/82);
+		font-size: 48px;
+		line-height: (52/48);
 	}
 }
 
@@ -107,37 +107,6 @@ h6,
 	margin: em(12.5, 8) 0;
 }
 
-p {
-	font-size: em(16, 16);
-	line-height: (24/16);
-	margin: 0 0 em(40, 16);
-
-	@media screen and (min-width: $bp-sm) {
-		font-size: 3.5vw;
-	}
-
-	@media screen and (min-width: $bp-md) {
-		font-size: 2vw;
-	}
-
-	@media screen and (min-width: $bp-xl) {
-		font-size: 21px;
-		line-height: (32/21);
-		margin: 0 0 em(32, 21);
-	}
-
-	img {
-		float: left;
-		margin-right: em(28, 14);
-		vertical-align: baseline;
-
-		&.alignright {
-			float: right;
-			margin-left: em(28, 14);
-		}
-	}
-}
-
 strong,
 .strong {
 	font-weight: $font-bold;
@@ -151,7 +120,7 @@ figcaption {
 figcaption {
 	font-size: em(12, 16);
 	line-height: (16/12);
-	margin: 4px 0 em(20, 12);
+	margin:  em(16, 12) 0 em(20, 12);
 	text-align: center;
 }
 
@@ -199,30 +168,43 @@ a {
 	}
 }
 
+p,
+dl,
+ol,
+ul, {
+	font-size: em(16, 16);
+	line-height: (24/16);
+	margin: 0 0 em(40, 16);
+
+	@media (min-width: $bp-sm) {
+		font-size: em(18,16);
+	}
+
+	@media (min-width: $bp-lg) {
+		font-size: em(21,16);
+		line-height: (32/21);
+		margin: 0 0 em(32, 21);
+	}
+
+	img {
+		float: left;
+		margin-right: em(28, 14);
+		vertical-align: baseline;
+
+		&.alignright {
+			float: right;
+			margin-left: em(28, 14);
+		}
+	}
+}
+
 // Lists
 ol,
 ul {
-	font-size: em(16, 16);
-	line-height: (28/16);
-	margin: 0 0 em(40, 16);
-
-	@media screen and (min-width: $bp-wide) {
-		font-size: em(20, 16);
-		line-height: (32/20);
-		margin: 0 0 em(42, 20);
-	}
 
 	li {
 		font-size: 1em;
 		margin-bottom: 1em;
-	}
-
-	p + & {
-		margin-top: -16px;
-
-		@media screen and (min-width: $bp-wide) {
-			margin-top: -22px;
-		}
 	}
 }
 

@@ -1,6 +1,29 @@
+// Helpers
 .align-items-center {
 	align-items: center;
 }
+
 .justify-content-center {
 	justify-content: center;
+}
+
+.case-study {
+	max-width: 48em;
+	padding-top: rem(64);
+
+	@media (min-width: $bp-md) {
+		padding-top: rem(144);
+	}
+
+	@media (min-width: $bp-xl) {
+		max-width: 66%;
+	}
+}
+
+.article-image {
+	margin: em(40, 16) auto;
+
+	@media (min-width: $bp-xl) {
+		margin: em(64, 21) auto;
+	}
 }

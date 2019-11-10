@@ -3,14 +3,14 @@
 .pageBorder {
 	padding: 4vw;
 
-	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		padding: 80px;
 	}
 
 	.page {
 		padding: 4vw;
 
-		@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+		@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 			padding: 80px;
 		}
 	}
@@ -21,7 +21,7 @@
 	padding: 4vw;
 	position: relative;
 
-	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		min-height: calc(100vh - 160px);
 		padding: 80px 160px;
 	}
@@ -38,7 +38,7 @@
 	top: 3vw;
 	z-index: 1;
 
-	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		display: block;
 		font-size: em(44, 16);
 		left: 0;
@@ -55,7 +55,7 @@
 	position: relative;
 	width: 8vw;
 
-	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		flex-direction: row;
 		padding-left: 80px;
 		width: auto;
@@ -72,7 +72,7 @@
 	text-transform: uppercase;
 	transition: transform 0.3s ease, opacity 0.3s ease;
 
-	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		height: 80px;
 		line-height: 80px;
 		width: 80px;
@@ -151,7 +151,7 @@
 	text-transform: uppercase;
 	z-index: 3;
 
-	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		height: 80px;
 		line-height: 80px;
 		position: fixed;
@@ -184,7 +184,7 @@
 		width: 0;
 	}
 
-	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		background: linear-gradient(62deg, #24A306 0%, #0ED8A8 100%);
 
 		&:before {
@@ -310,17 +310,17 @@
 }
 
 .projects {
-	@media screen and (min-width: $bp-lg) {
+	@media (min-width: $bp-lg) {
 		padding: 80px;
 	}
 
-	@media screen and (min-width: $bp-xl) {
+	@media (min-width: $bp-xl) {
 		padding: 80px 160px;
 	}
 }
 
 .projectsHeadline {
-	@media screen and (min-width: $bp-lg), screen and (orientation: landscape) and (min-width: $bp-md) {
+	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
 		padding-left: 111px;
 	}
 }
@@ -336,15 +336,15 @@
 	line-height: (24/16);
 	margin: 0 0 em(40, 16);
 
-	@media screen and (min-width: $bp-sm) {
+	@media (min-width: $bp-sm) {
 		font-size: 22px;
 	}
 
-	@media screen and (min-width: $bp-md) {
+	@media (min-width: $bp-md) {
 		font-size: 26px;
 	}
 
-	@media screen and (min-width: $bp-xl) {
+	@media (min-width: $bp-xl) {
 		font-size: 42px;
 		line-height: (52/42);
 		margin: 0 0 1em;

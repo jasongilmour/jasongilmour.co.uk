@@ -35,18 +35,20 @@ class Navigation extends Component {
                         [`${styles.navOpen}`]: open,
                     })}
                 >
-                    <Link smooth to="/#about" onClick={this.toggle}>
-                        About
-                    </Link>
-                    <Link smooth to="/#services" onClick={this.toggle}>
-                        Services
-                    </Link>
-                    <Link smooth to="/#projects" onClick={this.toggle}>
-                        Projects
-                    </Link>
-                    <Link smooth to="/#contact" onClick={this.toggle}>
-                        Contact
-                    </Link>
+                    <div>
+                        <Link smooth to="/#about" onClick={this.toggle}>
+                            About
+                        </Link>
+                        <Link smooth to="/#services" onClick={this.toggle}>
+                            Services
+                        </Link>
+                        <Link smooth to="/#projects" onClick={this.toggle}>
+                            Projects
+                        </Link>
+                        <Link smooth to="/#contact" onClick={this.toggle}>
+                            Contact
+                        </Link>
+                    </div>
                     <div className={styles.social}>
                         <a
                             onClick={this.toggle}
