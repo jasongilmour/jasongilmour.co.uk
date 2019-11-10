@@ -332,9 +332,9 @@
 }
 
 .contactDetails {
-	font-size: em(16, 16);
+	font-size: em(20, 16);
 	line-height: (24/16);
-	margin: 0 0 em(40, 16);
+	margin: 0 0 em(40, 20);
 
 	@media (min-width: $bp-sm) {
 		font-size: 22px;
