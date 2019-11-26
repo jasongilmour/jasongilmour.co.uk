@@ -54,7 +54,7 @@ $bp: 720px;
 .hamburger {
 	align-content: center;
 	appearance: none;
-	background-color: rgba($background-color, 0.75);
+	background-color: transparent;
 	border-radius: 40px;
 	border: 0;
 	color: $green;
@@ -69,7 +69,6 @@ $bp: 720px;
 	z-index: 3;
 
 	@media (min-width: $bp) {
-		background-color: transparent;
 		height: 80px;
 		width: 80px;
 	}

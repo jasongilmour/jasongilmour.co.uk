@@ -181,14 +181,16 @@ const Home = () => {
                                 stars so they can promote their own shows in an
                                 effective, coordinated way on social media.
                             </p>
-                            <a
-                                href="https://medium.com/@jasongilmour94/designing-hailto-c08225062352"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-outline-primary project-link"
-                            >
-                                Case study
-                            </a>
+                            <div>
+                                <a
+                                    href="https://medium.com/@jasongilmour94/designing-hailto-c08225062352"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-outline-primary project-link"
+                                >
+                                    Case study
+                                </a>
+                            </div>
                         </React.Fragment>
                     }
                     slug="hailto"
@@ -216,22 +218,24 @@ const Home = () => {
                                 tasked with redesigning the agency website and
                                 refreshing the aesthetics.
                             </p>
-                            <a
-                                href="https://stormideas.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-outline-primary project-link"
-                            >
-                                Website
-                            </a>
-                            <a
-                                href="https://www.toptal.com#project=storm-ideas-agency-website&image=1#incorporate-only-acute-mobile-app-designers"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-outline-secondary project-link"
-                            >
-                                Learn more
-                            </a>
+                            <div>
+                                <a
+                                    href="https://stormideas.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-outline-primary project-link"
+                                >
+                                    Website
+                                </a>
+                                <a
+                                    href="https://www.toptal.com/designers/resume/jason-gilmour#project=storm-ideas-agency-website&image=1#incorporate-only-acute-mobile-app-designers"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-outline-secondary project-link"
+                                >
+                                    Learn more
+                                </a>
+                            </div>
                         </React.Fragment>
                     }
                     slug="storm-ideas"

@@ -3,11 +3,12 @@
 // ==========================================================================
 
 @font-face {
-	font-family: 'SolomonBold', sans-serif;
-	font-display: swap;
-	src: url('./../fonts/solomon-bold.woff');
-	src: url('./../fonts/solomon-bold.ttf') format(truetype),
-		url('./../fonts/solomon-bold.svg') fformat(svg);
+	font-family: 'solomonbold';
+	src: url('//jasongilmour.co.uk/fonts/solomon-bold.eot');
+	src: url('//jasongilmour.co.uk/fonts/solomon-bold.eot?#iefix') format('embedded-opentype'),
+			url('//jasongilmour.co.uk/fonts/solomon-bold.woff2') format('woff2'),
+			url('//jasongilmour.co.uk/fonts/solomon-bold.woff') format('woff'),
+			url('//jasongilmour.co.uk/fonts/solomon-bold.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -26,12 +27,13 @@ h5,
 h6,
 td {
 	color: inherit;
+	font-weight: 700;
 	overflow: hidden;
 }
 
 .page-title,
 .section-header {
-	font-family: 'SolomonBold', sans-serif;
+	font-family: 'solomonbold', sans-serif;
 	font-size: rem(62);
 	line-height: (74/62);
 	margin: 0 0 rem(32);
@@ -44,7 +46,7 @@ td {
 
 h1,
 .h1 {
-	font-family: 'SolomonBold', sans-serif;
+	font-family: 'solomonbold', sans-serif;
 	font-size: rem(58);
 	line-height: (80/58);
 	margin: 0 0 rem(32);
@@ -57,7 +59,7 @@ h1,
 
 h2,
 .h2 {
-	font-family: 'SolomonBold', sans-serif;
+	font-family: 'solomonbold', sans-serif;
 	font-size: em(46, 16);
 	line-height: (62/46);
 	margin: 0.6em 0;
@@ -74,7 +76,7 @@ h2,
 
 h3,
 .h3 {
-	font-family: 'SolomonBold', sans-serif;
+	font-family: 'solomonbold', sans-serif;
 	font-size: em(38, 16);
 	line-height: (44/38);
 	margin: 0.6em 0;
@@ -87,7 +89,7 @@ h3,
 
 h4,
 .h4 {
-	font-family: 'SolomonBold', sans-serif;
+	font-family: 'solomonbold', sans-serif;
 	font-size: em(24, 16);
 	line-height: (28/24);
 	margin: em(32, 28) 0;
@@ -95,7 +97,7 @@ h4,
 
 h5,
 .h5 {
-	font-family: 'SolomonBold', sans-serif;
+	font-family: 'solomonbold', sans-serif;
 	font-size: em(12, 16);
 	line-height: 2.083333;
 	margin: em(25, 12) 0;

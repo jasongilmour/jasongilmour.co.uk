@@ -55,6 +55,7 @@ main,
 	// justify-content: center;
 	margin: auto;
 	min-height: 100vh;
+	overflow-x: hidden;
 	position: relative;
 
 	> section {
@@ -65,6 +66,7 @@ main,
 section {
 	margin: 0 auto;
 	padding: em(10, 16) em(20, 16);
+
 	@media (min-width: $bp-wide) {
 		padding: em(24, 16) em(20, 16);
 		width: 50%;

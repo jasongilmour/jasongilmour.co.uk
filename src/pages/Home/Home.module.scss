@@ -29,8 +29,9 @@
 
 .jrg {
 	display: flex;
-	font-family: 'SolomonBold', sans-serif;
+	font-family: 'solomonbold', sans-serif;
 	font-size: 6vw;
+	font-weight: 700;
 	line-height: (32/24);
 	overflow: visible;
 	position: absolute;
@@ -263,7 +264,8 @@
 }
 
 .serviceList {
-	font-family: 'SolomonBold', sans-serif;
+	font-family: 'solomonbold', sans-serif;
+	font-weight: 700;
 	list-style: none;
 	font-size: rem(38);
 	line-height: (52/38);
