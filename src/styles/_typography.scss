@@ -5,10 +5,11 @@
 @font-face {
 	font-family: 'solomonbold';
 	src: url('//jasongilmour.co.uk/fonts/solomon-bold.eot');
-	src: url('//jasongilmour.co.uk/fonts/solomon-bold.eot?#iefix') format('embedded-opentype'),
-			url('//jasongilmour.co.uk/fonts/solomon-bold.woff2') format('woff2'),
-			url('//jasongilmour.co.uk/fonts/solomon-bold.woff') format('woff'),
-			url('//jasongilmour.co.uk/fonts/solomon-bold.ttf') format('truetype');
+	src: url('//jasongilmour.co.uk/fonts/solomon-bold.eot?#iefix')
+		format('embedded-opentype'),
+		url('//jasongilmour.co.uk/fonts/solomon-bold.woff2') format('woff2'),
+		url('//jasongilmour.co.uk/fonts/solomon-bold.woff') format('woff'),
+		url('//jasongilmour.co.uk/fonts/solomon-bold.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -73,8 +74,14 @@ h2,
 .gradient-text {
 	@include textGradient(linear-gradient(0deg, #83e46c 0%, #95f3dd 100%));
 
-	@media (prefers-color-scheme: light) {
-		@include textGradient(linear-gradient(0deg, #83e46c 0%, #46d0bd 100%));
+	@supports (-webkit-background-clip: text) {
+		@media (prefers-color-scheme: light) {
+			background: (linear-gradient(0deg, #83E46C 0%, #46D0BD 100%));
+			background-attachment: fixed;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			transform: translate3d(0, 0, 0);
+		}
 	}
 }
 
