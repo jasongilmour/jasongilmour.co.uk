@@ -76,6 +76,10 @@
 
 	@media (prefers-color-scheme: light) {
 		color: $text-color-alt;
+
+		@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
+			color: $white;
+		}
 	}
 
 	@media (min-width: $bp-lg), (orientation: landscape) and (min-width: $bp-md) {
@@ -178,7 +182,7 @@
 	position: relative;
 
 	@media (prefers-color-scheme: light) {
-		background-color: $white;
+		background: linear-gradient(-45deg, $green 0, #46d0bd 94%);
 		color: $text-color-alt;
 	}
 
@@ -263,6 +267,12 @@
 		contain no-repeat,
 		radial-gradient(660px at 100% 100%, #3C453E 0%, rgba(48, 48, 48, 0) 100%);
 	overflow: visible;
+
+	@media (prefers-color-scheme: light) {
+		background: url('/img/page-backgrounds/background-services-light.svg') right
+			bottom / contain no-repeat,
+			radial-gradient(660px at 100% 100%, white 0%, rgba(48, 48, 48, 0) 100%);
+	}
 }
 
 .serviceList {
@@ -286,6 +296,10 @@
 		opacity: 1;
 		transform: none;
 		transition: transform 0.8s ease, opacity 0.6s ease;
+
+		@media (prefers-color-scheme: light) {
+			@include textGradient(linear-gradient(0deg, #83e46c 0%, #46d0bd 100%));
+		}
 
 		&:nth-child(2) {
 			transition-delay: 0.1s;
@@ -355,6 +369,10 @@
 	background: url('/img/page-backgrounds/background-contact.png') center top /
 		cover no-repeat;
 	min-height: calc(100vh - 80px);
+
+	@media (prefers-color-scheme: light) {
+		background-image: url('/img/page-backgrounds/background-contact-light.png');
+	}
 }
 
 .contactDetails {
