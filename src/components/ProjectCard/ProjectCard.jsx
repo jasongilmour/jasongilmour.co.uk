@@ -22,7 +22,7 @@ const ProjectCard = props => {
 
 ProjectCard.propTypes = {
     img: PropTypes.string,
-    shortDesc: PropTypes.string,
+    shortDesc: PropTypes.node,
     slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
 };

@@ -266,7 +266,7 @@
 	background: url('/img/page-backgrounds/background-services.svg') right bottom /
 		contain no-repeat,
 		radial-gradient(660px at 100% 100%, #3C453E 0%, rgba(48, 48, 48, 0) 100%);
-	overflow: visible;
+	overflow: hidden;
 
 	@media (prefers-color-scheme: light) {
 		background: url('/img/page-backgrounds/background-services-light.svg') right

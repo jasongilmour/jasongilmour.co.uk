@@ -154,7 +154,7 @@ const Home = () => {
                                 <li className={styles.service}>Strategy</li>
                                 <li className={styles.service}>UX & UI</li>
                                 <li className={styles.service}>Prototyping</li>
-                                <li className={styles.service}>Frontend</li>
+                                <li className={styles.service}>Front End</li>
                             </ul>
                         </Waypoint>
                     </div>
