@@ -16,6 +16,30 @@ const ProjectCard = props => {
                     <img src={img} alt={title} />
                 </div>
             )}
+            {/* <script type="application/ld+json">
+                {
+                    '@context': 'http://schema.org',
+                    '@type': 'CreativeWork',
+                    '@id': 'https://jasongilmour.co.uk/projects/hailto,
+                    'name': 'HailTo',
+                    'url': 'https://jasongilmour.co.uk/img/projects/hailto',
+                    'image': [
+                    ],
+                    'author': [
+                        {
+                            'name': 'Jason Gilmour',
+                            'url': 'https://jasongilmour.co.uk',
+                            'sameAs': [
+                                'https://www.twitter.com/jasongilmour94',
+                                'https://www.linkedin.com/in/jason-gilmour-1805b474',
+                                'https://github.com/jasongilmour',
+                                'https://medium.com/@jasongilmour94',
+                                'https://www.toptal.com/designers/resume/jason-gilmour'
+                            ]
+                        }
+                    ]
+                }
+            </script> */}
         </div>
     );
 };

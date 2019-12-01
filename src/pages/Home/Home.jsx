@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Waypoint } from 'react-waypoint';
+import { JsonLd } from 'react-schemaorg';
 import classnames from 'classnames';
+import { Waypoint } from 'react-waypoint';
 import { HashLink as Link } from 'react-router-hash-link';
 import { ProjectCard } from 'components';
 
@@ -290,7 +291,7 @@ const Home = () => {
                                 </div>
                                 <div>
                                     <a
-                                        href="tel:+16045008985"
+                                        href="tel:+447949019596"
                                         className={styles.phone}
                                     >
                                         +44 7949 01 9596
@@ -299,6 +300,24 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                    <JsonLd
+                        item={{
+                            '@context': 'http://schema.org',
+                            '@type': 'Person',
+                            name: 'Jason Gilmour',
+                            disambiguatingDescription:
+                                'Freelance Digital Product Designer',
+                            image: 'https://jasongilmour.co.uk/img/ui/face.jpg',
+                            url: 'https://jasongilmour.co.uk',
+                            sameAs: [
+                                'https://www.twitter.com/jasongilmour94',
+                                'https://www.linkedin.com/in/jason-gilmour-1805b474',
+                                'https://github.com/jasongilmour',
+                                'https://medium.com/@jasongilmour94',
+                                'https://www.toptal.com/designers/resume/jason-gilmour',
+                            ],
+                        }}
+                    />
                 </article>
             </Waypoint>
         </main>
