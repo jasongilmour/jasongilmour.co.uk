@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { JsonLd } from 'react-schemaorg';
 import classnames from 'classnames';
 import { Waypoint } from 'react-waypoint';
-import { HashLink as Link } from 'react-router-hash-link';
 import { ProjectCard } from 'components';
 
 import styles from './Home.module.scss';
 
 const Home = () => {
     const [startVisible, setStartVisible] = useState(true);
-    const [skillsVisible, setSkillsVisible] = useState(false);
     const [contactVisible, setContactVisible] = useState(false);
 
     const startEnter = () => {
@@ -18,14 +16,6 @@ const Home = () => {
 
     const startLeave = () => {
         setStartVisible(false);
-    };
-
-    const skillsEnter = () => {
-        setSkillsVisible(true);
-    };
-
-    const skillsLeave = () => {
-        setSkillsVisible(false);
     };
 
     const contactEnter = () => {

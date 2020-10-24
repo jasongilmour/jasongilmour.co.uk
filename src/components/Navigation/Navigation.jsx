@@ -65,7 +65,7 @@ class Navigation extends Component {
                         <a
                             onClick={this.toggle}
                             className={styles.socialLink}
-                            href="https://www.toptal.com#incorporate-only-acute-mobile-app-designers"
+                            href="https://www.toptal.com/designers/resume/jason-gilmour#incorporate-only-acute-mobile-app-designers"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
