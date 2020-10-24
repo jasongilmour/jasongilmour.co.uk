@@ -9,7 +9,7 @@ import styles from './Home.module.scss';
 
 const Home = () => {
     const [startVisible, setStartVisible] = useState(true);
-    const [servicesVisible, setServicesVisible] = useState(false);
+    const [skillsVisible, setSkillsVisible] = useState(false);
     const [contactVisible, setContactVisible] = useState(false);
 
     const startEnter = () => {
@@ -20,12 +20,12 @@ const Home = () => {
         setStartVisible(false);
     };
 
-    const servicesEnter = () => {
-        setServicesVisible(true);
+    const skillsEnter = () => {
+        setSkillsVisible(true);
     };
 
-    const servicesLeave = () => {
-        setServicesVisible(false);
+    const skillsLeave = () => {
+        setSkillsVisible(false);
     };
 
     const contactEnter = () => {
@@ -88,14 +88,14 @@ const Home = () => {
                             <h2 className={`${styles.aboutHeadline}`}>
                                 Pragmatic
                                 <br /> Digital Product
-                                <br /> Design.
+                                <br /> Designer.
                             </h2>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col offset-lg-1 col-lg-4 offset-xl-3 col-xl-2">
                             <p>
-                                I am an experienced Freelance Digital Product
+                                I am an experienced Digital Product
                                 Designer with a talent for UX, strategy, and
                                 creating innovative solutions from first
                                 principles.
@@ -107,68 +107,18 @@ const Home = () => {
                                 of ownership, pragmatism, professionalism and
                                 pride in my work.
                             </p>
-                            <p>
-                                I offer a variety of{' '}
-                                <Link smooth to="/#services">
-                                    services
-                                </Link>{' '}
-                                on a freelance basis, honed over the years
-                                through various{' '}
-                                <Link smooth to="/#projects">
-                                    successful projects
-                                </Link>
-                                . Please{' '}
-                                <a
-                                    href="mailto:hello@jasongilmour.co.uk"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    get in touch
-                                </a>{' '}
-                                if you'd like to work with me.
-                            </p>
-                            <p>Based in Edinburgh, serving clients anywhere.</p>
                         </div>
                     </div>
                 </article>
             </div>
             <article
-                className={classnames(styles.page, styles.services, {
-                    [styles.out]: !servicesVisible,
-                })}
-                id="services"
-            >
-                <div className="row justify-content-center">
-                    <div className="col-lg-4">
-                        <h2 className="gradient-text section-header">
-                            Services.
-                        </h2>
-                        <Waypoint
-                            key={2}
-                            onEnter={() => servicesEnter()}
-                            onLeave={() => servicesLeave()}
-                            topOffset="30%"
-                        >
-                            <ul className={styles.serviceList}>
-                                <li className={styles.service}>Product</li>
-                                <li className={styles.service}>Design</li>
-                                <li className={styles.service}>Strategy</li>
-                                <li className={styles.service}>UX & UI</li>
-                                <li className={styles.service}>Prototyping</li>
-                                <li className={styles.service}>Front End</li>
-                            </ul>
-                        </Waypoint>
-                    </div>
-                </div>
-            </article>
-            <article
                 className={`${styles.page} ${styles.projects}`}
-                id="projects"
+                id="portfolio"
             >
                 <h2
                     className={`gradient-text section-header ${styles.projectsHeadline}`}
                 >
-                    Projects.
+                    Portfolio
                 </h2>
                 <ProjectCard
                     img={
@@ -176,7 +126,7 @@ const Home = () => {
                         '/img/projects/hailto/cover.png'
                     }
                     shortDesc={
-                        <React.Fragment>
+                        <>
                             <p>
                                 The HailTo App serves up official assets for TV
                                 stars so they can promote their own shows in an
@@ -192,7 +142,7 @@ const Home = () => {
                                     Case study
                                 </a>
                             </div>
-                        </React.Fragment>
+                        </>
                     }
                     slug="hailto"
                     title="HailTo"
@@ -213,7 +163,7 @@ const Home = () => {
                     }
                     layout="B"
                     shortDesc={
-                        <React.Fragment>
+                        <>
                             <p>
                                 While employed by Storm Ideas in 2018, I was
                                 tasked with redesigning the agency website and
@@ -237,7 +187,7 @@ const Home = () => {
                                     Learn more
                                 </a>
                             </div>
-                        </React.Fragment>
+                        </>
                     }
                     slug="storm-ideas"
                     title="Storm Ideas"
@@ -274,10 +224,10 @@ const Home = () => {
                     <div className="row justify-content-center">
                         <div className="col-lg-4">
                             <h2 className="gradient-text section-header">
-                                Contact.
+                                Contact
                             </h2>
                             <div className={styles.contactDetails}>
-                                <div>Jason Gilmour Design & Consulting.</div>
+                                <div>Jason Gilmour</div>
                                 <div>Edinburgh, Scotland.</div>
                                 <div>
                                     <a
@@ -306,7 +256,7 @@ const Home = () => {
                             '@type': 'Person',
                             name: 'Jason Gilmour',
                             disambiguatingDescription:
-                                'Freelance Digital Product Designer',
+                                'Digital Product Designer',
                             image: 'https://jasongilmour.co.uk/img/ui/face.jpg',
                             url: 'https://jasongilmour.co.uk',
                             sameAs: [

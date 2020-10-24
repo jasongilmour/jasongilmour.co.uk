@@ -39,11 +39,8 @@ class Navigation extends Component {
                         <Link smooth to="/#about" onClick={this.toggle}>
                             About
                         </Link>
-                        <Link smooth to="/#services" onClick={this.toggle}>
-                            Services
-                        </Link>
-                        <Link smooth to="/#projects" onClick={this.toggle}>
-                            Projects
+                        <Link smooth to="/#portfolio" onClick={this.toggle}>
+                            Portfolio
                         </Link>
                         <Link smooth to="/#contact" onClick={this.toggle}>
                             Contact
