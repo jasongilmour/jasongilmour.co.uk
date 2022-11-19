@@ -6,13 +6,11 @@ module.exports = {
   extends: [
     'airbnb',
     'prettier',
-    'prettier/react',
-    'plugin:eslint-comments/recommended',
   ],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: [
-    'react',
-    'prettier',
+    // 'react',
+    'eslint-plugin-prettier',
     'jsx-a11y',
   ],
   settings: {
@@ -54,5 +52,8 @@ module.exports = {
     ],
     'no-console': [1],
     'linebreak-style': 'off',
+    'react/function-component-definition': 'off',
+    'react/no-unescaped-entities': 'off',
+    'arrow-body-style': 'off',
   },
 };

@@ -3,6 +3,8 @@
 // ==========================================================================
 
 // Slightly lighten a color
+@use "sass:math";
+
 @function tint($color, $percentage) {
     @return mix(white, $color, $percentage);
 }
@@ -14,12 +16,12 @@
 
 // em values
 @function em($px, $font-size: 16px) {
-    @return ($px / $font-size) * 1em;
+    @return math.div($px, $font-size) * 1em;
 }
 
 // rem values
 @function rem($px) {
-    @return ($px / 16) * 1rem;
+    @return math.div($px, 16) * 1rem;
 }
 
 // ==========================================================================

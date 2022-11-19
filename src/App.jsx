@@ -1,17 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import AppRouter from 'Router';
-import { Navigation } from 'components';
 import 'styles/app.scss';
+import Home from './pages/Home';
 
 function App() {
     return (
-        <Router>
-            <header className="global-header">
-                <Navigation />
-            </header>
-            <AppRouter />
-        </Router>
+        <Home />
     );
 }
 

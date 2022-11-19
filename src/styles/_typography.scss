@@ -1,20 +1,28 @@
-// ==========================================================================
+/// ==========================================================================
 // Typography
 // ==========================================================================
 
-@font-face {
-	font-family: 'solomonbold';
-	src: url('//jasongilmour.co.uk/fonts/solomon-bold.eot');
-	src: url('//jasongilmour.co.uk/fonts/solomon-bold.eot?#iefix')
-		format('embedded-opentype'),
-		url('//jasongilmour.co.uk/fonts/solomon-bold.woff2') format('woff2'),
-		url('//jasongilmour.co.uk/fonts/solomon-bold.woff') format('woff'),
-		url('//jasongilmour.co.uk/fonts/solomon-bold.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+@use "sass:math";
+
+  @font-face {
+	font-family: 'Clash Display Variable';
+	src: url('../../public/fonts/ClashDisplay-Variable.woff2') format('woff2'),
+		 url('../../public/fonts/ClashDisplay-Variable.woff') format('woff'),
+		 url('../../public/fonts/ClashDisplay-Variable.ttf') format('truetype');
+		 font-weight: 200 700;
+		 font-display: swap;
+		 font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap');
+@font-face {
+	font-family: 'Clash Grotesk Variable';
+	src: url('../../public/fonts/ClashGrotesk-Variable.woff2') format('woff2'),
+		 url('../../public/fonts/ClashGrotesk-Variable.woff') format('woff'),
+		 url('../../public/fonts/ClashGrotesk-Variable.ttf') format('truetype');
+		 font-weight: 200 700;
+		 font-display: swap;
+		 font-style: normal;
+}
 
 .metadata {
 	@include visuallyhidden;
@@ -28,97 +36,54 @@ h5,
 h6,
 td {
 	color: inherit;
-	font-weight: 700;
+	font-family: 'Clash Display Variable', sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	line-height: 1.2;
+	margin: 0 0 0.6em;
 	overflow: hidden;
 }
-
-.page-title,
-.section-header {
-	font-family: 'solomonbold', sans-serif;
-	font-size: rem(62);
-	line-height: (74/62);
-	margin: 0 0 rem(32);
-
-	@media (min-width: $bp-xl) {
-		font-size: 162px;
-		line-height: (210/162);
-	}
-}
-
 h1,
 .h1 {
-	font-family: 'solomonbold', sans-serif;
-	font-size: rem(58);
-	line-height: (80/58);
-	margin: 0 0 rem(32);
+	font-size: 10vmin;
+	line-height: 1.2;
+	margin: 0 0 0.6em;
 
-	@media (min-width: $bp-xl) {
-		font-size: 118px;
-		line-height: (132/118);
+	@media (min-width: $bp-lg) {
+		font-size: 6vmin;
+		line-height: 1.2;
 	}
 }
 
 h2,
 .h2 {
-	font-family: 'solomonbold', sans-serif;
-	font-size: em(46, 16);
-	line-height: (62/46);
-	margin: 0.6em 0;
+	font-size: 8vmin;
+	line-height: 1.2;
+	margin: 0 0 0.6em;
 
-	@media (min-width: $bp-xl) {
-		font-size: 64px;
-		line-height: (68/64);
-	}
-}
-
-.gradient-text {
-	@include textGradient(linear-gradient(0deg, #83e46c 0%, #95f3dd 100%));
-
-	@supports (-webkit-background-clip: text) {
-		@media (prefers-color-scheme: light) {
-			background: (linear-gradient(0deg, #83E46C 0%, #46D0BD 100%));
-			background-attachment: fixed;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			transform: translate3d(0, 0, 0);
-		}
+	@media (min-width: $bp-lg) {
+		font-size: 4.4vmin;
 	}
 }
 
 h3,
 .h3 {
-	font-family: 'solomonbold', sans-serif;
-	font-size: em(38, 16);
-	line-height: (44/38);
-	margin: 0.6em 0;
-
-	@media (min-width: $bp-xl) {
-		font-size: 48px;
-		line-height: (52/48);
-	}
+	font-size: 6vmin;
 }
 
 h4,
 .h4 {
-	font-family: 'solomonbold', sans-serif;
-	font-size: em(24, 16);
-	line-height: (28/24);
-	margin: em(32, 28) 0;
+	font-size: 5vmin;
 }
 
 h5,
 .h5 {
-	font-family: 'solomonbold', sans-serif;
-	font-size: em(12, 16);
-	line-height: 2.083333;
-	margin: em(25, 12) 0;
+	font-size: 4vmin;
 }
 
 h6,
 .h6 {
-	font-size: em(8, 16);
-	line-height: 1.5625;
-	margin: em(12.5, 8) 0;
+	font-size: 3vmin;
 }
 
 strong,
@@ -133,7 +98,7 @@ figcaption {
 
 figcaption {
 	font-size: em(12, 16);
-	line-height: (16/12);
+	line-height: math.div(16, 12);
 	margin: em(16, 12) 0 em(20, 12);
 	text-align: center;
 }
@@ -171,7 +136,7 @@ code {
 // links
 
 a {
-	color: $green;
+	color: inherit;
 	cursor: pointer;
 	text-decoration: underline;
 	transition: color 0.2s ease;
@@ -186,18 +151,12 @@ p,
 dl,
 ol,
 ul {
-	font-size: em(16, 16);
-	line-height: (24/16);
-	margin: 0 0 em(40, 16);
-
-	@media (min-width: $bp-sm) {
-		font-size: em(18, 16);
-	}
+	font-size: 4.4vmin;
+	line-height: 1.4;
+	margin: 0 0 0.75em;
 
 	@media (min-width: $bp-lg) {
-		font-size: em(21, 16);
-		line-height: (32/21);
-		margin: 0 0 em(32, 21);
+		font-size: 2.2vmin;
 	}
 
 	img {
