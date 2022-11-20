@@ -13,9 +13,9 @@ const Button = props => {
                     unstyled,
                 }
             )}
+            // eslint-disable-next-line react/button-has-type
             type={type}
         >
-            {console.log('unstyled = ' + unstyled)}
             {children}
         </button>
     );

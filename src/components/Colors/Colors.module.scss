@@ -1,0 +1,141 @@
+@import '../../styles/tooling';
+
+@keyframes colorRotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.noise {
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0.1;
+    pointer-events: none;
+    position: fixed;
+    z-index: 4;
+    object-fit: cover;
+
+    @media (prefers-color-scheme: light) {
+        opacity: 0.15;
+
+        @media (min-width: $bp-md) {
+            opacity: 0.075;
+        }
+    }
+}
+
+.colors {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+
+    @media (min-width: $bp-md) {
+        opacity: 0.4;
+    }
+
+    @media (prefers-color-scheme: light) {
+        opacity: 0.35;
+    }
+
+    .topLeftColor,
+    .topRightColor,
+    .bottomRightColor,
+    .bottomLeftColor {
+        animation: colorRotation 20s linear infinite;
+        filter: blur(100px);
+
+        @media (min-width: $bp-md) {
+            filter: blur(400px);
+        }
+    }
+
+    .centreColor {
+        background: #31FF00;
+        height: 100vh;
+        left: 0;
+        opacity: 0.7;
+        position: absolute;
+        top: 0 ;
+        width: 100vw;
+        z-index: -1;
+
+        @media (min-width: $bp-lg) {
+            border-radius: 50%;
+            filter: blur(400px);
+            left: 25vw;
+            opacity: 1;
+            top: 5vh;
+        }
+    }
+
+    .topLeftColor {
+        border-radius: 50%;
+        position: absolute;
+        width: 150vw;
+        height: 90vw;
+        left: -50vw;
+        top: -50vw;
+        background: #FFE3B2;
+
+        @media (min-width: $bp-lg) {
+            height: 125vh;
+            width: 100vw;
+            left: -50vw;
+            top: -60vh;
+        }
+    }
+
+    .topRightColor {
+        border-radius: 50%;
+        position: absolute;
+        width: 125vw;
+        height: 75vw;
+        right: -50vw;
+        top: -25vw;
+        background: #0ED8A8;
+
+        @media (min-width: $bp-lg) {
+            width: 150vh;
+            height: 150vh;
+            right: -50vh;
+            top: -50vh;
+        }
+    }
+
+    .bottomRightColor {
+        border-radius: 50%;
+        position: absolute;
+        width: 120vw;
+        height: 60vw;
+        right: -60vw;
+        bottom: -10vw;
+        background: #0A3B9B;
+
+        @media (min-width: $bp-lg) {
+            width: 80vw;
+            height: 90vh;
+            right: -30vw;
+            bottom: -40vh;
+        }
+    }
+
+    .bottomLeftColor {
+        border-radius: 50%;
+        position: absolute;
+        width: 80vw;
+        height: 100vh;
+        left: -55vw;
+        bottom: -50vh;
+        background: #24A306;
+    }
+}

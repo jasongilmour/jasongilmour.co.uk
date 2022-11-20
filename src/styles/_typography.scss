@@ -136,14 +136,25 @@ code {
 // links
 
 a {
-	color: inherit;
+	color: $text-color;
 	cursor: pointer;
 	text-decoration: underline;
-	transition: color 0.2s ease;
+	transition: color 0.15s linear;
+
+	@media (prefers-color-scheme: light) {
+		color: $text-color-alt;
+	}
 
 	&:hover,
 	&:active {
 		color: $light-green;
+	}
+
+	@media (prefers-color-scheme: light) {
+		&:hover,
+		&:active {
+			color: $dark-green;
+		}
 	}
 }
 

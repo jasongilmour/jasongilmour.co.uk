@@ -20,15 +20,20 @@ html {
 }
 
 body {
-	background-color: $background-color;
+	background-color: #000;
 	color: $text-color;
 	font-size: 1em;
 	position: relative;
-	min-height: 100vh;
+	height: 100vh;
+	overflow: hidden;
 
 	@media (prefers-color-scheme: light) {
-		background-color: $white;
+		background-color: #FFF;
 		color: $text-color-alt;
+	}
+
+	@media (min-width: $bp-sm) {
+		overflow: auto;
 	}
 }
 
@@ -47,20 +52,6 @@ body {
 //     outline: none;
 //     box-shadow: 0 0 0 2px rgab(currentColor, 0, 2);
 // }
-
-main,
-.main {
-	// align-items: center;
-	// display: flex;
-	// justify-content: center;
-	margin: auto;
-	min-height: 100vh;
-	position: relative;
-
-	> section {
-		padding: em(20, 16);
-	}
-}
 
 section {
 	margin: 0 auto;
