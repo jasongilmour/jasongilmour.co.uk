@@ -42,10 +42,8 @@ const Home = () => {
                 <h2>Pragmatic Product Design.</h2>
             </div>
             <div className={styles.blurb}>
-                <p>I'm the Head of Product Design at <a href="https://www.getstoryteller.com/" target="_blank" rel="noopener noreferrer">Storyteller</a> and driven by craft and innovation.
-                I love collaborating with my small but mighty team to ship products and features that create real value and are loved by their users.</p>
-                <p>I have experience with everything from product, UX and visual design to front-end development so I know exactly what it takes to ship great products. I'm motivated by
-                seeing my work go from idea to launch and onwards - and I've been lucky enough to be involved with products like HailTo and Storyteller from their inception.</p>
+                <p>Formerly the Head of Product Design at <a href="https://www.getstoryteller.com/" target="_blank" rel="noopener noreferrer">Storyteller</a> and <a href="https://stormideas.com/" target="_blank" rel="noopener noreferrer">Storm Ideas</a>, I am driven by a passion for craftsmanship and innovation. I enjoy working hand-in-hand with a small but mighty team to deliver products and features that not only drive real value but are also loved by users.</p>
+                <p>With a versatile skill set spanning product, UX and visual design to front-end development, I understand the intricate details and dedication required to bring great products to life. I am motivated by the thrill of turning ideas into tangible outcomes and have had the privilege of being a part of the journey from inception to launch and beyond for products such as HailTo and Storyteller.</p>
             </div>
             <div className={styles.contact}>
                 <p>Edinburgh, Scotland.</p>
